@@ -45,7 +45,7 @@ Copyright
 ---------
 
 The libunistring library and its header files are under the GNU LGPL, see
-file COPYING.LIB.
+file COPYING.LIB.  This license is based on the GNU GPL, see file COPYING.
 
 The documentation is under another license; see in the documentation.
 

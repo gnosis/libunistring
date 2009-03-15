@@ -1,0 +1,5 @@
+New in 0.9:
+* The new include file unicase.h implements case folding.
+* The new include file uninorm.h implements normalization.
+* The new include file uniwbrk.h implements word break determination.
+* The library source code is now part of gnulib.

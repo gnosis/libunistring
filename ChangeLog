@@ -1,5 +1,8 @@
 2008-03-14  Bruno Haible  <bruno@clisp.org>
 
+	* INSTALL.generic: New file, from gnulib/doc/INSTALL.UTF-8 with an
+	added paragraph mentioning --with-libiconv-prefix.
+
 	* COPYING.LIB: New file, from gnulib/doc/COPYING.LESSERv3.
 	* COPYING: New file, from gnulib/doc/COPYINGv3.
 

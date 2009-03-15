@@ -1,0 +1,44 @@
+All you need to know when hacking (modifying) GNU libunistring or when building
+it off a git checkout.
+
+
+Requirements
+============
+
+You will need reasonably recent versions of the build tools:
+
+  * A C compiler. Such as GNU GCC.
+    + Homepage:
+      http://gcc.gnu.org/
+
+  * GNU automake
+    + Homepage:
+      http://www.gnu.org/software/automake/
+
+  * GNU autoconf
+    + Homepage:
+      http://www.gnu.org/software/autoconf/
+
+  * GNU m4
+    + Homepage:
+      http://www.gnu.org/software/m4/
+
+  * GNU gperf
+    + Homepage:
+      http://www.gnu.org/software/gperf/
+
+  * Perl
+    + Homepage:
+      http://www.perl.org/
+
+  * Either an internet connection or a recent copy of GNU gnulib.
+    + Homepage:
+      http://www.gnu.org/software/gnulib/
+
+And, of course, the packages listed in the DEPENDENCIES file.
+
+
+Sources
+=======
+
+Most of the sources have their origin in gnulib.

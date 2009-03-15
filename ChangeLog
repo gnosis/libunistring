@@ -1,5 +1,8 @@
 2008-03-14  Bruno Haible  <bruno@clisp.org>
 
+	* build-aux/config.guess: New file, from gnulib, version 2009-02-03.
+	* build-aux/config.sub: Likewise.
+
 	* README: New file.
 	* AUTHORS: New file.
 	* DEPENDENCIES: New file.

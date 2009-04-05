@@ -169,6 +169,21 @@ This function is similar to @posixfunc{memcmp}, except that it operates on
 Unicode strings.
 @end deftypefun
 
+The following function compares two Unicode strings of possibly different
+lengths.
+
+@deftypefun int u8_cmp2 (const uint8_t *@var{s1}, size_t @var{n1}, const uint8_t *@var{s2}, size_t @var{n2})
+@deftypefunx int u16_cmp2 (const uint16_t *@var{s1}, size_t @var{n1}, const uint16_t *@var{s2}, size_t @var{n2})
+@deftypefunx int u32_cmp2 (const uint32_t *@var{s1}, size_t @var{n1}, const uint32_t *@var{s2}, size_t @var{n2})
+Compares @var{s1} and @var{s2}, lexicographically.
+Returns a negative value if @var{s1} compares smaller than @var{s2},
+a positive value if @var{s1} compares larger than @var{s2}, or 0 if
+they compare equal.
+
+This function is similar to @func{memcmp2}, except that it operates on
+Unicode strings.
+@end deftypefun
+
 The following function searches for a given Unicode character.
 
 @deftypefun {uint8_t *} u8_chr (const uint8_t *@var{s}, size_t @var{n}, ucs4_t @var{uc})

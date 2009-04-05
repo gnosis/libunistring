@@ -1,3 +1,22 @@
+2008-04-05  Bruno Haible  <bruno@clisp.org>
+
+	* doc/libunistring.texi: New file.
+	* doc/unitypes.texi: New file, based on gnulib/lib/unitypes.h.
+	* doc/unistr.texi: New file, based on gnulib/lib/unistr.h.
+	* doc/uniconv.texi: New file, based on gnulib/lib/uniconv.h.
+	* doc/unistdio.texi: New file, based on gnulib/lib/unistdio.h.
+	* doc/uniname.texi: New file, based on gnulib/lib/uniname.h.
+	* doc/unictype.texi: New file, based on gnulib/lib/unictype.h.
+	* doc/uniwidth.texi: New file, based on gnulib/lib/uniwidth.h.
+	* doc/uniwbrk.texi: New file, based on gnulib/lib/uniwbrk.h.
+	* doc/unilbrk.texi: New file, based on gnulib/lib/unilbrk.h.
+	* doc/uninorm.texi: New file, based on gnulib/lib/uninorm.h.
+	* doc/unicase.texi: New file, based on gnulib/lib/unicase.h.
+	* doc/uniregex.texi: New file.
+	* doc/gpl.texi: New file, from gnulib.
+	* doc/lgpl.texi: New file, from gnulib.
+	* doc/fdl.texi: New file, from gnulib.
+
 2008-03-14  Bruno Haible  <bruno@clisp.org>
 
 	* INSTALL.generic: New file, from gnulib/doc/INSTALL.UTF-8 with an

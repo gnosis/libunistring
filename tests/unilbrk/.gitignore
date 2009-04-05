@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /test-u16-possible-linebreaks.c
 /test-u16-width-linebreaks.c
 /test-u32-possible-linebreaks.c
@@ -6,3 +7,4 @@
 /test-u8-width-linebreaks.c
 /test-ulc-possible-linebreaks.c
 /test-ulc-width-linebreaks.c
+

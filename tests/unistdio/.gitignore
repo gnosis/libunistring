@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /test-u16-asnprintf1.c
 /test-u16-asnprintf1.h
 /test-u16-printf1.h
@@ -42,3 +43,4 @@
 /test-ulc-vasprintf1.c
 /test-ulc-vsnprintf1.c
 /test-ulc-vsprintf1.c
+

@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /test-u16-conv-from-enc.c
 /test-u16-conv-to-enc.c
 /test-u16-strconv-from-enc.c
@@ -10,3 +11,4 @@
 /test-u8-conv-to-enc.c
 /test-u8-strconv-from-enc.c
 /test-u8-strconv-to-enc.c
+

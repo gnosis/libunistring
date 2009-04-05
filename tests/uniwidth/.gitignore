@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /test-u16-strwidth.c
 /test-u16-width.c
 /test-u32-strwidth.c
@@ -7,3 +8,4 @@
 /test-uc_width.c
 /test-uc_width2.c
 /test-uc_width2.sh
+

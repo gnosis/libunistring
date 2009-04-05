@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /u-wordbreaks.h
 /u16-wordbreaks.c
 /u32-wordbreaks.c
@@ -7,3 +8,4 @@
 /wbrktable.c
 /wbrktable.h
 /wordbreak-property.c
+

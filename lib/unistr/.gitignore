@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /u-cmp2.h
 /u-cpy-alloc.h
 /u-cpy.h
@@ -149,3 +150,4 @@
 /u8-to-u32.c
 /u8-uctomb-aux.c
 /u8-uctomb.c
+

@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /Makefile.gnulib
 /error.c
 /error.h
@@ -56,3 +57,4 @@
 /xalloc-die.c
 /xalloc.h
 /xmalloc.c
+

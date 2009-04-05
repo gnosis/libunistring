@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /test-casecmp.h
 /test-is-cased.h
 /test-is-casefolded.h
@@ -50,3 +51,4 @@
 /test-ulc-casecoll.c
 /test-ulc-casecoll1.sh
 /test-ulc-casecoll2.sh
+

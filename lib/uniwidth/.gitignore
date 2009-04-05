@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /cjk.h
 /u16-strwidth.c
 /u16-width.c
@@ -6,3 +7,4 @@
 /u8-strwidth.c
 /u8-width.c
 /width.c
+

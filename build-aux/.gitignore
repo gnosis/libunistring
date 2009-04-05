@@ -1,6 +1,10 @@
+# Files brought in by gnulib-tool:
 /config.rpath
 /link-warning.h
+
+# Files brought in by "automake --add-missing --copy":
 /compile
 /depcomp
 /install-sh
 /missing
+

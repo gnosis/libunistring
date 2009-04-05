@@ -1,3 +1,4 @@
+# Files brought in by gnulib-tool:
 /00gnulib.m4
 /alloca.m4
 /codeset.m4
@@ -74,3 +75,4 @@
 /wint_t.m4
 /xalloc.m4
 /xsize.m4
+

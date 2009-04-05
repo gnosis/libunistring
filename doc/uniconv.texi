@@ -4,6 +4,7 @@
 This include file declares functions for converting between Unicode strings
 and @code{char *} strings in locale encoding or in other specified encodings.
 
+@cindex locale encoding
 The following function returns the locale encoding.
 
 @deftypefun {const char *} locale_charset ()
@@ -20,6 +21,7 @@ around the native @code{iconv_open} function.  It may not work as an argument
 to the native @code{iconv_open} function directly.
 @end deftypefun
 
+@cindex converting
 The following functions convert between strings in a specified encoding and
 Unicode strings.
 

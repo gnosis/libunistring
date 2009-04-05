@@ -1,6 +1,7 @@
 @node uniname.h
 @chapter Names of Unicode characters @code{<uniname.h>}
 
+@cindex Unicode character, name
 This include file implements the association between a Unicode character and
 its name.
 

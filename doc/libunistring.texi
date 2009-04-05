@@ -248,6 +248,8 @@ case folding
 regular expressions (not yet implemented)
 @end table
 
+@cindex use cases
+@cindex value, of libunistring
 libunistring is for you if your application involves non-trivial text
 processing, such as upper/lower case conversions, line breaking, operations
 on words, or more advanced analysis of text.  Text provided by the user can,
@@ -274,6 +276,7 @@ internal in-memory representation.
 @node Unicode
 @section Unicode
 
+@cindex Unicode
 Unicode is a standardized repertoire of characters that contains characters
 from all scripts of the world, from Latin letters to Chinese ideographs
 and Babylonian cuneiform glyphs.  It also specifies how these characters
@@ -283,6 +286,10 @@ to behave on Unicode text.
 
 Unicode also specifies three ways of storing sequences of Unicode
 characters in a computer whose basic unit of data is an 8-bit byte:
+@cindex UTF-8
+@cindex UTF-16
+@cindex UTF-32
+@cindex UCS-4
 @table @asis
 @item UTF-8
 Every character is represented as 1 to 4 bytes.
@@ -320,6 +327,7 @@ Markus Kuhn's UTF-8 and Unicode FAQ:
 @node Unicode and i18n
 @section Unicode and Internationalization
 
+@cindex internationalization
 Internationalization is the process of changing the source code of a program
 so that it can meet the expectations of users in any culture, if culture
 specific data (translations, images etc.) are provided.
@@ -352,12 +360,14 @@ POSIX APIs and the implementation of locales in the GNU C library.
 @node Locale encodings
 @section Locale encodings
 
+@cindex locale
 A locale is a set of cultural conventions.  According to POSIX, for a program,
 at any moment, there is one locale being designated as the ``current locale''.
 (Actually, POSIX supports also one locale per thread, but this feature is not
-yet universally implemented and not widely used.)  The locale is partitioned
-into several aspects, called the ``categories'' of the locale.  The main
-various aspects are:
+yet universally implemented and not widely used.)
+@cindex locale categories
+The locale is partitioned into several aspects, called the ``categories''
+of the locale.  The main various aspects are:
 @itemize
 @item
 The character encoding and the character properties.  This is the
@@ -377,6 +387,7 @@ category.
 The formatting of date and time.  This is the @code{LC_TIME} category.
 @end itemize
 
+@cindex locale encoding
 In particular, the @code{LC_CTYPE} category of the current locale determines
 the character encoding.  This is the encoding of @samp{char *} strings.
 We also call it the ``locale encoding''.  GNU libunistring has a function,
@@ -425,6 +436,7 @@ see @ref{The wchar_t mess}.
 @node char * strings
 @section @samp{char *} strings
 
+@cindex C string functions
 The classical C strings, with its C library support standardized by
 ISO C and POSIX, can be used in internationalized programs with some
 precautions.  The problem with this API is that many of the C library
@@ -432,6 +444,7 @@ functions for strings don't work correctly on strings in locale
 encodings, leading to bugs that only people in some cultures of the
 world will experience.
 
+@cindex locale, multibyte
 The first problem with the C library API is the support of multibyte
 locales.  According to the locale encoding, in general, every character
 is represented by one or more bytes (up to 4 bytes in practice --- but
@@ -442,6 +455,7 @@ to realize that the majority of Unix installations nowadays use UTF-8
 or GB18030 as locale encoding; therefore, the majority of users are
 using multibyte locales.
 
+@cindex char, type
 The important fact to remember is:
 @cartouche
 @emph{A @samp{char} is a byte, not a character.}
@@ -552,6 +566,7 @@ This is implemented in this library, through the functions declared in @code{<un
 @node The wchar_t mess
 @section The @code{wchar_t} mess
 
+@cindex wchar_t, type
 The ISO C and POSIX standard creators made an attempt to fix the first
 problem mentioned in the previous section.  They introduced
 @itemize
@@ -604,6 +619,9 @@ the program to produce garbage or abort.
 @section Unicode strings
 
 libunistring supports Unicode strings in three representations:
+@cindex UTF-8, strings
+@cindex UTF-16, strings
+@cindex UTF-32, strings
 @itemize
 @item
 UTF-8 strings, through the type @samp{uint8_t *}.  The units are bytes
@@ -636,6 +654,7 @@ zero-valued unit used as ``end marker''.
 
 This chapter explains conventions valid throughout the libunistring library.
 
+@cindex argument conventions
 Variables of type @code{char *} denote C strings in locale encoding.
 See @ref{Locale encodings}.
 
@@ -674,6 +693,7 @@ All parameters starting with @samp{str} and the parameters of
 functions starting with @code{u8_str}/@code{u16_str}/@code{u32_str}
 denote a NUL terminated string.
 
+@cindex return value conventions
 Error values are always returned through the @code{errno} variable,
 usually with a return value that indicates the presence of an error
 (NULL for functions that return an pointer, or -1 for functions that
@@ -704,9 +724,11 @@ NULL is returned and @code{errno} is set.
 @node More functionality
 @chapter More advanced functionality
 
+@cindex bidirectional reordering
 For bidirectional reordering of strings, we recommend the GNU FriBidi library:
 @url{http://www.fribidi.org/}.
 
+@cindex rendering
 For the rendering of Unicode strings outside of the context of a given toolkit
 (KDE/Qt or GNOME/Gtk), we recommend the Pango library:
 @url{http://www.pango.org/}.

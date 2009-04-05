@@ -15,6 +15,8 @@ essentially the equivalent of what @code{<string.h>} is for C strings.
 @node Elementary string checks
 @section Elementary string checks
 
+@cindex validity
+@cindex verification
 The following function is available to verify the integrity of a Unicode string.
 
 @deftypefun {const uint8_t *} u8_check (const uint8_t *@var{s}, size_t @var{n})
@@ -27,6 +29,7 @@ It returns NULL if valid, or a pointer to the first invalid unit otherwise.
 @node Elementary string conversions
 @section Elementary string conversions
 
+@cindex converting
 The following functions perform conversions between the different forms of Unicode strings.
 
 @deftypefun {uint16_t *} u8_to_u16 (const uint8_t *@var{s}, size_t @var{n}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -56,6 +59,7 @@ Converts an UTF-32 string to an UTF-16 string.
 @node Elementary string functions
 @section Elementary string functions
 
+@cindex iterating
 The following functions inspect and return details about the first character
 in a Unicode string.
 
@@ -122,6 +126,7 @@ Unicode strings, @var{s} must not be NULL, and the argument @var{n} must be
 specified.
 @end deftypefun
 
+@cindex copying
 The following functions copy Unicode strings in memory.
 
 @deftypefun {uint8_t *} u8_cpy (uint8_t *@var{dest}, const uint8_t *@var{src}, size_t @var{n})
@@ -155,6 +160,7 @@ This function is similar to @posixfunc{memset}, except that it operates on
 Unicode strings.
 @end deftypefun
 
+@cindex comparing
 The following function compares two Unicode strings of the same length.
 
 @deftypefun int u8_cmp (const uint8_t *@var{s1}, const uint8_t *@var{s2}, size_t @var{n})
@@ -184,6 +190,7 @@ This function is similar to @func{memcmp2}, except that it operates on
 Unicode strings.
 @end deftypefun
 
+@cindex searching, for a character
 The following function searches for a given Unicode character.
 
 @deftypefun {uint8_t *} u8_chr (const uint8_t *@var{s}, size_t @var{n}, ucs4_t @var{uc})
@@ -197,6 +204,7 @@ This function is similar to @posixfunc{memchr}, except that it operates on
 Unicode strings.
 @end deftypefun
 
+@cindex counting
 The following function counts the number of Unicode characters.
 
 @deftypefun size_t u8_mbsnlen (const uint8_t *@var{s}, size_t @var{n})
@@ -212,6 +220,7 @@ it operates on Unicode strings.
 @node Elementary string functions with memory allocation
 @section Elementary string functions with memory allocation
 
+@cindex duplicating
 The following function copies a Unicode string.
 
 @deftypefun {uint8_t *} u8_cpy_alloc (const uint8_t *@var{s}, size_t @var{n})
@@ -233,6 +242,7 @@ Returns the length (number of units) of the first character in @var{s}.
 Returns 0 if it is the NUL character.  Returns -1 upon failure.
 @end deftypefun
 
+@cindex iterating
 @deftypefun int u8_strmbtouc (ucs4_t *@var{puc}, const uint8_t *@var{s})
 @deftypefunx int u16_strmbtouc (ucs4_t *@var{puc}, const uint16_t *@var{s})
 @deftypefunx int u32_strmbtouc (ucs4_t *@var{puc}, const uint32_t *@var{s})
@@ -280,6 +290,7 @@ This function is similar to @posixfunc{strnlen} and @posixfunc{wcsnlen}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex copying
 The following functions copy portions of Unicode strings in memory.
 
 @deftypefun {uint8_t *} u8_strcpy (uint8_t *@var{dest}, const uint8_t *@var{src})
@@ -338,6 +349,7 @@ This function is similar to @posixfunc{strncat} and @posixfunc{wcsncat}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex comparing
 The following functions compare two Unicode strings.
 
 @deftypefun int u8_strcmp (const uint8_t *@var{s1}, const uint8_t *@var{s2})
@@ -352,6 +364,7 @@ This function is similar to @posixfunc{strcmp} and @posixfunc{wcscmp}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex comparing, with collation rules
 @deftypefun int u8_strcoll (const uint8_t *@var{s1}, const uint8_t *@var{s2})
 @deftypefunx int u16_strcoll (const uint16_t *@var{s1}, const uint16_t *@var{s2})
 @deftypefunx int u32_strcoll (const uint32_t *@var{s1}, const uint32_t *@var{s2})
@@ -377,6 +390,7 @@ This function is similar to @posixfunc{strncmp} and @posixfunc{wcsncmp}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex duplicating
 The following function allocates a duplicate of a Unicode string.
 
 @deftypefun {uint8_t *} u8_strdup (const uint8_t *@var{s})
@@ -388,6 +402,7 @@ This function is similar to @posixfunc{strdup} and @posixfunc{wcsdup}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex searching, for a character
 The following functions search for a given Unicode character.
 
 @deftypefun {uint8_t *} u8_strchr (const uint8_t *@var{str}, ucs4_t @var{uc})
@@ -440,6 +455,7 @@ This function is similar to @posixfunc{strpbrk} and @posixfunc{wcspbrk}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@cindex searching, for a substring
 The following functions search whether a given Unicode string is a substring
 of another Unicode string.
 

@@ -29,6 +29,9 @@ in the presence of specific Unicode characters.
 @node General category
 @section General category
 
+@cindex general category
+@cindex Unicode character, general category
+@cindex Unicode character, classification
 Every Unicode character or code point has a @emph{general category} assigned
 to it.  This classification is important for most algorithms that work on
 Unicode text.
@@ -359,6 +362,8 @@ This function uses a big table comprising all general categories.
 @node Canonical combining class
 @section Canonical combining class
 
+@cindex canonical combining class
+@cindex Unicode character, canonical combining class
 Every Unicode character or code point has a @emph{canonical combining class}
 assigned to it.
 
@@ -461,6 +466,8 @@ Returns the canonical combining class of a Unicode character.
 @node Bidirectional category
 @section Bidirectional category
 
+@cindex bidirectional category
+@cindex Unicode character, bidirectional category
 Every Unicode character or code point has a @emph{bidirectional category}
 assigned to it.
 
@@ -569,6 +576,8 @@ Tests whether a Unicode character belongs to a given bidirectional category.
 @node Decimal digit value
 @section Decimal digit value
 
+@cindex value, of Unicode character
+@cindex Unicode character, value
 Decimal digits (like the digits from @samp{0} to @samp{9}) exist in many
 scripts.  The following function converts a decimal digit character to its
 numerical value.
@@ -582,6 +591,8 @@ do not represent a decimal digit.
 @node Digit value
 @section Digit value
 
+@cindex value, of Unicode character
+@cindex Unicode character, value
 Digit characters are like decimal digit characters, possibly in special forms,
 like as superscript, subscript, or circled.  The following function converts a
 digit character to its numerical value.
@@ -595,6 +606,8 @@ do not represent a digit.
 @node Numeric value
 @section Numeric value
 
+@cindex value, of Unicode character
+@cindex Unicode character, value
 There are also characters that represent numbers without a digit system, like
 the Roman numerals, and fractional numbers, like 1/4 or 3/4.
 
@@ -620,6 +633,8 @@ characters that do not represent a number.
 @node Mirrored character
 @section Mirrored character
 
+@cindex mirroring, of Unicode character
+@cindex Unicode character, mirroring
 Character mirroring is used to associate the closing parenthesis character
 to the opening parenthesis character, the closing brace character with the
 closing brace character, and so on.
@@ -635,6 +650,8 @@ stores @var{uc} unmodified in @code{*@var{puc}} and returns @code{false}.
 @node Properties
 @section Properties
 
+@cindex properties, of Unicode character
+@cindex Unicode character, properties
 This section defines boolean properties of Unicode characters.  This
 means, a character either has the given property or does not have it.
 In other words, the property can be viewed as a subset of the set of
@@ -915,6 +932,7 @@ Other miscellaneous properties are:
 @node Scripts
 @section Scripts
 
+@cindex scripts
 The Unicode characters are subdivided into scripts.
 
 The following type is used to represent a script:
@@ -929,6 +947,7 @@ const char *name;
 The @code{name} field contains the name of the script.
 @end deftp
 
+@cindex Unicode character, script
 The following functions look up a script.
 
 @deftypefun {const uc_script_t *} uc_script (ucs4_t @var{uc})
@@ -957,6 +976,7 @@ Get the list of all scripts.  Stores a pointer to an array of all scripts in
 @node Blocks
 @section Blocks
 
+@cindex block
 The Unicode characters are subdivided into blocks.  A block is an interval of
 Unicode code points.
 
@@ -978,6 +998,7 @@ The @code{end} field is the last Unicode code point in the block.
 The @code{name} field is the name of the block.
 @end deftp
 
+@cindex Unicode character, block
 The following function looks up a block.
 
 @deftypefun {const uc_block_t *} uc_block (ucs4_t @var{uc})
@@ -1000,6 +1021,9 @@ Get the list of all blocks.  Stores a pointer to an array of all blocks in
 @node ISO C and Java syntax
 @section ISO C and Java syntax
 
+@cindex C, programming language
+@cindex Java, programming language
+@cindex identifiers
 The following properties are taken from language standards.  The supported
 language standards are ISO C 99 and Java.
 
@@ -1035,11 +1059,13 @@ This return value (only for Java) means that the given character is ignorable.
 The following function determine whether a given character can be a constituent
 of an identifier in the given programming language.
 
+@cindex Unicode character, validity in C identifiers
 @deftypefun int uc_c_ident_category (ucs4_t @var{uc})
 Returns the categorization of a Unicode character with respect to the ISO C 99
 identifier syntax.
 @end deftypefun
 
+@cindex Unicode character, validity in Java identifiers
 @deftypefun int uc_java_ident_category (ucs4_t @var{uc})
 Returns the categorization of a Unicode character with respect to the Java
 identifier syntax.
@@ -1048,6 +1074,8 @@ identifier syntax.
 @node Classifications like in ISO C
 @section Classifications like in ISO C
 
+@cindex C-like API
+@cindex Unicode character, classification like in C
 The following character classifications mimic those declared in the ISO C
 header files @code{<ctype.h>} and @code{<wctype.h>}.  These functions are
 deprecated, because this set of functions was designed with ASCII in mind and

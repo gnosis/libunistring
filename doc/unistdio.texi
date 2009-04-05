@@ -1,6 +1,8 @@
 @node unistdio.h
 @chapter Output with Unicode strings @code{<unistdio.h>}
 
+@cindex formatted output
+@cindex output, formatted
 This include file declares functions for doing formatted output with Unicode
 strings.  It defines a set of functions similar to @code{fprintf} and
 @code{sprintf}, which are declared in @code{<stdio.h>}.

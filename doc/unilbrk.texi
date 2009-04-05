@@ -1,6 +1,9 @@
 @node unilbrk.h
 @chapter Line breaking @code{<unilbrk.h>}
 
+@cindex line breaks
+@cindex breaks, line
+@cindex wrapping
 This include file declares functions for determining where in a string
 line breaks could or should be introduced, in order to make the displayed
 string fit into a column of given width.

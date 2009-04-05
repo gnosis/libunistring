@@ -1,6 +1,8 @@
 @node uniwbrk.h
 @chapter Word breaks in strings @code{<uniwbrk.h>}
 
+@cindex word breaks
+@cindex breaks, word
 This include file declares functions for determining where in a string
 ``words'' start and end.  Here ``words'' are not necessarily the same as
 entities that can be looked up in dictionaries, but rather groups of

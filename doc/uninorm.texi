@@ -1,6 +1,8 @@
 @node uninorm.h
 @chapter Normalization forms (composition and decomposition) @code{<uninorm.h>}
 
+@cindex normal forms
+@cindex normalizing
 This include file defines functions for transforming Unicode strings to one
 of the four normal forms, known as NFC, NFD, NKFC, NFKD.  These
 transformations involve decomposition and --- for NFC and NFKC --- composition
@@ -17,6 +19,7 @@ of Unicode characters.
 @node Decomposition of characters
 @section Decomposition of Unicode characters
 
+@cindex decomposing
 The following enumerated values are the possible types of decomposition of a
 Unicode character.
 
@@ -135,6 +138,8 @@ and @var{n} is returned.  Otherwise -1 is returned.
 @node Composition of characters
 @section Composition of Unicode characters
 
+@cindex composing, Unicode characters
+@cindex combining, Unicode characters
 The following function composes a Unicode character from two Unicode
 characters.
 
@@ -204,6 +209,7 @@ Returns the specified normalization form of a string.
 @node Normalizing comparisons
 @section Normalizing comparisons
 
+@cindex comparing, ignoring normalization
 The following functions compare Unicode string, ignoring differences in
 normalization.
 
@@ -219,6 +225,8 @@ If successful, sets @code{*@var{resultp}} to -1 if @var{s1} < @var{s2},
 Upon failure, returns -1 with @code{errno} set.
 @end deftypefun
 
+@cindex comparing, ignoring normalization, with collation rules
+@cindex comparing, with collation rules, ignoring normalization
 @deftypefun {char *} u8_normxfrm (const uint8_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} u16_normxfrm (const uint16_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} u32_normxfrm (const uint32_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
@@ -246,6 +254,7 @@ Upon failure, returns -1 with @code{errno} set.
 @node Normalization of streams
 @section Normalization of streams of Unicode characters
 
+@cindex stream, normalizing a
 A ``stream of Unicode characters'' is essentially a function that accepts an
 @code{ucs4_t} argument repeatedly, optionally combined with a function that
 ``flushes'' the stream.

@@ -19,6 +19,7 @@ Greek sigma and the Lithuanian i correctly.
 @node Case mappings of characters
 @section Case mappings of characters
 
+@cindex Unicode character, case mappings
 The following functions implement case mappings on Unicode characters ---
 for those cases only where the result of the mapping is a again a single
 Unicode character.
@@ -46,6 +47,10 @@ Returns the titlecase mapping of the Unicode character @var{uc}.
 @node Case mappings of strings
 @section Case mappings of strings
 
+@cindex case mappings
+@cindex uppercasing
+@cindex lowercasing
+@cindex titlecasing
 Case mapping should always be performed on entire strings, not on individual
 characters.  The functions in this sections do so.
 
@@ -56,6 +61,7 @@ a character, U+00C4 @sc{LATIN CAPITAL LETTER A WITH DIAERESIS} and
 U+0041 @sc{LATIN CAPITAL LETTER A} U+0308 @sc{COMBINING DIAERESIS} the same.
 The @var{nf} argument designates the normalization.
 
+@cindex locale language
 These functions are locale dependent.  The @var{iso639_language} argument
 identifies the language (e.g. @code{"tr"} for Turkish).  NULL means to use
 locale independent case mappings.
@@ -95,6 +101,8 @@ case-mapping.  It can also be NULL, for no normalization.
 @node Case insensitive comparison
 @section Case insensitive comparison
 
+@cindex comparing, ignoring case
+@cindex comparing, ignoring normalization and case
 The following functions implement comparison that ignores differences in case
 and normalization.
 
@@ -125,6 +133,10 @@ If successful, sets @code{*@var{resultp}} to -1 if @var{s1} < @var{s2},
 Upon failure, returns -1 with @code{errno} set.
 @end deftypefun
 
+@cindex comparing, ignoring case, with collation rules
+@cindex comparing, with collation rules, ignoring case
+@cindex comparing, ignoring normalization and case, with collation rules
+@cindex comparing, with collation rules, ignoring normalization and case
 The following functions additionally take into account the sorting rules of the
 current locale.
 
@@ -160,6 +172,8 @@ Upon failure, returns -1 with @code{errno} set.
 @node Case detection
 @section Case detection
 
+@cindex case detection
+@cindex detecting case
 The following functions determine whether a Unicode string is entirely in
 upper case. or entirely in lower case, or entirely in title case, or already
 case-folded.

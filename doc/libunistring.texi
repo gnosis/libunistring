@@ -129,6 +129,59 @@ Introduction
 * The wchar_t mess::            Why @code{wchar_t *} strings are useless
 * Unicode strings::             How are Unicode strings represented?
 
+unistr.h
+
+* Elementary string checks::
+* Elementary string conversions::
+* Elementary string functions::
+* Elementary string functions with memory allocation::
+* Elementary string functions on NUL terminated strings::
+
+unictype.h
+
+* General category::
+* Canonical combining class::
+* Bidirectional category::
+* Decimal digit value::
+* Digit value::
+* Numeric value::
+* Mirrored character::
+* Properties::
+* Scripts::
+* Blocks::
+* ISO C and Java syntax::
+* Classifications like in ISO C::
+
+General category
+
+* Object oriented API::
+* Bit mask API::
+
+Properties
+
+* Properties as objects::
+* Properties as functions::
+
+uniwbrk.h
+
+* Word breaks in a string::
+* Word break property::
+
+uninorm.h
+
+* Decomposition of characters::
+* Composition of characters::
+* Normalization of strings::
+* Normalizing comparisons::
+* Normalization of streams::
+
+unicase,h
+
+* Case mappings of characters::
+* Case mappings of strings::
+* Case insensitive comparison::
+* Case detection::
+
 Licenses
 
 * GNU GPL::                     GNU General Public License

@@ -1,5 +1,9 @@
 2008-04-05  Bruno Haible  <bruno@clisp.org>
 
+	* doc/libunistring.texi: Complete the detailmenu.
+
+2008-04-05  Bruno Haible  <bruno@clisp.org>
+
 	* doc/libunistring.texi: New file.
 	* doc/unitypes.texi: New file, based on gnulib/lib/unitypes.h.
 	* doc/unistr.texi: New file, based on gnulib/lib/unistr.h.

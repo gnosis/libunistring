@@ -68,3 +68,5 @@
 /ulc-casecoll.c
 /ulc-casexfrm.c
 /unicasemap.h
+/locale-languages.h
+/special-casing-table.h

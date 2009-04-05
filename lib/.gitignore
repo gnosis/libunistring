@@ -91,3 +91,7 @@
 /wctype.in.h
 /wcwidth.c
 /xsize.h
+/iconv_open-aix.h
+/iconv_open-hpux.h
+/iconv_open-irix.h
+/iconv_open-osf.h

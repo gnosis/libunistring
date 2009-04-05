@@ -32,3 +32,4 @@
 /u8-normcoll.c
 /u8-normxfrm.c
 /uninorm-filter.c
+/composition-table.h

@@ -1,5 +1,14 @@
 2008-04-05  Bruno Haible  <bruno@clisp.org>
 
+	* autogen.sh: New file.
+	* configure.ac: New file.
+	* build-aux/fixaclocal: New file, from GNU gettext.
+	* Makefile.am: New file.
+	* lib/Makefile.am: New file.
+	* tests/Makefile.am: New file.
+
+2008-04-05  Bruno Haible  <bruno@clisp.org>
+
 	* INSTALL: Renamed from INSTALL.generic. Add section about
 	prerequisites,
 

@@ -1,0 +1,14 @@
+/lbrkprop1.h
+/lbrkprop2.h
+/lbrktables.c
+/lbrktables.h
+/u16-possible-linebreaks.c
+/u16-width-linebreaks.c
+/u32-possible-linebreaks.c
+/u32-width-linebreaks.c
+/u8-possible-linebreaks.c
+/u8-width-linebreaks.c
+/ulc-common.c
+/ulc-common.h
+/ulc-possible-linebreaks.c
+/ulc-width-linebreaks.c

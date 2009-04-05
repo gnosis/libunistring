@@ -1,0 +1,12 @@
+/test-u16-conv-from-enc.c
+/test-u16-conv-to-enc.c
+/test-u16-strconv-from-enc.c
+/test-u16-strconv-to-enc.c
+/test-u32-conv-from-enc.c
+/test-u32-conv-to-enc.c
+/test-u32-strconv-from-enc.c
+/test-u32-strconv-to-enc.c
+/test-u8-conv-from-enc.c
+/test-u8-conv-to-enc.c
+/test-u8-strconv-from-enc.c
+/test-u8-strconv-to-enc.c

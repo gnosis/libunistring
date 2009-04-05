@@ -99,3 +99,6 @@
 /iconv_open-irix.h
 /iconv_open-osf.h
 
+# Files generate by the autotools:
+/Makefile.in
+

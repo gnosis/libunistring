@@ -58,3 +58,6 @@
 /xalloc.h
 /xmalloc.c
 
+# Files generate by the autotools:
+/Makefile.in
+

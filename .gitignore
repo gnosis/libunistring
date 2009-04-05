@@ -5,3 +5,9 @@
 .#*
 \#*#
 
+# Files generate by the autotools:
+/aclocal.m4
+/configure
+/config.h.in
+/Makefile.in
+

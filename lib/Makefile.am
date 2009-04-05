@@ -45,6 +45,13 @@ include_HEADERS = \
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib
 
+# Libtool's library version information for libunistring.
+# See the libtool documentation, section "Library interface versions".
+LTV_CURRENT=0
+LTV_REVISION=0
+LTV_AGE=0
+
 # How to build libunistring.la.
 libunistring_la_LDFLAGS += \
+  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
   -rpath $(libdir)

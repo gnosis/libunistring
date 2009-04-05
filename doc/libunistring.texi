@@ -604,7 +604,7 @@ for all other logical purposes.
 Unicode strings where embedded NUL characters are allowed.  These
 are represented by a pointer to the first unit and the number of units
 (not bytes!) of the string.  In this setting, there is no trailing
-zero-valued unit used as ``end marker'' 
+zero-valued unit used as ``end marker''.
 @end itemize
 
 @node Conventions

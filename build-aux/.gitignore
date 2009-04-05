@@ -1,2 +1,6 @@
 /config.rpath
 /link-warning.h
+/compile
+/depcomp
+/install-sh
+/missing

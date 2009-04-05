@@ -66,7 +66,7 @@ Returns the length (number of units) of the first character in @var{s}, which
 is no longer than @var{n}.  Returns 0 if it is the NUL character.  Returns -1
 upon failure.
 
-This function is similar to @code{mblen()}, except that it operates on a
+This function is similar to @posixfunc{mblen}, except that it operates on a
 Unicode string and that @var{s} must not be NULL.
 @end deftypefun
 
@@ -80,7 +80,7 @@ is returned.
 
 The number of available units, @var{n}, must be > 0.
 
-This function is similar to @code{mbtowc()}, except that it operates on a
+This function is similar to @posixfunc{mbtowc}, except that it operates on a
 Unicode string, @var{puc} and @var{s} must not be NULL, @var{n} must be > 0,
 and the NUL character is not treated specially.
 @end deftypefun
@@ -104,7 +104,7 @@ sequence of units, -2 is returned for an incomplete sequence of units.
 The number of available units, @var{n}, must be > 0.
 
 This function is similar to @code{u8_mbtouc}, except that the return value
-gives more details about the failure, similar to @code{mbrtowc()}.
+gives more details about the failure, similar to @posixfunc{mbrtowc}.
 @end deftypefun
 
 The following function stores a Unicode character as a Unicode string in
@@ -117,7 +117,7 @@ Puts the multibyte character represented by @var{uc} in @var{s}, returning its
 length.  Returns -1 upon failure, -2 if the number of available units, @var{n},
 is too small.  The latter case cannot occur if @var{n} >= 6/2/1, respectively.
 
-This function is similar to @code{wctomb()}, except that it operates on a
+This function is similar to @posixfunc{wctomb}, except that it operates on a
 Unicode strings, @var{s} must not be NULL, and the argument @var{n} must be
 specified.
 @end deftypefun
@@ -129,7 +129,7 @@ The following functions copy Unicode strings in memory.
 @deftypefunx {uint32_t *} u32_cpy (uint32_t *@var{dest}, const uint32_t *@var{src}, size_t @var{n})
 Copies @var{n} units from @var{src} to @var{dest}.
 
-This function is similar to @code{memcpy()}, except that it operates on
+This function is similar to @posixfunc{memcpy}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -139,7 +139,7 @@ Unicode strings.
 Copies @var{n} units from @var{src} to @var{dest}, guaranteeing correct
 behavior for overlapping memory areas.
 
-This function is similar to @code{memmove()}, except that it operates on
+This function is similar to @posixfunc{memmove}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -151,7 +151,7 @@ The following function fills a Unicode string.
 Sets the first @var{n} characters of @var{s} to @var{uc}.  @var{uc} should be
 a character that occupies only 1 unit.
 
-This function is similar to @code{memset()}, except that it operates on
+This function is similar to @posixfunc{memset}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -165,7 +165,7 @@ Returns a negative value if @var{s1} compares smaller than @var{s2},
 a positive value if @var{s1} compares larger than @var{s2}, or 0 if
 they compare equal.
 
-This function is similar to @code{memcmp()}, except that it operates on
+This function is similar to @posixfunc{memcmp}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -178,7 +178,7 @@ Searches the string at @var{s} for @var{uc}.  Returns a pointer to the first
 occurrence of @var{uc} in @var{s}, or NULL if @var{uc} does not occur in
 @var{s}.
 
-This function is similar to @code{memchr()}, except that it operates on
+This function is similar to @posixfunc{memchr}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -190,7 +190,7 @@ The following function counts the number of Unicode characters.
 Counts and returns the number of Unicode characters in the @var{n} units
 from @var{s}.
 
-This function is similar to the gnulib function @code{mbsnlen()}, except that
+This function is similar to the gnulib function @func{mbsnlen}, except that
 it operates on Unicode strings.
 @end deftypefun
 
@@ -252,8 +252,8 @@ The following functions determine the length of a Unicode string.
 @deftypefunx size_t u32_strlen (const uint32_t *@var{s})
 Returns the number of units in @var{s}.
 
-This function is similar to @code{strlen()} and @code{wcslen()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strlen} and @posixfunc{wcslen}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun size_t u8_strnlen (const uint8_t *@var{s}, size_t @var{maxlen})
@@ -261,8 +261,8 @@ it operates on Unicode strings.
 @deftypefunx size_t u32_strnlen (const uint32_t *@var{s}, size_t @var{maxlen})
 Returns the number of units in @var{s}, but at most @var{maxlen}.
 
-This function is similar to @code{strnlen()} and @code{wcsnlen()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strnlen} and @posixfunc{wcsnlen}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following functions copy portions of Unicode strings in memory.
@@ -272,8 +272,8 @@ The following functions copy portions of Unicode strings in memory.
 @deftypefunx {uint32_t *} u32_strcpy (uint32_t *@var{dest}, const uint32_t *@var{src})
 Copies @var{src} to @var{dest}.
 
-This function is similar to @code{strcpy()} and @code{wcscpy()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strcpy} and @posixfunc{wcscpy}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_stpcpy (uint8_t *@var{dest}, const uint8_t *@var{src})
@@ -282,7 +282,7 @@ it operates on Unicode strings.
 Copies @var{src} to @var{dest}, returning the address of the terminating NUL
 in @var{dest}.
 
-This function is similar to @code{stpcpy()}, except that it operates on
+This function is similar to @posixfunc{stpcpy}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -291,8 +291,8 @@ Unicode strings.
 @deftypefunx {uint32_t *} u32_strncpy (uint32_t *@var{dest}, const uint32_t *@var{src}, size_t @var{n})
 Copies no more than @var{n} units of @var{src} to @var{dest}.
 
-This function is similar to @code{strncpy()} and @code{wcsncpy()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strncpy} and @posixfunc{wcsncpy}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_stpncpy (uint8_t *@var{dest}, const uint8_t *@var{src}, size_t @var{n})
@@ -301,7 +301,7 @@ it operates on Unicode strings.
 Copies no more than @var{n} units of @var{src} to @var{dest}, returning the
 address of the last unit written into @var{dest}.
 
-This function is similar to @code{stpncpy()}, except that it operates on
+This function is similar to @posixfunc{stpncpy}, except that it operates on
 Unicode strings.
 @end deftypefun
 
@@ -310,8 +310,8 @@ Unicode strings.
 @deftypefunx {uint32_t *} u32_strcat (uint32_t *@var{dest}, const uint32_t *@var{src})
 Appends @var{src} onto @var{dest}.
 
-This function is similar to @code{strcat()} and @code{wcscat()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strcat} and @posixfunc{wcscat}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_strncat (uint8_t *@var{dest}, const uint8_t *@var{src}, size_t @var{n})
@@ -319,8 +319,8 @@ it operates on Unicode strings.
 @deftypefunx {uint32_t *} u32_strncat (uint32_t *@var{dest}, const uint32_t *@var{src}, size_t @var{n})
 Appends no more than @var{n} units of @var{src} onto @var{dest}.
 
-This function is similar to @code{strncat()} and @code{wcsncat()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strncat} and @posixfunc{wcsncat}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following functions compare two Unicode strings.
@@ -333,8 +333,8 @@ Returns a negative value if @var{s1} compares smaller than @var{s2},
 a positive value if @var{s1} compares larger than @var{s2}, or 0 if
 they compare equal.
 
-This function is similar to @code{strcmp()} and @code{wcscmp()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strcmp} and @posixfunc{wcscmp}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun int u8_strcoll (const uint8_t *@var{s1}, const uint8_t *@var{s2})
@@ -345,8 +345,8 @@ locale.
 Returns -1 if @var{s1} < @var{s2}, 0 if @var{s1} = @var{s2}, 1 if
 @var{s1} > @var{s2}.  Upon failure, sets @code{errno} and returns any value.
 
-This function is similar to @code{strcoll()} and @code{wcscoll()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strcoll} and @posixfunc{wcscoll}, except
+that it operates on Unicode strings.
 
 Note that this function may consider different canonical normalizations
 of the same string as having a large distance.  It is therefore better to
@@ -358,8 +358,8 @@ use the function @code{u8_normcoll} instead of this one; see @ref{uninorm.h}.
 @deftypefunx int u32_strncmp (const uint32_t *@var{s1}, const uint32_t *@var{s2}, size_t @var{n})
 Compares no more than @var{n} units of @var{s1} and @var{s2}.
 
-This function is similar to @code{strncmp()} and @code{wcsncmp()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strncmp} and @posixfunc{wcsncmp}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following function allocates a duplicate of a Unicode string.
@@ -369,8 +369,8 @@ The following function allocates a duplicate of a Unicode string.
 @deftypefunx {uint32_t *} u32_strdup (const uint32_t *@var{s})
 Duplicates @var{s}, returning an identical malloc'd string.
 
-This function is similar to @code{strdup()} and @code{wcsdup()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strdup} and @posixfunc{wcsdup}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following functions search for a given Unicode character.
@@ -380,8 +380,8 @@ The following functions search for a given Unicode character.
 @deftypefunx {uint32_t *} u32_strchr (const uint32_t *@var{str}, ucs4_t @var{uc})
 Finds the first occurrence of @var{uc} in @var{str}.
 
-This function is similar to @code{strchr()} and @code{wcschr()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strchr} and @posixfunc{wcschr}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_strrchr (const uint8_t *@var{str}, ucs4_t @var{uc})
@@ -389,8 +389,8 @@ it operates on Unicode strings.
 @deftypefunx {uint32_t *} u32_strrchr (const uint32_t *@var{str}, ucs4_t @var{uc})
 Finds the last occurrence of @var{uc} in @var{str}.
 
-This function is similar to @code{strrchr()} and @code{wcsrchr()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strrchr} and @posixfunc{wcsrchr}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following functions seach for the first occurrence of some Unicode
@@ -402,8 +402,8 @@ character in or outside a given set of Unicode characters.
 Returns the length of the initial segment of @var{str} which consists entirely
 of Unicode characters not in @var{reject}.
 
-This function is similar to @code{strcspn()} and @code{wcscspn()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strcspn} and @posixfunc{wcscspn}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun size_t u8_strspn (const uint8_t *@var{str}, const uint8_t *@var{accept})
@@ -412,8 +412,8 @@ it operates on Unicode strings.
 Returns the length of the initial segment of @var{str} which consists entirely
 of Unicode characters in @var{accept}.
 
-This function is similar to @code{strspn()} and @code{wcsspn()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strspn} and @posixfunc{wcsspn}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_strpbrk (const uint8_t *@var{str}, const uint8_t *@var{accept})
@@ -421,8 +421,8 @@ it operates on Unicode strings.
 @deftypefunx {uint32_t *} u32_strpbrk (const uint32_t *@var{str}, const uint32_t *@var{accept})
 Finds the first occurrence in @var{str} of any character in @var{accept}.
 
-This function is similar to @code{strpbrk()} and @code{wcspbrk()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strpbrk} and @posixfunc{wcspbrk}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 The following functions search whether a given Unicode string is a substring
@@ -433,8 +433,8 @@ of another Unicode string.
 @deftypefunx {uint32_t *} u32_strstr (const uint32_t *@var{haystack}, const uint32_t *@var{needle})
 Finds the first occurrence of @var{needle} in @var{haystack}.
 
-This function is similar to @code{strstr()} and @code{wcsstr()}, except that
-it operates on Unicode strings.
+This function is similar to @posixfunc{strstr} and @posixfunc{wcsstr}, except
+that it operates on Unicode strings.
 @end deftypefun
 
 @deftypefun bool u8_startswith (const uint8_t *@var{str}, const uint8_t *@var{prefix})
@@ -456,7 +456,7 @@ The following function does one step in tokenizing a Unicode string.
 @deftypefunx {uint32_t *} u32_strtok (uint32_t *@var{str}, const uint32_t *@var{delim}, uint32_t **@var{ptr})
 Divides @var{str} into tokens separated by characters in @var{delim}.
 
-This function is similar to @code{strtok_r()} and @code{wcstok()}, except that
-it operates on Unicode strings.  Its interface is actually more similar to
+This function is similar to @posixfunc{strtok_r} and @posixfunc{wcstok}, except
+that it operates on Unicode strings.  Its interface is actually more similar to
 @code{wcstok} than to @code{strtok}.
 @end deftypefun

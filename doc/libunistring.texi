@@ -20,6 +20,30 @@
 
 @include version.texi
 
+@c Location of the POSIX specification on the web.
+@set POSIXURL http://www.opengroup.org/onlinepubs/9699919799
+
+@c Macro for referencing a POSIX function.
+@c We don't write it as func(), see section "GNU Manuals" of the
+@c GNU coding standards.
+@ifinfo
+@macro posixfunc{func}
+@code{\func\}
+@end macro
+@end ifinfo
+@ifnotinfo
+@macro posixfunc{func}
+@uref{@value{POSIXURL}/functions/\func\.html,,@code{\func\}}
+@end macro
+@end ifnotinfo
+
+@c Macro for referencing a normal function.
+@c We don't write it as func(), see section "GNU Manuals" of the
+@c GNU coding standards.
+@macro func{func}
+@code{\func\}
+@end macro
+
 @ifinfo
 @dircategory Software development
 @direntry
@@ -356,7 +380,7 @@ The formatting of date and time.  This is the @code{LC_TIME} category.
 In particular, the @code{LC_CTYPE} category of the current locale determines
 the character encoding.  This is the encoding of @samp{char *} strings.
 We also call it the ``locale encoding''.  GNU libunistring has a function,
-@code{locale_charset()}, that returns a standardized (platform independent)
+@func{locale_charset}, that returns a standardized (platform independent)
 name for this encoding.
 
 All locale encodings used on glibc systems are essentially ASCII compatible:
@@ -429,33 +453,33 @@ As a consequence:
 The @code{<ctype.h>} API is useless in this context; it does not work in
 multibyte locales.
 @item
-The @code{strlen()} function does not return the number of characters
+The @posixfunc{strlen} function does not return the number of characters
 in a string.  Nor does it return the number of screen columns occupied
 by a string after it is output.  It merely returns the number of
 @emph{bytes} occupied by a string.
 @item
-Truncating a string, for example, with @code{strncpy()}, can have the
+Truncating a string, for example, with @posixfunc{strncpy}, can have the
 effect of truncating it in the middle of a multibyte character.  Such
 a string will, when output, have a garbled character at its end, often
 represented by a hollow box.
 @item
-@code{strchr()} and @code{strrchr()} do not work with multibyte strings
+@posixfunc{strchr} and @posixfunc{strrchr} do not work with multibyte strings
 if the locale encoding is GB18030 and the character to be searched is
 a digit.
 @item
-@code{strstr()} does not work with multibyte strings if the locale encoding
+@posixfunc{strstr} does not work with multibyte strings if the locale encoding
 is different from UTF-8.
 @item
-@code{strcspn()}, @code{strpbrk()}, @code{strspn()} cannot work correctly
-in multibyte locales: they assume the second argument is a list of
+@posixfunc{strcspn}, @posixfunc{strpbrk}, @posixfunc{strspn} cannot work
+correctly in multibyte locales: they assume the second argument is a list of
 single-byte characters.  Even in this simple case, they do not work with
 multibyte strings if the locale encoding is GB18030 and one of the
 characters to be searched is a digit.
 @item
-@code{strsep()} and @code{strtok_r()} do not work with multibyte strings
+@posixfunc{strsep} and @posixfunc{strtok_r} do not work with multibyte strings
 unless all of the delimiter characters are ASCII characters < 0x30.
 @item
-The @code{strcasecmp()}, @code{strncasecmp()}, and @code{strcasestr()}
+The @posixfunc{strcasecmp}, @posixfunc{strncasecmp}, and @posixfunc{strcasestr}
 functions do not work with multibyte strings.
 @end itemize
 
@@ -466,26 +490,26 @@ gnulib has modules @samp{mbchar}, @samp{mbiter}, @samp{mbuiter} that
 represent multibyte characters and allow to iterate across a multibyte
 string with the same ease as through a unibyte string.
 @item
-gnulib has functions @code{mbslen()} and @code{mbswidth()} that can be
-used instead of @code{strlen()} when the number of characters or the
+gnulib has functions @func{mbslen} and @func{mbswidth} that can be
+used instead of @posixfunc{strlen} when the number of characters or the
 number of screen columns of a string is requested.
 @item
-gnulib has functions @code{mbschr()} and @code{mbsrrchr()} that are
-like @code{strchr()} and @code{strrchr()}, but work in multibyte locales.
+gnulib has functions @func{mbschr} and @func{mbsrrchr} that are
+like @posixfunc{strchr} and @posixfunc{strrchr}, but work in multibyte locales.
 @item
-gnulib has a function @code{mbsstr()}, like @code{strstr()}, but works
+gnulib has a function @func{mbsstr}, like @posixfunc{strstr}, but works
 in multibyte locales.
 @item
-gnulib has functions @code{mbscspn()}, @code{mbspbrk()}, @code{mbsspn()}
-that are like @code{strcspn()}, @code{strpbrk()}, @code{strspn()} , but
+gnulib has functions @func{mbscspn}, @func{mbspbrk}, @func{mbsspn}
+that are like @posixfunc{strcspn}, @posixfunc{strpbrk}, @posixfunc{strspn}, but
 work in multibyte locales.
 @item
-gnulib has functions @code{mbssep()} and @code{mbstok_r()} that are
-like @code{strsep()} and @code{strtok_r()} but work in multibyte locales.
+gnulib has functions @func{mbssep} and @func{mbstok_r} that are
+like @posixfunc{strsep} and @posixfunc{strtok_r} but work in multibyte locales.
 @item
-gnulib has functions @code{mbscasecmp()}, @code{mbsncasecmp()},
-@code{mbspcasecmp()}, and @code{mbscasestr()} that are like
-@code{strcasecmp()}, @code{strncasecmp()}, and @code{strcasestr()}, but
+gnulib has functions @func{mbscasecmp}, @func{mbsncasecmp},
+@func{mbspcasecmp}, and @func{mbscasestr} that are like @posixfunc{strcasecmp},
+@posixfunc{strncasecmp}, and @posixfunc{strcasestr}, but
 work in multibyte locales.  Still, the function @code{ulc_casecmp} is
 preferable to these functions; see below.
 @end itemize
@@ -558,11 +582,11 @@ and undocumented.  This means, if you want to know any property of a
 @code{wchar_t} character, other than the properties defined by
 @code{<wctype.h>} --- such as whether it's a dash, currency symbol,
 paragraph separator, or similar ---, you have to convert it to
-@code{char *} encoding first, by use of the function @code{wctomb()}.
+@code{char *} encoding first, by use of the function @posixfunc{wctomb}.
 
 @item
 When you read a stream of wide characters, through the functions
-@code{fgetwc()} and @code{fgetws()}, and when the input stream/file is
+@posixfunc{fgetwc} and @posixfunc{fgetws}, and when the input stream/file is
 not in the expected encoding, you have no way to determine the invalid
 byte sequence and do some corrective action.  If you use these
 functions, your program becomes ``garbage in - more garbage out'' or

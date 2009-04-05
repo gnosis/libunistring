@@ -1,5 +1,11 @@
 2008-04-05  Bruno Haible  <bruno@clisp.org>
 
+	* doc/libunistring.texi (func, posixfunc): New macros.
+	Use them where appropriate.
+	* doc/unistr.texi: Likewise.
+
+2008-04-05  Bruno Haible  <bruno@clisp.org>
+
 	* doc/libunistring.texi: Complete the detailmenu.
 
 2008-04-05  Bruno Haible  <bruno@clisp.org>

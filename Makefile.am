@@ -22,7 +22,9 @@ ACLOCAL_AMFLAGS = -I m4 -I gnulib-m4
 
 SUBDIRS = lib tests
 
-EXTRA_DIST = BUGS
+EXTRA_DIST = \
+  version.sh BUGS DEPENDENCIES HACKING autogen.sh \
+  build-aux/fixaclocal
 
 
 # Allow users to use "gnulib-tool --update".

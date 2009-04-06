@@ -42,3 +42,15 @@ Sources
 =======
 
 Most of the sources have their origin in gnulib.
+
+
+Running the testsuite in valgrind
+=================================
+
+To run the test suite with a memory access checker and leak detector such as
+valgrind,
+  1) configure with the options --disable-shared and CFLAGS="-g",
+  2) run "make",
+  3) edit tests/Makefile to uncomment the appropriate definition of the CHECKER
+     macro,
+  4) run "make check".

@@ -1,5 +1,14 @@
 2008-04-06  Bruno Haible  <bruno@clisp.org>
 
+	Add support for checking with valgrind.
+	* build-aux/run-test: New file.
+	* Makefile.am (EXTRA_DIST): Add it.
+	* tests/Makefile.am (CHECKER, CHECKER_END_OF_COMMENTS): New variables.
+	(TESTS_ENVIRONMENT): Add a run-test invocation.
+	* HACKING: Mention how to use valgrind.
+
+2008-04-06  Bruno Haible  <bruno@clisp.org>
+
 	* Makefile.am (EXTRA_DIST): Add version.sh, DEPENDENCIES, HACKING,
 	autogen.sh, build-aux/fixaclocal.
 	* version.sh: New file.
@@ -13,7 +22,7 @@
 2008-04-05  Bruno Haible  <bruno@clisp.org>
 
 	Use libtool versioning.
-	* lib/Makefile.am (LTV_CURRENT, LTV_REVISION, LTV_AGE): New macros.
+	* lib/Makefile.am (LTV_CURRENT, LTV_REVISION, LTV_AGE): New variables.
 	(libunistring_la_LDFLAGS): Pass -version-info option.
 
 2008-04-05  Bruno Haible  <bruno@clisp.org>

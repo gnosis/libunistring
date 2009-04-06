@@ -23,3 +23,14 @@ AUTOMAKE_OPTIONS += subdir-objects
 
 # The test suite uses the 'localcharset' module.
 TESTS_ENVIRONMENT += @LOCALCHARSET_TESTS_ENVIRONMENT@
+
+
+# For debugging memory leaks and memory allocation bugs.
+# You should build with --disable-shared when using valgrind.
+CHECKER =
+#CHECKER = valgrind --tool=memcheck --suppressions=$(srcdir)/../lib/malloca.valgrind --num-callers=20 --leak-check=yes --leak-resolution=high --show-reachable=yes
+#CHECKER = valgrind --tool=massif --format=html --depth=10 --alloc-fn=xmalloc --alloc-fn=xrealloc --stacks=no
+CHECKER_END_OF_COMMENTS =
+
+# This must be the last thing that gets added to TESTS_ENVIRONMENT.
+TESTS_ENVIRONMENT += $(SHELL) $(top_srcdir)/build-aux/run-test '$(CHECKER)'

@@ -24,7 +24,7 @@ SUBDIRS = lib tests
 
 EXTRA_DIST = \
   version.sh BUGS DEPENDENCIES HACKING autogen.sh \
-  build-aux/fixaclocal
+  build-aux/fixaclocal build-aux/run-test
 
 
 # Allow users to use "gnulib-tool --update".

@@ -1,5 +1,11 @@
 2008-04-05  Bruno Haible  <bruno@clisp.org>
 
+	Allow building as a shared library on AIX.
+	* lib/Makefile.am (libunistring_la_LDFLAGS): Add -no-undefined flag
+	and INTL_MACOSX_LIBS (for MacOS X).
+
+2008-04-05  Bruno Haible  <bruno@clisp.org>
+
 	Use libtool versioning.
 	* lib/Makefile.am (LTV_CURRENT, LTV_REVISION, LTV_AGE): New macros.
 	(libunistring_la_LDFLAGS): Pass -version-info option.

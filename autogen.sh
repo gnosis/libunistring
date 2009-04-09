@@ -44,6 +44,17 @@ while :; do
 done
 
 if test $skip_gnulib = false; then
+  # texinfo.tex
+  # The most recent snapshot of it is available in the gnulib repository.
+  # But this is a snapshot, with all possible dangers.
+  # A stable release of it is available through "automake --add-missing --copy",
+  # but that is too old (does not support @arrow{}). So take the version which
+  # matches the latest stable texinfo release.
+  if test ! -f build-aux/texinfo.tex; then
+    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'http://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_4_13' \
+        && mv build-aux/texinfo.tex.tmp build-aux/texinfo.tex; \
+    } || rm -f build-aux/texinfo.tex.tmp
+  fi
   if test -z "$GNULIB_TOOL"; then
     # Check out gnulib in a subdirectory 'gnulib'.
     if test -d gnulib; then
@@ -393,6 +404,10 @@ if test $skip_gnulib = false; then
       --import $GNULIB_MODULES
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
+    # If we got no texinfo.tex so far, take the snapshot from gnulib.
+    if test ! -f build-aux/texinfo.tex; then
+      $GNULIB_TOOL --copy-file build-aux/texinfo.tex build-aux/texinfo.tex
+    fi
   fi
 fi
 

@@ -54,7 +54,15 @@ dnl Checks for types, header files, functions and declarations.
 
 gl_INIT
 
+dnl Check for tools needed for formatting the documentation.
+ac_aux_dir_abs=`cd $ac_aux_dir && pwd`
+AC_PATH_PROG([TEXI2DVI], [texi2dvi], [$ac_aux_dir_abs/missing texi2dvi])
+AC_PATH_PROG([DVIPS], [dvips], [$ac_aux_dir_abs/missing dvips])
+AC_PATH_PROG([PERL], [perl], [$ac_aux_dir_abs/missing perl])
+
 AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([doc/Makefile],
+                [FIX_MAKEFILE_DISTRIB])
 AC_CONFIG_FILES([lib/Makefile])
 AC_CONFIG_FILES([tests/Makefile])
 AC_OUTPUT

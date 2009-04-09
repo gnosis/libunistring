@@ -1,6 +1,7 @@
 \input texinfo          @c -*-texinfo-*-
 @comment %**start of header
 @setfilename libunistring.info
+@documentencoding UTF-8
 @settitle GNU libunistring
 @finalout
 @c Indices:
@@ -16,6 +17,12 @@
 @ifclear texi2html
 @firstparagraphindent insert
 @end ifclear
+@c texi2html-1.76 does not support @arrow{}.
+@ifset texi2html
+@macro arrow{}
+→
+@end macro
+@end ifset
 @comment %**end of header
 
 @include version.texi

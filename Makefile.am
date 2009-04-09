@@ -20,11 +20,11 @@ AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
 ACLOCAL = build-aux/fixaclocal @ACLOCAL@
 ACLOCAL_AMFLAGS = -I m4 -I gnulib-m4
 
-SUBDIRS = lib tests
+SUBDIRS = doc lib tests
 
 EXTRA_DIST = \
   version.sh BUGS DEPENDENCIES HACKING autogen.sh \
-  build-aux/fixaclocal build-aux/run-test
+  build-aux/fixaclocal build-aux/texi2html build-aux/run-test
 
 
 # Allow users to use "gnulib-tool --update".

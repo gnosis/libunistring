@@ -1,4 +1,15 @@
-2008-04-08  Bruno Haible  <bruno@clisp.org>
+2008-04-09  Bruno Haible  <bruno@clisp.org>
+
+	Build and install documentation.
+	* autogen.sh: Fetch a recent copy of texinfo.tex.
+	* configure.ac (TEXI2DVI, DVIPS, PERL): New substituted variables.
+	(AC_CONFIG_FILES): Add doc/Makefile.
+	* m4/fixautomake.m4: New file, from GNU gettext.
+	* Makefile.am (SUBDIRS): Add doc.
+	(EXTRA_DIST): Add build-aux/texi2html.
+	* doc/Makefile.am: New file.
+	* doc/libunistring.texi: Set document encoding to UTF-8.
+	(arrow): Add a fallback definition for texi2html.
 
 	Put the table of contents at the beginning, not at the end.
 	* build-aux/texi2html (INLINE_CONTENTS): Set to 1.

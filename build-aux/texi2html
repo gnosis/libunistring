@@ -75,7 +75,7 @@ Send bugs and suggestions to <texi2html-bug\@nongnu.org>
 EOT
 
 # Version: set in configure.in
-my $THISVERSION = '1.78';
+my $THISVERSION = '1.78a';
 my $THISPROG = "texi2html $THISVERSION"; # program name and version
 
 #+++########################################################################
@@ -941,7 +941,7 @@ $DO_CONTENTS = 0;
 $DO_SCONTENTS = 0;
 
 # if set, output the contents where the command is located
-$INLINE_CONTENTS = 0;
+$INLINE_CONTENTS = 1;
 
 # if this variable is true, numeric entities are used when there is no
 # corresponding textual entity.

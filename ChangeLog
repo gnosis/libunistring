@@ -1,5 +1,9 @@
 2008-04-08  Bruno Haible  <bruno@clisp.org>
 
+	Put the table of contents at the beginning, not at the end.
+	* build-aux/texi2html (INLINE_CONTENTS): Set to 1.
+	(THISVERSION): Append an 'a'.
+
 	* build-aux/texi2html: New file, from texinfo-1.78.
 
 2008-04-06  Bruno Haible  <bruno@clisp.org>

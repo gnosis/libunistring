@@ -1,3 +1,7 @@
+2008-04-08  Bruno Haible  <bruno@clisp.org>
+
+	* build-aux/texi2html: New file, from texinfo-1.78.
+
 2008-04-06  Bruno Haible  <bruno@clisp.org>
 
 	Add support for checking with valgrind.

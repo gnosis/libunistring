@@ -8,3 +8,6 @@
 /install-sh
 /missing
 
+# Other files brought in by autogen.sh:
+/texinfo.tex
+

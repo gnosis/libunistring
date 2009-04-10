@@ -1,3 +1,21 @@
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
+	Provide installable <stdbool.h>, <stdint.h> replacements.
+	* autogen.sh: Pass --local-dir option to gnulib-tool.
+	* configure.ac (AC_CONFIG_FILES): Add gnulib-local/Makefile.
+	* Makefile.am (SUBDIRS): Add gnulib-local.
+	* gnulib-local/Makefile.am: New file.
+	* gnulib-local/lib/unitypes.h.diff: New file.
+	* gnulib-local/lib/unistr.h.diff: New file.
+	* gnulib-local/lib/unictype.h.diff: New file.
+	* gnulib-local/lib/unicase.h.diff: New file.
+	* lib/stdint.mini.h: New file, a reduced version of gnulib's
+	lib/stdint.in.h.
+	* lib/Makefile.am (nodist_include_HEADERS): New variable.
+	(unistring-stdbool.h, unistring-stdint.h): New rules.
+	(BUILT_SOURCES, MOSTLYCLEANFILES, CLEANFILES): Update accordingly.
+	(EXTRA_DIST): Add stdint.mini.h.
+
 2008-04-09  Bruno Haible  <bruno@clisp.org>
 
 	Build and install documentation.

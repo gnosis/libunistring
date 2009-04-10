@@ -45,6 +45,51 @@ include_HEADERS = \
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib
 
+# The <stdbool.h> and <stdint.h> replacements that can be installed.
+nodist_include_HEADERS = \
+  unistring-stdbool.h \
+  unistring-stdint.h
+
+unistring-stdbool.h : $(STDBOOL_H)
+	rm -f $@-t $@
+	if test -n '$(STDBOOL_H)'; then \
+	  cp stdbool.h $@-t; \
+	else \
+	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	    echo '#include <stdbool.h>'; \
+	  } > $@-t; \
+	fi
+	mv $@-t $@
+BUILT_SOURCES    += unistring-stdbool.h
+MOSTLYCLEANFILES += unistring-stdbool.h-t
+CLEANFILES       += unistring-stdbool.h
+
+unistring-stdint.h : $(STDINT_H) stdint.mini.h
+	rm -f $@-t $@
+	if test -n '$(STDINT_H)'; then \
+	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	    sed -e 's/@''HAVE_STDINT_H''@/$(HAVE_STDINT_H)/g' \
+	        -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+	        -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+	        -e 's|@''NEXT_STDINT_H''@|$(NEXT_STDINT_H)|g' \
+	        -e 's/@''HAVE_SYS_TYPES_H''@/$(HAVE_SYS_TYPES_H)/g' \
+	        -e 's/@''HAVE_INTTYPES_H''@/$(HAVE_INTTYPES_H)/g' \
+	        -e 's/@''HAVE_SYS_INTTYPES_H''@/$(HAVE_SYS_INTTYPES_H)/g' \
+	        -e 's/@''HAVE_SYS_BITYPES_H''@/$(HAVE_SYS_BITYPES_H)/g' \
+	        -e 's/include_next/include/' \
+	        < $(srcdir)/stdint.mini.h; \
+	  } > $@-t; \
+	else \
+	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	    echo '#include <stdint.h>'; \
+	  } > $@-t; \
+	fi
+	mv $@-t $@
+BUILT_SOURCES    += unistring-stdint.h
+MOSTLYCLEANFILES += unistring-stdint.h-t
+CLEANFILES       += unistring-stdint.h
+EXTRA_DIST       += stdint.mini.h
+
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".
 LTV_CURRENT=0

@@ -1,5 +1,5 @@
-## Makefile for the toplevel directory of GNU libunistring.
-## Copyright (C) 2009 Free Software Foundation, Inc.
+## Makefile for the gnulib-local directory of GNU libunistring
+## Copyright (C) 2006-2009 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -16,16 +16,10 @@
 
 ## Process this file with automake to produce Makefile.in.
 
-AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
-ACLOCAL = build-aux/fixaclocal @ACLOCAL@
-ACLOCAL_AMFLAGS = -I m4 -I gnulib-m4
-
-SUBDIRS = doc gnulib-local lib tests
-
+# Generate this list with
+# find . '(' -name Makefile.am ')' -prune -o -type f '!' '(' -name '*.orig' -or -name '*~' ')' -printf '%P\n' | sort | tr '\012' @ | sed 's/@$/%/;s/@/ \\@/g' | tr @% '\012\012'
 EXTRA_DIST = \
-  version.sh BUGS DEPENDENCIES HACKING autogen.sh \
-  build-aux/fixaclocal build-aux/texi2html build-aux/run-test
-
-
-# Allow users to use "gnulib-tool --update".
-EXTRA_DIST += gnulib-m4/gnulib-cache.m4
+lib/unicase.h.diff \
+lib/unictype.h.diff \
+lib/unistr.h.diff \
+lib/unitypes.h.diff

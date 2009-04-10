@@ -63,6 +63,7 @@ AC_PATH_PROG([PERL], [perl], [$ac_aux_dir_abs/missing perl])
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([doc/Makefile],
                 [FIX_MAKEFILE_DISTRIB])
+AC_CONFIG_FILES([gnulib-local/Makefile])
 AC_CONFIG_FILES([lib/Makefile])
 AC_CONFIG_FILES([tests/Makefile])
 AC_OUTPUT

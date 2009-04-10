@@ -115,7 +115,8 @@ this:
 
      ./configure CC="gcc -arch i386 -arch x86_64 -arch ppc -arch ppc64" \
                  CXX="g++ -arch i386 -arch x86_64 -arch ppc -arch ppc64" \
-                 CPP="gcc -E" CXXCPP="g++ -E"
+                 CPP="gcc -E" CXXCPP="g++ -E" \
+                 --disable-dependency-tracking
 
    This is not guaranteed to produce working output in all cases.  You
 may have to build one architecture at a time and combine the results

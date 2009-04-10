@@ -1,5 +1,11 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	* INSTALL (Multiple Architectures): Recommend to use
+	--disable-dependency-tracking.
+	Suggested by Peter O'Gorman <peter@pogma.com>.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	Replace HAVE_INLINE in installed include files.
 	* lib/unistring-inline.h: New file.
 	* lib/unistring-notinline.h: New file.

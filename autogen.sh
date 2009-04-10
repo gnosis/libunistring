@@ -402,6 +402,12 @@ if test $skip_gnulib = false; then
     $GNULIB_TOOL --lib=libunistring --source-base=lib --m4-base=gnulib-m4 --tests-base=tests \
       --with-tests --lgpl --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local \
       --import $GNULIB_MODULES
+    # Change lib/unistr.h to be usable standalone.
+    sed -e 's/ifdef GNULIB_[A-Za-z0-9_]*/if 1/' -e 's/defined GNULIB_[A-Za-z0-9_]*/1/g' \
+        -e 's/HAVE_INLINE/UNISTRING_HAVE_INLINE/g' \
+        < lib/unistr.h \
+        > lib/unistr.h.tmp \
+    && mv lib/unistr.h.tmp lib/unistr.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
     # If we got no texinfo.tex so far, take the snapshot from gnulib.

@@ -1,5 +1,16 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	Replace HAVE_INLINE in installed include files.
+	* lib/unistring-inline.h: New file.
+	* lib/unistring-notinline.h: New file.
+	* autogen.sh: Postprocess unistr.h.
+	* gnulib-local/lib/unistr.h.diff: Also include unistring-inline.h.
+	* lib/Makefile.am (include_HEADERS): Add unistring-inline.h.
+	(noinst_HEADERS): New variable.
+	(AM_CPPFLAGS): Define IN_LIBUNISTRING.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	Provide installable <stdbool.h>, <stdint.h> replacements.
 	* autogen.sh: Pass --local-dir option to gnulib-tool.
 	* configure.ac (AC_CONFIG_FILES): Add gnulib-local/Makefile.

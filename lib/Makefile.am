@@ -38,9 +38,13 @@ include_HEADERS = \
   uniwbrk.h \
   unilbrk.h \
   uninorm.h \
-  unicase.h
+  unicase.h \
+  unistring-inline.h
 
-#AM_CPPFLAGS =
+noinst_HEADERS = \
+  unistring-notinline.h
+
+AM_CPPFLAGS = -DIN_LIBUNISTRING
 
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib

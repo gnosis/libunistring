@@ -1,7 +1,8 @@
-*** unistr.h.orig	2009-04-05 19:30:34.000000000 +0200
---- unistr.h	2009-04-10 16:21:37.000000000 +0200
+*** unistr.h.orig	2009-04-05 12:22:17.000000000 +0200
+--- unistr.h	2009-04-10 18:57:37.000000000 +0200
 ***************
-*** 20,26 ****
+*** 19,26 ****
+  
   #include "unitypes.h"
   
   /* Get bool.  */
@@ -9,9 +10,13 @@
   
   /* Get size_t.  */
   #include <stddef.h>
---- 20,26 ----
+--- 19,29 ----
+  
   #include "unitypes.h"
   
++ /* Get inline if available.  */
++ #include "unistring-inline.h"
++ 
   /* Get bool.  */
 ! #include <unistring-stdbool.h>
   

@@ -18,6 +18,7 @@
 /fseterr.c
 /fseterr.h
 /iconv.in.h
+/iconveh.h
 /iconv_open-aix.gperf
 /iconv_open-hpux.gperf
 /iconv_open-irix.gperf

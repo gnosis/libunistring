@@ -1,5 +1,16 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	Provide an installable localcharset.h replacement.
+	* gnulib-local/lib/uniconv.h.diff: New file.
+	* gnulib-local/lib/unilbrk.h.diff: New file.
+	* gnulib-local/lib/uniwidth.h.diff: New file.
+	* gnulib-local/Makefile.am (EXTRA_DIST): Add them.
+	* lib/Makefile.am (nodist_include_HEADERS): Add unistring-localcharset.h.
+	(unistring-localcharset.h): New rule.
+	(BUILT_SOURCES, MOSTLYCLEANFILES, CLEANFILES): Update accordingly.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	* INSTALL (Multiple Architectures): Recommend to use
 	--disable-dependency-tracking.
 	Suggested by Peter O'Gorman <peter@pogma.com>.

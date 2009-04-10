@@ -94,6 +94,16 @@ MOSTLYCLEANFILES += unistring-stdint.h-t
 CLEANFILES       += unistring-stdint.h
 EXTRA_DIST       += stdint.mini.h
 
+# localcharset.h is not public, but its contents is documented.
+nodist_include_HEADERS += unistring-localcharset.h
+unistring-localcharset.h : localcharset.h
+	rm -f $@-t $@
+	cp $(srcdir)/localcharset.h $@-t
+	mv $@-t $@
+BUILT_SOURCES    += unistring-localcharset.h
+MOSTLYCLEANFILES += unistring-localcharset.h-t
+CLEANFILES       += unistring-localcharset.h
+
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".
 LTV_CURRENT=0

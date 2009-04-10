@@ -20,6 +20,9 @@
 # find . '(' -name Makefile.am ')' -prune -o -type f '!' '(' -name '*.orig' -or -name '*~' ')' -printf '%P\n' | sort | tr '\012' @ | sed 's/@$/%/;s/@/ \\@/g' | tr @% '\012\012'
 EXTRA_DIST = \
 lib/unicase.h.diff \
+lib/uniconv.h.diff \
 lib/unictype.h.diff \
+lib/unilbrk.h.diff \
 lib/unistr.h.diff \
-lib/unitypes.h.diff
+lib/unitypes.h.diff \
+lib/uniwidth.h.diff

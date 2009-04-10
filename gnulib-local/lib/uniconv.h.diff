@@ -1,0 +1,19 @@
+*** uniconv.h.orig	2009-03-26 05:18:45.000000000 +0100
+--- uniconv.h	2009-04-10 22:39:33.000000000 +0200
+***************
+*** 29,35 ****
+  #include "striconveha.h"
+  
+  /* Get locale_charset() declaration.  */
+! #include "localcharset.h"
+  
+  
+  #ifdef __cplusplus
+--- 29,35 ----
+  #include "striconveha.h"
+  
+  /* Get locale_charset() declaration.  */
+! #include "unistring-localcharset.h"
+  
+  
+  #ifdef __cplusplus

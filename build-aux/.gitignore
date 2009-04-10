@@ -6,6 +6,7 @@
 /compile
 /depcomp
 /install-sh
+/mdate-sh
 /missing
 
 # Other files brought in by autogen.sh:

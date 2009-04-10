@@ -1,5 +1,14 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	Provide an installable iconveh.h replacement.
+	* gnulib-local/lib/uniconv.h.diff: Include unistring-iconveh.h instead
+	of iconveh.h. Don't include striconveha.h.
+	* lib/Makefile.am (nodist_include_HEADERS): Add unistring-iconveh.h.
+	(unistring-iconveh.h): New rule.
+	(BUILT_SOURCES, MOSTLYCLEANFILES, CLEANFILES): Update accordingly.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	Provide an installable localcharset.h replacement.
 	* gnulib-local/lib/uniconv.h.diff: New file.
 	* gnulib-local/lib/unilbrk.h.diff: New file.

@@ -104,6 +104,16 @@ BUILT_SOURCES    += unistring-localcharset.h
 MOSTLYCLEANFILES += unistring-localcharset.h-t
 CLEANFILES       += unistring-localcharset.h
 
+# iconeh.h is not public, but its contents is documented.
+nodist_include_HEADERS += unistring-iconveh.h
+unistring-iconveh.h : iconveh.h
+	rm -f $@-t $@
+	cp $(srcdir)/iconveh.h $@-t
+	mv $@-t $@
+BUILT_SOURCES    += unistring-iconveh.h
+MOSTLYCLEANFILES += unistring-iconveh.h-t
+CLEANFILES       += unistring-iconveh.h
+
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".
 LTV_CURRENT=0

@@ -13,7 +13,7 @@
   #include "unitypes.h"
   
   /* Get bool.  */
-! #include <unistring-stdbool.h>
+! #include <unistring/stdbool.h>
   
   /* Get size_t.  */
   #include <stddef.h>

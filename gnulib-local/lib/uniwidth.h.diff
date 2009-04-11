@@ -13,7 +13,7 @@
   #include <stddef.h>
   
   /* Get locale_charset() declaration.  */
-! #include "unistring-localcharset.h"
+! #include <unistring/localcharset.h>
   
   #ifdef __cplusplus
   extern "C" {

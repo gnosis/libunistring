@@ -27,7 +27,7 @@ SUFFIXES =
 
 lib_LTLIBRARIES = libunistring.la
 
-include_HEADERS = \
+nobase_include_HEADERS = \
   unitypes.h \
   unistr.h \
   uniconv.h \
@@ -39,7 +39,7 @@ include_HEADERS = \
   unilbrk.h \
   uninorm.h \
   unicase.h \
-  unistring-inline.h
+  unistring/inline.h
 
 noinst_HEADERS = \
   unistring-notinline.h
@@ -50,11 +50,12 @@ AM_CPPFLAGS = -DIN_LIBUNISTRING
 include Makefile.gnulib
 
 # The <stdbool.h> and <stdint.h> replacements that can be installed.
-nodist_include_HEADERS = \
-  unistring-stdbool.h \
-  unistring-stdint.h
+nobase_nodist_include_HEADERS = \
+  unistring/stdbool.h \
+  unistring/stdint.h
 
-unistring-stdbool.h : $(STDBOOL_H)
+unistring/stdbool.h : $(STDBOOL_H)
+	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	if test -n '$(STDBOOL_H)'; then \
 	  cp stdbool.h $@-t; \
@@ -64,11 +65,12 @@ unistring-stdbool.h : $(STDBOOL_H)
 	  } > $@-t; \
 	fi
 	mv $@-t $@
-BUILT_SOURCES    += unistring-stdbool.h
-MOSTLYCLEANFILES += unistring-stdbool.h-t
-CLEANFILES       += unistring-stdbool.h
+BUILT_SOURCES    += unistring/stdbool.h
+MOSTLYCLEANFILES += unistring/stdbool.h-t
+CLEANFILES       += unistring/stdbool.h
 
-unistring-stdint.h : $(STDINT_H) stdint.mini.h
+unistring/stdint.h : $(STDINT_H) stdint.mini.h
+	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	if test -n '$(STDINT_H)'; then \
 	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
@@ -89,30 +91,50 @@ unistring-stdint.h : $(STDINT_H) stdint.mini.h
 	  } > $@-t; \
 	fi
 	mv $@-t $@
-BUILT_SOURCES    += unistring-stdint.h
-MOSTLYCLEANFILES += unistring-stdint.h-t
-CLEANFILES       += unistring-stdint.h
+BUILT_SOURCES    += unistring/stdint.h
+MOSTLYCLEANFILES += unistring/stdint.h-t
+CLEANFILES       += unistring/stdint.h
 EXTRA_DIST       += stdint.mini.h
 
 # localcharset.h is not public, but its contents is documented.
-nodist_include_HEADERS += unistring-localcharset.h
-unistring-localcharset.h : localcharset.h
+nobase_nodist_include_HEADERS += unistring/localcharset.h
+unistring/localcharset.h : localcharset.h
+	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	cp $(srcdir)/localcharset.h $@-t
 	mv $@-t $@
-BUILT_SOURCES    += unistring-localcharset.h
-MOSTLYCLEANFILES += unistring-localcharset.h-t
-CLEANFILES       += unistring-localcharset.h
+BUILT_SOURCES    += unistring/localcharset.h
+MOSTLYCLEANFILES += unistring/localcharset.h-t
+CLEANFILES       += unistring/localcharset.h
 
 # iconeh.h is not public, but its contents is documented.
-nodist_include_HEADERS += unistring-iconveh.h
-unistring-iconveh.h : iconveh.h
+nobase_nodist_include_HEADERS += unistring/iconveh.h
+unistring/iconveh.h : iconveh.h
+	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	cp $(srcdir)/iconveh.h $@-t
 	mv $@-t $@
-BUILT_SOURCES    += unistring-iconveh.h
-MOSTLYCLEANFILES += unistring-iconveh.h-t
-CLEANFILES       += unistring-iconveh.h
+BUILT_SOURCES    += unistring/iconveh.h
+MOSTLYCLEANFILES += unistring/iconveh.h-t
+CLEANFILES       += unistring/iconveh.h
+
+# Directories that contain some CLEANFILES.
+CLEANDIRS = 
+CLEANDIRS_NOT_IN_SRCDIR = unistring
+clean-local: clean-generic
+	@for dir in '' $(CLEANDIRS); do \
+	  if test -n "$$dir" && test -d $$dir; then \
+	    echo "rmdir $$dir"; rmdir $$dir; \
+	  fi; \
+	done; \
+	if test '$(srcdir)' != '.'; then \
+	  for dir in '' $(CLEANDIRS_NOT_IN_SRCDIR); do \
+	    if test -n "$$dir" && test -d $$dir; then \
+	      echo "rmdir $$dir"; rmdir $$dir; \
+	    fi; \
+	  done; \
+	fi; \
+        :
 
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".

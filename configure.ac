@@ -32,6 +32,7 @@ dnl Checks for basic programs.
 AC_PROG_CC
 AC_PROG_CPP
 AC_PROG_INSTALL
+AC_PROG_MKDIR_P
 
 dnl Check for host type.
 

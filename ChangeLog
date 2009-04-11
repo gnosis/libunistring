@@ -1,5 +1,34 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	Install all auxiliary include files in a subdirectory.
+	* lib/unistring/inline.h: Renamed from lib/unistring-inline.h.
+	* configure.ac: Invoke AC_PROG_MKDIR_P.
+	* lib/Makefile.am (nobase_include_HEADERS): Renamed from
+	include_HEADERS. Change unistring-inline.h to unistring/inline.h.
+	(nobase_nodist_include_HEADERS): Renamed from nodist_include_HEADERS.
+	Change unistring-*.h to unistring/*.h.
+	(unistring/stdbool.h): Renamed from unistring-stdbool.h. Ensure target
+	directory exists.
+	(unistring/stdint.h): Renamed from unistring-stdint.h. Ensure target
+	directory exists.
+	(unistring/localcharset.h): Renamed from unistring-localcharset.h.
+	Ensure target directory exists.
+	(unistring/iconveh.h): Renamed from unistring-iconveh.h Ensure target
+	directory exists.
+	(BUILT_SOURCES, MOSTLYCLEANFILES, CLEANFILES): Update.
+	(CLEANDIRS, CLEANDIRS_NOT_IN_SRCDIR): New variables.
+	(clean-local): New rule.
+	* gnulib-local/lib/unicase.h.diff: Update include statements.
+	* gnulib-local/lib/uniconv.h.diff: Likewise.
+	* gnulib-local/lib/unictype.h.diff: Likewise.
+	* gnulib-local/lib/unilbrk.h.diff: Likewise.
+	* gnulib-local/lib/unistr.h.diff: Likewise.
+	* gnulib-local/lib/unitypes.h.diff: Likewise.
+	* gnulib-local/lib/uniwidth.h.diff: Likewise.
+	* lib/unistring-notinline.h: Likewise.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	* doc/uniconv.h: Document the 'enum iconv_ilseq_handler' type.
 
 2008-04-10  Bruno Haible  <bruno@clisp.org>

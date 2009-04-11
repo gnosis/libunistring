@@ -19,10 +19,10 @@
   #include "unitypes.h"
   
   /* Get enum iconv_ilseq_handler.  */
-! #include "unistring-iconveh.h"
+! #include <unistring/iconveh.h>
   
   /* Get locale_charset() declaration.  */
-! #include "unistring-localcharset.h"
+! #include <unistring/localcharset.h>
   
   
   #ifdef __cplusplus

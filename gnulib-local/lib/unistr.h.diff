@@ -15,10 +15,10 @@
   #include "unitypes.h"
   
 + /* Get inline if available.  */
-+ #include "unistring-inline.h"
++ #include <unistring/inline.h>
 + 
   /* Get bool.  */
-! #include <unistring-stdbool.h>
+! #include <unistring/stdbool.h>
   
   /* Get size_t.  */
   #include <stddef.h>

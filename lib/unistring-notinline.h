@@ -16,7 +16,7 @@
 
 /* Written by Bruno Haible <bruno@clisp.org>, 2009.  */
 
-#include "unistring-inline.h"
+#include "unistring/inline.h"
 #undef UNISTRING_HAVE_INLINE
 #define UNISTRING_HAVE_INLINE 0
 #undef HAVE_INLINE

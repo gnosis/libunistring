@@ -21,6 +21,9 @@ include Makefile.gnulib
 
 AUTOMAKE_OPTIONS += subdir-objects
 
+# Ensure that ../lib/config.h is seen before ../config.h.
+DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/lib -I$(top_builddir)
+
 # The test suite uses the 'localcharset' module.
 TESTS_ENVIRONMENT += @LOCALCHARSET_TESTS_ENVIRONMENT@
 

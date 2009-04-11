@@ -27,6 +27,10 @@ You will need reasonably recent versions of the build tools:
     + Homepage:
       http://www.gnu.org/software/gperf/
 
+  * GNU sed
+    + Homepage:
+      http://www.gnu.org/software/sed/
+
   * Perl
     + Homepage:
       http://www.perl.org/

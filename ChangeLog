@@ -1,3 +1,18 @@
+2008-04-11  Bruno Haible  <bruno@clisp.org>
+
+	Limit the exported symbols through a config.h trick.
+	* m4/exported.m4: New file, from GNU gettext.
+	* lib/exported.sh.in: New file, from GNU gettext.
+	* configure.ac: Invoke gt_GLOBAL_SYMBOL_PIPE.
+	(AC_CONFIG_FILES): Add lib/exported.sh.
+	* lib/declared.sh: New file, borrowing from GNU gettext's moopp.
+	* lib/Makefile.am (HEADERS_WITH_EXTERNS): New variable.
+	(libunistring.sym, config.h): New rules.
+	(MOSTLYCLEANFILES, MAINTAINERCLEANFILES): Update accordingly.
+	(EXTRA_DIST): Add libunistring.sym.
+	* tests/Makefile.am (DEFAULT_INCLUDES): New variable.
+	* HACKING: Require GNU sed.
+
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
 	Install all auxiliary include files in a subdirectory.

@@ -21,6 +21,27 @@ around the native @code{iconv_open} function.  It may not work as an argument
 to the native @code{iconv_open} function directly.
 @end deftypefun
 
+The handling of unconvertible characters during thre conversions can be
+parametrized through the following enumeration type:
+
+@deftp Type {enum iconv_ilseq_handler}
+This type specifies how unconvertible characters in the input are handled.
+@end deftp
+
+@deftypevr Constant {enum iconv_ilseq_handler} iconveh_error
+This handler causes the function to return with @code{errno} set to
+@code{EILSEQ}.
+@end deftypevr
+
+@deftypevr Constant {enum iconv_ilseq_handler} iconveh_question_mark
+This handler produces one question mark @samp{?} per unconvertible character.
+@end deftypevr
+
+@deftypevr Constant {enum iconv_ilseq_handler} iconveh_escape_sequence
+This handler produces an escape sequence @code{\u@var{xxxx}} or
+@code{\U@var{xxxxxxxx}} for each unconvertible character.
+@end deftypevr
+
 @cindex converting
 The following functions convert between strings in a specified encoding and
 Unicode strings.

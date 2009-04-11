@@ -1,5 +1,9 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	* doc/uniconv.h: Document the 'enum iconv_ilseq_handler' type.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	* doc/uniwbrk.texi (Word break property): Remove extra white space.
 
 2008-04-10  Bruno Haible  <bruno@clisp.org>

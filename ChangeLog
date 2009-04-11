@@ -1,5 +1,9 @@
 2008-04-10  Bruno Haible  <bruno@clisp.org>
 
+	* doc/uniwbrk.texi (Word break property): Remove extra white space.
+
+2008-04-10  Bruno Haible  <bruno@clisp.org>
+
 	Provide an installable iconveh.h replacement.
 	* gnulib-local/lib/uniconv.h.diff: Include unistring-iconveh.h instead
 	of iconveh.h. Don't include striconveha.h.

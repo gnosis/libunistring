@@ -23,6 +23,7 @@ lib/unicase.h.diff \
 lib/uniconv.h.diff \
 lib/unictype.h.diff \
 lib/unilbrk.h.diff \
+lib/uninorm.h.diff \
 lib/unistr.h.diff \
 lib/unitypes.h.diff \
 lib/uniwidth.h.diff

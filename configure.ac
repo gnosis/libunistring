@@ -57,6 +57,29 @@ dnl Checks for types, header files, functions and declarations.
 
 gl_INIT
 
+dnl Compilation on mingw and Cygwin needs special Makefile rules, because
+dnl 1. when we install a shared library, we must arrange to export
+dnl    auxiliary pointer variables for every exported variable,
+dnl 2. when we install a shared library and a static library simultaneously,
+dnl    the include file specifies __declspec(dllimport) and therefore we
+dnl    must arrange to define the auxiliary pointer variables for the
+dnl    exported variables _also_ in the static library.
+if test "$enable_shared" = yes; then
+  case "$host_os" in
+    mingw* | cygwin*) is_woe32dll=yes ;;
+    *) is_woe32dll=no ;;
+  esac
+else
+  is_woe32dll=no
+fi
+AM_CONDITIONAL([WOE32DLL], [test $is_woe32dll = yes])
+if test $is_woe32dll = yes; then
+  DLL_VARIABLE='__declspec (dllimport)'
+else
+  DLL_VARIABLE=
+fi
+AC_SUBST([DLL_VARIABLE])
+
 dnl Check for prerequisites of exported.sh.
 gt_GLOBAL_SYMBOL_PIPE
 
@@ -72,5 +95,6 @@ AC_CONFIG_FILES([doc/Makefile],
 AC_CONFIG_FILES([gnulib-local/Makefile])
 AC_CONFIG_FILES([lib/Makefile])
 AC_CONFIG_FILES([lib/exported.sh])
+AC_CONFIG_FILES([lib/unistring/woe32dll.h:lib/unistring/woe32dll.in.h])
 AC_CONFIG_FILES([tests/Makefile])
 AC_OUTPUT

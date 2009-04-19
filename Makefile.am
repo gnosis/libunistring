@@ -29,3 +29,8 @@ EXTRA_DIST = \
 
 # Allow users to use "gnulib-tool --update".
 EXTRA_DIST += gnulib-m4/gnulib-cache.m4
+
+
+# Cygwin support.
+
+EXTRA_DIST += woe32dll/export.h

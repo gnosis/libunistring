@@ -39,7 +39,8 @@ nobase_include_HEADERS = \
   unilbrk.h \
   uninorm.h \
   unicase.h \
-  unistring/inline.h
+  unistring/inline.h \
+  unistring/woe32dll.h
 
 noinst_HEADERS = \
   unistring-notinline.h
@@ -169,21 +170,23 @@ MOSTLYCLEANFILES     += libunistring.sym-t
 MAINTAINERCLEANFILES += libunistring.sym
 EXTRA_DIST           += libunistring.sym
 
+# Tell the mingw or Cygwin linker which symbols to export.
+if WOE32DLL
+libunistring_la_SOURCES += ../woe32dll/unistring-exports.c
+libunistring_la_LDFLAGS += -Wl,--export-all-symbols
+endif
+
 # Hide undesired symbols that are defined by libunistring_la_SOURCES or
 # libunistring_la_LIBADD from the global namespace, by prefixing them with
 # "libunistring_".
 all check install: config.h
 config.h: $(BUILT_SOURCES) libunistring.sym
 	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
-	  : "Avoid double inclusion, to avoid a warning about redefinition of DLL_VARIABLE."; \
+	  : "Avoid double inclusion, to avoid a warning about redefinitions."; \
 	  echo '#ifndef UNISTRING_CONFIG_H'; \
 	  echo '#define UNISTRING_CONFIG_H'; \
 	  echo; \
 	  echo '#include "../config.h"'; \
-	  : "All code is collected in a single library,"; \
-	  : "No references to variables in other libraries exist."; \
-	  echo '#undef DLL_VARIABLE'; \
-	  echo '#define DLL_VARIABLE'; \
 	  echo; \
 	  echo '#endif /* UNISTRING_CONFIG_H */'; \
 	} > config.h && \

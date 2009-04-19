@@ -408,6 +408,16 @@ if test $skip_gnulib = false; then
         < lib/unistr.h \
         > lib/unistr.h.tmp \
     && mv lib/unistr.h.tmp lib/unistr.h
+    # Change lib/unictype.h and lib/uninorm.h for shared libraries on Woe32 systems.
+    sed -e 's/extern const uc_general_category_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_general_category_t UC_/' \
+        -e 's/extern const uc_property_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_property_t UC_/' \
+        < lib/unictype.h \
+        > lib/unictype.h.tmp \
+    && mv lib/unictype.h.tmp lib/unictype.h
+    sed -e 's/extern const struct unicode_normalization_form /extern LIBUNISTRING_DLL_VARIABLE const struct unicode_normalization_form /' \
+        < lib/uninorm.h \
+        > lib/uninorm.h.tmp \
+    && mv lib/uninorm.h.tmp lib/uninorm.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
     # If we got no texinfo.tex so far, take the snapshot from gnulib.

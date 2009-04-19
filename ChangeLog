@@ -1,5 +1,11 @@
 2008-04-19  Bruno Haible  <bruno@clisp.org>
 
+	Avoid a compilation error of tests/unictype/test-categ_none.c.
+	* gnulib-local/modules/unictype/category-none-tests.diff: New file.
+	* gnulib-local/Makefile.am (EXTRA_DIST): Add it.
+
+2008-04-19  Bruno Haible  <bruno@clisp.org>
+
 	Don't commit files brought in by autogen.sh.
 	* build-aux/config.guess: Remove from git repository.
 	* build-aux/config.sub: Likewise.

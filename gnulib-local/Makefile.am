@@ -26,4 +26,5 @@ lib/unilbrk.h.diff \
 lib/uninorm.h.diff \
 lib/unistr.h.diff \
 lib/unitypes.h.diff \
-lib/uniwidth.h.diff
+lib/uniwidth.h.diff \
+modules/unictype/category-none-tests.diff

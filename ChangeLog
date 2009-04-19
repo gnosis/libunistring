@@ -1,3 +1,9 @@
+2008-04-19  Bruno Haible  <bruno@clisp.org>
+
+	Don't use unreliable linker options on native Windows.
+	* m4/woe32-dll.m4: New file, from GNU gettext.
+	* configure.ac: Invoke gl_WOE32_DLL.
+
 2008-04-11  Bruno Haible  <bruno@clisp.org>
 
 	Limit the exported symbols through a config.h trick.

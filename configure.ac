@@ -49,6 +49,8 @@ AC_EXEEXT
 
 dnl Check for build configuration.
 
+gl_WOE32_DLL
+
 LT_INIT([win32-dll])
 
 dnl Checks for types, header files, functions and declarations.

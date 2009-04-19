@@ -1,5 +1,11 @@
 2008-04-19  Bruno Haible  <bruno@clisp.org>
 
+	Don't commit files brought in by autogen.sh.
+	* build-aux/config.guess: Remove from git repository.
+	* build-aux/config.sub: Likewise.
+
+2008-04-19  Bruno Haible  <bruno@clisp.org>
+
 	Add support for building as shared library on Cygwin and mingw.
 	* autogen.sh: Insert LIBUNISTRING_DLL_VARIABLE tokens into
 	lib/unictype.h and lib/uninorm.h.

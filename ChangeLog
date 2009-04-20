@@ -1,5 +1,10 @@
 2008-04-19  Bruno Haible  <bruno@clisp.org>
 
+	Avoid compilation errors in tests/uninorm/test-nf*.c.
+	* configure.ac (WOE32DLL): Define also as a C macro.
+
+2008-04-19  Bruno Haible  <bruno@clisp.org>
+
 	Avoid a compilation error of tests/unictype/test-categ_none.c.
 	* gnulib-local/modules/unictype/category-none-tests.diff: New file.
 	* gnulib-local/Makefile.am (EXTRA_DIST): Add it.

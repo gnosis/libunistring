@@ -79,6 +79,15 @@ else
   DLL_VARIABLE=
 fi
 AC_SUBST([DLL_VARIABLE])
+dnl Some parts of the tests have to be skipped when the tests are linked with
+dnl the shared library. This is because in this situation, the address of a
+dnl global variable in the shared library cannot be used as initializer of a
+dnl global or static variable.
+dnl gcc would say: "error: initializer element is not constant".
+if test $is_woe32dll = yes; then
+  AC_DEFINE([WOE32DLL], [1],
+    [Define when --enable-shared is used on mingw or Cygwin.])
+fi
 
 dnl Check for prerequisites of exported.sh.
 gt_GLOBAL_SYMBOL_PIPE

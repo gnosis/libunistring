@@ -41,6 +41,7 @@
 /locale-tr.m4
 /locale-zh.m4
 /localename.m4
+/locale_h.m4
 /longlong.m4
 /malloc.m4
 /malloca.m4

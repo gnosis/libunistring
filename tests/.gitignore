@@ -6,6 +6,7 @@
 /exitfail.h
 /gettext.h
 /intprops.h
+/locale.in.h
 /nan.h
 /progname.c
 /progname.h
@@ -28,6 +29,7 @@
 /test-isnanf.h
 /test-isnanl-nolibm.c
 /test-isnanl.h
+/test-locale.c
 /test-localename.c
 /test-malloca.c
 /test-math.c

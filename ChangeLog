@@ -1,3 +1,16 @@
+2008-04-21  Bruno Haible  <bruno@clisp.org>
+
+	Add version metainformation.
+	* configure.ac (AC_CONFIG_SRCDIR): Use lib/unistring/version.in.h.
+	(HEXVERSION): New variable, computed from VERSION.
+	(AC_CONFIG_FILES): Add lib/unistring/version.h.
+	* lib/unistring/version.in.h: New file.
+	* lib/version.c: New file.
+	* lib/Makefile.am (libunistring_la_SOURCES): Add version.c.
+	(nobase_nodist_include_HEADERS): Add unistring/version.h.
+	(HEADERS_WITH_EXTERNS): Add unistring/version.in.h.
+	* woe32dll/unistring-exports.c: Add _libunistring_version.
+
 2008-04-19  Bruno Haible  <bruno@clisp.org>
 
 	Avoid compilation errors in tests/uninorm/test-nf*.c.

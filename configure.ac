@@ -18,7 +18,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.63])
 AC_INIT
-AC_CONFIG_SRCDIR([lib/Makefile.am])
+AC_CONFIG_SRCDIR([lib/unistring/version.in.h])
 AC_CONFIG_AUX_DIR([build-aux])
 . $srcdir/version.sh
 AM_INIT_AUTOMAKE([libunistring], [$VERSION_NUMBER])
@@ -92,6 +92,25 @@ fi
 dnl Check for prerequisites of exported.sh.
 gt_GLOBAL_SYMBOL_PIPE
 
+dnl Substitutable version number.
+AC_PROG_AWK
+changequote(,)
+sed_extract_major='/^[0-9]/{s/^\([0-9]*\).*/\1/p;q;}
+i\
+0
+q
+'
+sed_extract_minor='/^[0-9][0-9]*[.][0-9]/{s/^[0-9]*[.]\([0-9]*\).*/\1/p;q;}
+i\
+0
+q
+'
+changequote([,])
+version_major=`echo "${VERSION}" | sed -n -e "$sed_extract_major"`
+version_minor=`echo "${VERSION}" | sed -n -e "$sed_extract_minor"`
+HEXVERSION=0x`$AWK 'BEGIN { printf("%02d%02d"',"$version_major","$version_minor"') }'`
+AC_SUBST([HEXVERSION])
+
 dnl Check for tools needed for formatting the documentation.
 ac_aux_dir_abs=`cd $ac_aux_dir && pwd`
 AC_PATH_PROG([TEXI2DVI], [texi2dvi], [$ac_aux_dir_abs/missing texi2dvi])
@@ -104,6 +123,7 @@ AC_CONFIG_FILES([doc/Makefile],
 AC_CONFIG_FILES([gnulib-local/Makefile])
 AC_CONFIG_FILES([lib/Makefile])
 AC_CONFIG_FILES([lib/exported.sh])
+AC_CONFIG_FILES([lib/unistring/version.h:lib/unistring/version.in.h])
 AC_CONFIG_FILES([lib/unistring/woe32dll.h:lib/unistring/woe32dll.in.h])
 AC_CONFIG_FILES([tests/Makefile])
 AC_OUTPUT

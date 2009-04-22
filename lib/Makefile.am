@@ -49,6 +49,9 @@ AM_CPPFLAGS = -DIN_LIBUNISTRING
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib
 
+# Additional source files.
+libunistring_la_SOURCES += version.c
+
 # The <stdbool.h> and <stdint.h> replacements that can be installed.
 nobase_nodist_include_HEADERS = \
   unistring/stdbool.h \
@@ -118,6 +121,9 @@ BUILT_SOURCES    += unistring/iconveh.h
 MOSTLYCLEANFILES += unistring/iconveh.h-t
 CLEANFILES       += unistring/iconveh.h
 
+# unistring/version.h is public.
+nobase_nodist_include_HEADERS += unistring/version.h
+
 # unistring/woe32dll.h is not public, but is included by other header files.
 nobase_nodist_include_HEADERS += unistring/woe32dll.h
 
@@ -153,7 +159,8 @@ HEADERS_WITH_EXTERNS = \
   uninorm.h \
   unicase.h \
   localcharset.h \
-  iconveh.h
+  iconveh.h \
+  unistring/version.in.h
 
 # List of exported symbols.
 # We extract it from the header files that get installed, removing symbols

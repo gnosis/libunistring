@@ -139,3 +139,5 @@ VARIABLE(uninorm_nfc)
 VARIABLE(uninorm_nfd)
 VARIABLE(uninorm_nfkc)
 VARIABLE(uninorm_nfkd)
+/* Variables declared in unistring/version.h */
+VARIABLE(_libunistring_version)

@@ -31,7 +31,8 @@
 	* configure.ac (WOE32DLL): New conditional.
 	(DLL_VARIABLE): New substituted variable.
 	(AC_CONFIG_FILES): Add lib/unistring/woe32dll.h.
-	* lib/Makefile.am (nobase_include_HEADERS): Add unistring/woe32dll.h.
+	* lib/Makefile.am (nobase_nodist_include_HEADERS): Add
+	unistring/woe32dll.h.
 	(libunistring_la_SOURCES) [WOE32DLL]: Add unistring-exports.c.
 	(libunistring_la_LDFLAGS) [WOE32DLL]: Add --export-all-symbols linker
 	flag.
@@ -54,7 +55,7 @@
 	* lib/Makefile.am (HEADERS_WITH_EXTERNS): New variable.
 	(libunistring.sym, config.h): New rules.
 	(MOSTLYCLEANFILES, MAINTAINERCLEANFILES): Update accordingly.
-	(EXTRA_DIST): Add libunistring.sym.
+	(EXTRA_DIST): Add libunistring.sym, declared.sh.
 	* tests/Makefile.am (DEFAULT_INCLUDES): New variable.
 	* HACKING: Require GNU sed.
 

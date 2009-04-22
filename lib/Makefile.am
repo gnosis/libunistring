@@ -39,8 +39,7 @@ nobase_include_HEADERS = \
   unilbrk.h \
   uninorm.h \
   unicase.h \
-  unistring/inline.h \
-  unistring/woe32dll.h
+  unistring/inline.h
 
 noinst_HEADERS = \
   unistring-notinline.h
@@ -108,7 +107,7 @@ BUILT_SOURCES    += unistring/localcharset.h
 MOSTLYCLEANFILES += unistring/localcharset.h-t
 CLEANFILES       += unistring/localcharset.h
 
-# iconeh.h is not public, but its contents is documented.
+# iconveh.h is not public, but its contents is documented.
 nobase_nodist_include_HEADERS += unistring/iconveh.h
 unistring/iconveh.h : iconveh.h
 	@MKDIR_P@ unistring
@@ -118,6 +117,9 @@ unistring/iconveh.h : iconveh.h
 BUILT_SOURCES    += unistring/iconveh.h
 MOSTLYCLEANFILES += unistring/iconveh.h-t
 CLEANFILES       += unistring/iconveh.h
+
+# unistring/woe32dll.h is not public, but is included by other header files.
+nobase_nodist_include_HEADERS += unistring/woe32dll.h
 
 # Directories that contain some CLEANFILES.
 CLEANDIRS = 
@@ -137,7 +139,7 @@ clean-local: clean-generic
 	fi; \
         :
 
-# List of header files that get installed and that declared 'extern' symbols.
+# List of header files that get installed and that declare 'extern' symbols.
 HEADERS_WITH_EXTERNS = \
   unitypes.h \
   unistr.h \
@@ -168,7 +170,7 @@ libunistring.sym : $(HEADERS_WITH_EXTERNS)
 # We distribute it because declared.sh relies on GNU sed.
 MOSTLYCLEANFILES     += libunistring.sym-t
 MAINTAINERCLEANFILES += libunistring.sym
-EXTRA_DIST           += libunistring.sym
+EXTRA_DIST           += libunistring.sym declared.sh
 
 # Tell the mingw or Cygwin linker which symbols to export.
 if WOE32DLL

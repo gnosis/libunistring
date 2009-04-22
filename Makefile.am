@@ -34,3 +34,8 @@ EXTRA_DIST += gnulib-m4/gnulib-cache.m4
 # Cygwin support.
 
 EXTRA_DIST += woe32dll/export.h
+
+
+# Woe32 support.
+
+EXTRA_DIST += build-aux/windres-options

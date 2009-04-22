@@ -203,6 +203,7 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	  { \
 	    for f in $(libunistring_la_SOURCES) $(libunistring_la_LIBADD); do \
 	      case $$f in \
+	        *.res.lo ) ;; \
 	        *.c | *.$(OBJEXT) | *.lo ) \
 	          sf=`echo "$$f" | sed -e 's,\\.[^.]*$$,,'`.c; \
 	          test -f $$sf || sf=$(srcdir)/$$sf; \
@@ -226,6 +227,19 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	  fi \
 	fi
 MOSTLYCLEANFILES += config.h config.h-t
+
+# Version information according to Woe32 conventions.
+EXTRA_DIST += libunistring.rc
+if WOE32
+WOE32_LIBADD = libunistring.res.lo
+libunistring.res.lo : $(srcdir)/libunistring.rc
+	$(LIBTOOL) --tag=RC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(RC) `$(SHELL) $(top_srcdir)/build-aux/windres-options --escape $(VERSION)` -i $(srcdir)/libunistring.rc -o libunistring.res.lo --output-format=coff
+MOSTLYCLEANFILES += libunistring.res.lo
+else
+WOE32_LIBADD =
+endif
+libunistring_la_LIBADD       += $(WOE32_LIBADD)
+libunistring_la_DEPENDENCIES += $(WOE32_LIBADD)
 
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".

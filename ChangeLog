@@ -1,5 +1,20 @@
 2008-04-21  Bruno Haible  <bruno@clisp.org>
 
+	Add version metainformation in Windows resource format.
+	* configure.ac: Invoke LT_LANG for Windows Resources.
+	(WOE32): New conditional.
+	* lib/libunistring.rc: New file.
+	* lib/Makefile.am (EXTRA_DIST): Add it.
+	(WOE32_LIBADD): New variable.
+	(libunistring.res.lo): New rule.
+	(libunistring_la_LIBADD, libunistring_la_DEPENDENCIES): Add
+	WOE32_LIBADD.
+	(config.h): Don't compile *.res.c files.
+	* build-aux/windres-options: New file, from GNU gettext.
+	* Makefile.am (EXTRA_DIST): Add it.
+
+2008-04-21  Bruno Haible  <bruno@clisp.org>
+
 	Add version metainformation.
 	* configure.ac (AC_CONFIG_SRCDIR): Use lib/unistring/version.in.h.
 	(HEXVERSION): New variable, computed from VERSION.

@@ -44,7 +44,10 @@ nobase_include_HEADERS = \
 noinst_HEADERS = \
   unistring-notinline.h
 
-AM_CPPFLAGS = -DIN_LIBUNISTRING
+AM_CPPFLAGS = \
+  -I. -I$(srcdir) \
+  -I$(top_builddir) -I$(top_srcdir) \
+  -DIN_LIBUNISTRING
 
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib

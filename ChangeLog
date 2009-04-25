@@ -1,5 +1,10 @@
 2009-04-24  Bruno Haible  <bruno@clisp.org>
 
+	Make VPATH builds on Cygwin work.
+	* lib/Makefile.am (AM_CPPFLAGS): Add the essential -I options.
+
+2009-04-24  Bruno Haible  <bruno@clisp.org>
+
 	* gnulib-m4/gnulib-cache.m4: Updated by gnulib-tool.
 
 2009-04-24  Bruno Haible  <bruno@clisp.org>

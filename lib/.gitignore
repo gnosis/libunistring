@@ -61,6 +61,8 @@
 /printf-parse.h
 /ref-add.sin
 /ref-del.sin
+/relocatable.c
+/relocatable.h
 /signbitd.c
 /signbitf.c
 /signbitl.c

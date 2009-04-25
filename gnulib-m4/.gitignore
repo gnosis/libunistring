@@ -57,6 +57,7 @@
 /printf-frexp.m4
 /printf-frexpl.m4
 /printf.m4
+/relocatable-lib.m4
 /setenv.m4
 /signbit.m4
 /size_max.m4

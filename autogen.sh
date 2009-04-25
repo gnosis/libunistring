@@ -398,6 +398,7 @@ if test $skip_gnulib = false; then
       unicase/ulc-casecmp
       unicase/ulc-casecoll
       unicase/ulc-casexfrm
+      relocatable-lib-lgpl
     '
     $GNULIB_TOOL --lib=libunistring --source-base=lib --m4-base=gnulib-m4 --tests-base=tests \
       --with-tests --lgpl --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local \

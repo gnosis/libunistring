@@ -241,6 +241,9 @@ endif
 libunistring_la_LIBADD       += $(WOE32_LIBADD)
 libunistring_la_DEPENDENCIES += $(WOE32_LIBADD)
 
+# Parametrization of the 'relocatable-lib-lgpl' module.
+AM_CPPFLAGS += -DDEPENDS_ON_LIBICONV=1
+
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".
 LTV_CURRENT=0

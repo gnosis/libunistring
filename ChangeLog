@@ -1,5 +1,10 @@
 2009-04-26  Bruno Haible  <bruno@clisp.org>
 
+	* doc/libunistring.texi: Initialize 'am' index.
+	(Using the library): New chapter.
+
+2009-04-26  Bruno Haible  <bruno@clisp.org>
+
 	* README.woe32: New file, from GNU gettext.
 	* Makefile.am (EXTRA_DIST): Add it.
 

@@ -46,9 +46,9 @@ This handler produces an escape sequence @code{\u@var{xxxx}} or
 The following functions convert between strings in a specified encoding and
 Unicode strings.
 
-@deftypefun int u8_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint8_t **@var{resultp}, size_t *@var{lengthp})
-@deftypefunx int u16_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint16_t **@var{resultp}, size_t *@var{lengthp})
-@deftypefunx int u32_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint32_t **@var{resultp}, size_t *@var{lengthp})
+@deftypefun {uint8_t *} u8_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint16_t *} u16_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint32_t *} u32_conv_from_encoding (const char *@var{fromcode}, enum iconv_ilseq_handler @var{handler}, const char *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an entire string, possibly including NUL bytes, from one encoding
 to UTF-8 encoding.
 
@@ -61,26 +61,26 @@ The input is in the memory region between @var{src} (inclusive) and
 If @var{offsets} is not NULL, it should point to an array of @var{srclen}
 integers; this array is filled with offsets into the result, i.e@. the
 character starting at @code{@var{src}[i]} corresponds to the character starting
-at @code{(*@var{resultp})[@var{offsets}[i]]}, and other offsets are set to
+at @code{@var{result}[@var{offsets}[i]]}, and other offsets are set to
 @code{(size_t)(-1)}.
 
-@code{*@var{resultp}} and @code{*@var{lengthp}} should initially be a scratch
-buffer and its size, or @code{*@var{resultp}} can initially be NULL.
+@code{@var{resultbuf}} and @code{*@var{lengthp}} should be a scratch
+buffer and its size, or @code{@var{resultbuf}} can be NULL.
 
-May erase the contents of the memory at @code{*@var{resultp}}.
+May erase the contents of the memory at @code{@var{resultbuf}}.
 
-Return value: 0 if successful, otherwise -1 and @code{errno} set.
-If successful: The resulting string is stored in @code{*@var{resultp}} and
-its length in @code{*@var{lengthp}}.  @code{*@var{resultp}} is set to a
-freshly allocated memory block, or is unchanged if no dynamic memory allocation
-was necessary.
+If successful: The resulting Unicode string (non-NULL) is returned and
+its length stored in @code{*@var{lengthp}}.  The resulting string is
+@code{@var{resultbuf}} if no dynamic memory allocation was necessary,
+or a freshly allocated memory block otherwise.
 
+In case of error: NULL is returned and @code{errno} is set.
 Particular @code{errno} values: @code{EINVAL}, @code{EILSEQ}, @code{ENOMEM}.
 @end deftypefun
 
-@deftypefun int u8_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint8_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char **@var{resultp}, size_t *@var{lengthp})
-@deftypefunx int u16_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint16_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char **@var{resultp}, size_t *@var{lengthp})
-@deftypefunx int u32_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint32_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char **@var{resultp}, size_t *@var{lengthp})
+@deftypefun {char *} u8_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint8_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {char *} u16_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint16_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {char *} u32_conv_to_encoding (const char *@var{tocode}, enum iconv_ilseq_handler @var{handler}, const uint32_t *@var{src}, size_t @var{srclen}, size_t *@var{offsets}, char *@var{resultbuf}, size_t *@var{lengthp})
 Converts an entire Unicode string, possibly including NUL units, from UTF-8
 encoding to a given encoding.
 
@@ -93,20 +93,20 @@ The input is in the memory region between @var{src} (inclusive) and
 If @var{offsets} is not NULL, it should point to an array of @var{srclen}
 integers; this array is filled with offsets into the result, i.e@. the
 character starting at @code{@var{src}[i]} corresponds to the character starting
-at @code{(*@var{resultp})[@var{offsets}[i]]}, and other offsets are set to
+at @code{@var{result}[@var{offsets}[i]]}, and other offsets are set to
 @code{(size_t)(-1)}.
 
-@code{*@var{resultp}} and @code{*@var{lengthp}} should initially be a scratch
-buffer and its size, or @code{*@var{resultp}} can initially be NULL.
+@code{@var{resultbuf}} and @code{*@var{lengthp}} should be a scratch
+buffer and its size, or @code{@var{resultbuf}} can be NULL.
 
-May erase the contents of the memory at @code{*@var{resultp}}.
+May erase the contents of the memory at @code{@var{resultbuf}}.
 
-Return value: 0 if successful, otherwise -1 and @code{errno} set.
-If successful: The resulting string is stored in @code{*@var{resultp}} and
-its length in @code{*@var{lengthp}}.  @code{*@var{resultp}} is set to a
-freshly allocated memory block, or is unchanged if no dynamic memory allocation
-was necessary.
+If successful: The resulting Unicode string (non-NULL) is returned and
+its length stored in @code{*@var{lengthp}}.  The resulting string is
+@code{@var{resultbuf}} if no dynamic memory allocation was necessary,
+or a freshly allocated memory block otherwise.
 
+In case of error: NULL is returned and @code{errno} is set.
 Particular @code{errno} values: @code{EINVAL}, @code{EILSEQ}, @code{ENOMEM}.
 @end deftypefun
 

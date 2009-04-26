@@ -1,5 +1,10 @@
 2009-04-26  Bruno Haible  <bruno@clisp.org>
 
+	* README.woe32: New file, from GNU gettext.
+	* Makefile.am (EXTRA_DIST): Add it.
+
+2009-04-26  Bruno Haible  <bruno@clisp.org>
+
 	* doc/uniconv.texi: Update for changed calling conventions of
 	u*_conv_from_encoding and u*_conv_to_encoding functions.
 

@@ -38,4 +38,4 @@ EXTRA_DIST += woe32dll/export.h
 
 # Woe32 support.
 
-EXTRA_DIST += build-aux/windres-options
+EXTRA_DIST += README.woe32 build-aux/windres-options

@@ -1,3 +1,10 @@
+2009-04-28  Bruno Haible  <bruno@clisp.org>
+
+	Make VPATH builds work off a git checkout.
+	* lib/Makefile.am (config.h): Look for libunistring.sym first in the
+	current directory.
+	Reported by Ralf Wildenhues <Ralf.Wildenhues@gmx.de>.
+
 2009-04-28  Thien-Thi Nguyen  <ttn@gnuvola.org>  (tiny change)
 
 	Fix typos.

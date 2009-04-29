@@ -219,7 +219,14 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	    done; \
 	  } 5>&1 \
 	    | sed -e 's,.* ,,' | LC_ALL=C sort | LC_ALL=C uniq \
-	    | LC_ALL=C join -v 1 - $(srcdir)/libunistring.sym \
+	    | { \
+	        if test -f libunistring.sym; then \
+	          symfile='libunistring.sym'; \
+	        else \
+	          symfile='$(srcdir)/libunistring.sym'; \
+	        fi; \
+	        LC_ALL=C join -v 1 - $$symfile; \
+	      } \
 	    | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t && \
 	  if test -f config.h; then \
 	    cat config.h-t >> config.h; \

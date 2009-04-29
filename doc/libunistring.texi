@@ -604,7 +604,7 @@ Unfortunately, this API and its implementation has numerous problems:
 @itemize
 @item
 On AIX and Windows platforms, @code{wchar_t} is a 16-bit type.  This
-means that it can never accomodate an entire Unicode character.  Either
+means that it can never accommodate an entire Unicode character.  Either
 the @code{wchar_t *} strings are limited to characters in UCS-2 (the
 ``Basic Multilingual Plane'' of Unicode), or --- if @code{wchar_t *}
 strings are encoded in UTF-16 --- a @code{wchar_t} represents only half

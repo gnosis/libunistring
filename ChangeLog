@@ -1,3 +1,11 @@
+2009-04-28  Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>  (tiny change)
+
+	* doc/libunistring.texi: Fix typos.
+	* doc/unistr.texi: Likewise.
+	* doc/uniname.texi: Likewise.
+	* doc/unictype.texi: Likewise.
+	* doc/uninorm.texi: Likewise.
+
 2009-04-28  Bruno Haible  <bruno@clisp.org>
 
 	Make VPATH builds work off a git checkout.

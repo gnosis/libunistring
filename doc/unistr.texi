@@ -423,7 +423,7 @@ This function is similar to @posixfunc{strrchr} and @posixfunc{wcsrchr}, except
 that it operates on Unicode strings.
 @end deftypefun
 
-The following functions seach for the first occurrence of some Unicode
+The following functions search for the first occurrence of some Unicode
 character in or outside a given set of Unicode characters.
 
 @deftypefun size_t u8_strcspn (const uint8_t *@var{str}, const uint8_t *@var{reject})

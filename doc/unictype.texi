@@ -57,7 +57,7 @@ information for all Unicode characters.
 
 @deftp Type uc_general_category_t
 This data type denotes a general category value.  It is an immediate type that
-can be copied by simple assignment, without involving memory allcation.  It is
+can be copied by simple assignment, without involving memory allocation.  It is
 not an array type.
 @end deftp
 
@@ -675,7 +675,7 @@ The following type designates a property on Unicode characters.
 @deftp Type uc_property_t
 This data type denotes a boolean property on Unicode characters. It is an
 immediate type that can be copied by simple assignment, without involving
-memory allcation.  It is not an array type.
+memory allocation.  It is not an array type.
 @end deftp
 
 Many Unicode properties are predefined.

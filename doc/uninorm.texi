@@ -110,7 +110,7 @@ The following constant denotes the maximum size of decomposition of a single
 Unicode character.
 
 @deftypevr Macro {unsigned int} UC_DECOMPOSITION_MAX_LENGTH
-This macro expands to a constant that is the required size of buffer oassed to
+This macro expands to a constant that is the required size of buffer passed to
 the @code{uc_decomposition} and @code{uc_canonical_decomposition} functions.
 @end deftypevr
 

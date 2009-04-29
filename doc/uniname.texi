@@ -6,7 +6,7 @@ This include file implements the association between a Unicode character and
 its name.
 
 The name of a Unicode character allows to distinguish it from other, similar
-looking characters.  For example, the character @samp{x} has tha name
+looking characters.  For example, the character @samp{x} has the name
 @code{"LATIN SMALL LETTER X"} and is therefore different from the character
 named @code{"MULTIPLICATION SIGN"}.
 

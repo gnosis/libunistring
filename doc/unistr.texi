@@ -186,8 +186,8 @@ Returns a negative value if @var{s1} compares smaller than @var{s2},
 a positive value if @var{s1} compares larger than @var{s2}, or 0 if
 they compare equal.
 
-This function is similar to @func{memcmp2}, except that it operates on
-Unicode strings.
+This function is similar to the gnulib function @func{memcmp2}, except that it
+operates on Unicode strings.
 @end deftypefun
 
 @cindex searching, for a character

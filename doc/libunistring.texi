@@ -516,7 +516,8 @@ The @posixfunc{strcasecmp}, @posixfunc{strncasecmp}, and @posixfunc{strcasestr}
 functions do not work with multibyte strings.
 @end itemize
 
-The workarounds can be found in GNU gnulib @url{http://wwww.gnu.org/software/gnulib/}.
+The workarounds can be found in GNU gnulib
+@url{http://www.gnu.org/software/gnulib/}.
 @itemize
 @item
 gnulib has modules @samp{mbchar}, @samp{mbiter}, @samp{mbuiter} that

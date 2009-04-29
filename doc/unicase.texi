@@ -144,10 +144,10 @@ current locale.
 @deftypefunx {char *} u16_casexfrm (const uint16_t *@var{s}, size_t @var{n}, const char *@var{iso639_language}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} u32_casexfrm (const uint32_t *@var{s}, size_t @var{n}, const char *@var{iso639_language}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} ulc_casexfrm (const char *@var{s}, size_t @var{n}, const char *@var{iso639_language}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
-Converts the string @var{s} of length @var{n} to a string in locale encoding,
-in such a way that comparing @code{u8_casexfrm (@var{s1})} and
-@code{u8_casexfrm (@var{s2})} with @code{memcmp2} is equivalent to comparing
-@var{s1} and @var{s2} with @code{u8_casecoll}.
+Converts the string @var{s} of length @var{n} to a NUL-terminated byte
+sequence, in such a way that comparing @code{u8_casexfrm (@var{s1})} and
+@code{u8_casexfrm (@var{s2})} with the gnulib function @code{memcmp2} is
+equivalent to comparing @var{s1} and @var{s2} with @code{u8_casecoll}.
 
 @var{nf} must be either @code{UNINORM_NFC}, @code{UNINORM_NFKC}, or NULL for
 no normalization.

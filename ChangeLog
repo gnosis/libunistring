@@ -1,3 +1,12 @@
+2009-04-28  Bruno Haible  <bruno@clisp.org>
+
+	Doc tweaks.
+	* doc/libunistring.texi: Fix typo.
+	* doc/unistr.texi (u*_cmp2): Clarify what memcmp2 is.
+	* doc/uninorm.texi (u*_normxfrm): Fix description of return value.
+	* doc/unicase.texi (u*_casexfrm): Likewise.
+	Reported by Paolo Bonzini.
+
 2009-04-26  Bruno Haible  <bruno@clisp.org>
 
 	* Version 0.9 released.

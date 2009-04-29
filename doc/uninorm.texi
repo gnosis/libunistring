@@ -230,8 +230,8 @@ Upon failure, returns -1 with @code{errno} set.
 @deftypefun {char *} u8_normxfrm (const uint8_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} u16_normxfrm (const uint16_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {char *} u32_normxfrm (const uint32_t *@var{s}, size_t @var{n}, uninorm_t @var{nf}, char *@var{resultbuf}, size_t *@var{lengthp})
-Converts the string @var{s} of length @var{n} to a string in locale encoding,
-in such a way that comparing @code{u8_normxfrm (@var{s1})} and
+Converts the string @var{s} of length @var{n} to a NUL-terminated byte
+sequence, in such a way that comparing @code{u8_normxfrm (@var{s1})} and
 @code{u8_normxfrm (@var{s2})} with the @code{u8_cmp2} function is equivalent to
 comparing @var{s1} and @var{s2} with the @code{u8_normcoll} function.
 

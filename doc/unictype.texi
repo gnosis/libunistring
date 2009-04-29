@@ -655,7 +655,7 @@ stores @var{uc} unmodified in @code{*@var{puc}} and returns @code{false}.
 This section defines boolean properties of Unicode characters.  This
 means, a character either has the given property or does not have it.
 In other words, the property can be viewed as a subset of the set of
-Unicode character.
+Unicode characters.
 
 The GNU libunistring library provides two kinds of API for working with
 properties.  The object oriented API uses a type @code{uc_property_t}

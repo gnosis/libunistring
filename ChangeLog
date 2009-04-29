@@ -1,3 +1,9 @@
+2009-04-28  Thien-Thi Nguyen  <ttn@gnuvola.org>  (tiny change)
+
+	Fix typos.
+	* doc/uniconv.texi (uniconv.h): Fix typo.
+	* doc/unictype.texi (Properties): Fix typo.
+
 2009-04-28  Bruno Haible  <bruno@clisp.org>
 
 	Doc tweaks.

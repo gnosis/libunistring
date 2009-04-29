@@ -21,7 +21,7 @@ around the native @code{iconv_open} function.  It may not work as an argument
 to the native @code{iconv_open} function directly.
 @end deftypefun
 
-The handling of unconvertible characters during thre conversions can be
+The handling of unconvertible characters during the conversions can be
 parametrized through the following enumeration type:
 
 @deftp Type {enum iconv_ilseq_handler}

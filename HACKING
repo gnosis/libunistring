@@ -36,11 +36,19 @@ You will need reasonably recent versions of the build tools:
       http://www.perl.org/
 
   * Either an internet connection or a recent copy of GNU gnulib.
+    In order to work with the HEAD of libunistring development, you need the
+    HEAD of the gnulib development.
+    In order to work with the version of libunistring at a given date, you need
+    the version of gnulib of the same date.
+    In order to work with a released tarball of libunistring, you need the
+    particular version of gnulib which is indicated in the GNULIB_GIT_COMMIT
+    variable in version.sh.
     + Homepage:
       http://www.gnu.org/software/gnulib/
 
 And, of course, the packages listed in the DEPENDENCIES file.
 
+Then you can run the 'autogen.sh' script 
 
 Sources
 =======

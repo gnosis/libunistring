@@ -1,5 +1,15 @@
 2009-05-01  Bruno Haible  <bruno@clisp.org>
 
+	Avoid "overfull hboxes" in the TeXed documentation.
+	* doc/libunistring.texi (texnl): New macro.
+	(Unicode, Autoconf macro): Use it.
+	* doc/unictype.texi (Canonical combining class,
+	Bidirectional category): Likewise.
+	* doc/uniwbrk.texi (Word break property): Likewise.
+	Reported by Ralf Wildenhues.
+
+2009-05-01  Bruno Haible  <bruno@clisp.org>
+
 	* lib/exported.sh.in: Fix quoting of argument reference.
 
 2009-05-01  Bruno Haible  <bruno@clisp.org>

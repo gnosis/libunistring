@@ -54,6 +54,23 @@
 @code{\func\}
 @end macro
 
+@c Macro for forcing a line break in TeX mode.
+@c Needed because there are long unbreakable pieces of text (such as URLs or
+@c formulas), TeX is too shy to move them to a new file. TeX considers only
+@c two choices: a line break in aligned mode (which it rejects due to aesthetic
+@c reasons) and writing into the margin. What we want in many cases is a line
+@c break without filling the first line. Like what @* delivers.
+@c But we need it only in TeX mode. info and HTML modes are fine.
+@iftex
+@macro texnl
+@*
+@end macro
+@end iftex
+@ifnottex
+@macro texnl
+@end macro
+@end ifnottex
+
 @ifinfo
 @dircategory Software development
 @direntry
@@ -339,7 +356,7 @@ Definition of UTF-8: @url{http://www.rfc-editor.org/rfc/rfc3629.txt}
 @item
 Definition of UTF-16: @url{http://www.rfc-editor.org/rfc/rfc2781.txt}
 @item
-Markus Kuhn's UTF-8 and Unicode FAQ:
+Markus Kuhn's UTF-8 and Unicode FAQ:@texnl
 @url{http://www.cl.cam.ac.uk/~mgk25/unicode.html}
 @end itemize
 
@@ -834,7 +851,7 @@ that uses @code{libunistring} was installed.
 
 @cindex autoconf macro
 GNU Gnulib provides an autoconf macro that test for the availability
-of @code{libunistring}.  It is contained in the Gnulib module
+of @code{libunistring}.  It is contained in the Gnulib module@texnl
 @url{http://www.gnu.org/software/gnulib/MODULES.html#module=libunistring}.
 
 @amindex gl_LIBUNISTRING

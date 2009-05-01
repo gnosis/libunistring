@@ -1,5 +1,9 @@
 2009-05-01  Bruno Haible  <bruno@clisp.org>
 
+	* doc/libunistring.texi: Enable the table of contents also in TeX mode.
+
+2009-05-01  Bruno Haible  <bruno@clisp.org>
+
 	Avoid "overfull hboxes" in the TeXed documentation.
 	* doc/libunistring.texi (texnl): New macro.
 	(Unicode, Autoconf macro): Use it.

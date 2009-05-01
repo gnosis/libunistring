@@ -137,10 +137,8 @@ A copy of the license is included in @ref{GNU GPL}.
 @end ifnothtml
 @end titlepage
 
-@ifnottex
 @c Table of Contents
 @contents
-@end ifnottex
 
 @ifnottex
 @node Top

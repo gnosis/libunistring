@@ -56,7 +56,7 @@
 
 @c Macro for forcing a line break in TeX mode.
 @c Needed because there are long unbreakable pieces of text (such as URLs or
-@c formulas), TeX is too shy to move them to a new file. TeX considers only
+@c formulas), TeX is too shy to move them to a new line. TeX considers only
 @c two choices: a line break in aligned mode (which it rejects due to aesthetic
 @c reasons) and writing into the margin. What we want in many cases is a line
 @c break without filling the first line. Like what @* delivers.

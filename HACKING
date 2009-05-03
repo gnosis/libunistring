@@ -50,10 +50,22 @@ And, of course, the packages listed in the DEPENDENCIES file.
 
 Then you can run the 'autogen.sh' script 
 
+
 Sources
 =======
 
 Most of the sources have their origin in gnulib.
+
+
+Building
+========
+
+See the INSTALL file for generic instructions.
+
+You can use the configure option --disable-namespacing to speed up the build
+by a factor of 1.5.  The resulting library is not namespace-clean and
+therefore should not be installed (if you don't want to risk collisions
+with other libraries) and should certainly not be distributed.
 
 
 Running the testsuite in valgrind

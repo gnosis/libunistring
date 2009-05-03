@@ -101,6 +101,18 @@ if test $is_woe32dll = yes; then
     [Define when --enable-shared is used on mingw or Cygwin.])
 fi
 
+dnl Namespacing is the default: it builds a namespace clean library.
+dnl Allow the user to disable namespacing. This speeds up "make" considerably.
+AC_ARG_ENABLE([namespacing],
+  [  --disable-namespacing   build a library that exports undesired symbols],
+  [:], [enable_namespacing=yes])
+if test "$enable_namespacing" != no; then
+  NAMESPACING=yes
+else
+  NAMESPACING=
+fi
+AC_SUBST([NAMESPACING])
+
 dnl Check for prerequisites of exported.sh.
 gt_GLOBAL_SYMBOL_PIPE
 

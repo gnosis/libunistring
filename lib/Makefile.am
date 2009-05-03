@@ -202,7 +202,7 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	  echo; \
 	  echo '#endif /* UNISTRING_CONFIG_H */'; \
 	} > config.h && \
-	if test -n "$(HAVE_GLOBAL_SYMBOL_PIPE)"; then \
+	if test -n "$(NAMESPACING)" && test -n "$(HAVE_GLOBAL_SYMBOL_PIPE)"; then \
 	  { \
 	    for f in $(libunistring_la_SOURCES) $(libunistring_la_LIBADD); do \
 	      case $$f in \

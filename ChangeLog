@@ -1,3 +1,12 @@
+2009-05-03  Bruno Haible  <bruno@clisp.org>
+
+	New configure option --disable-namespacing.
+	* configure.ac: New option --disable-namespacing.
+	(NAMESPACING): New substituted variable.
+	* lib/Makefile.am (config.h): Don't alias any symbols if NAMESPACING is
+	set to empty.
+	* HACKING: New section "Building".
+
 2009-05-01  Bruno Haible  <bruno@clisp.org>
 
 	* doc/libunistring.texi: Enable the table of contents also in TeX mode.

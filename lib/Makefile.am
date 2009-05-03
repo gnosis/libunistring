@@ -204,30 +204,33 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	} > config.h && \
 	if test -n "$(NAMESPACING)" && test -n "$(HAVE_GLOBAL_SYMBOL_PIPE)"; then \
 	  { \
-	    for f in $(libunistring_la_SOURCES) $(libunistring_la_LIBADD); do \
-	      case $$f in \
-	        *.res.lo ) ;; \
-	        *.c | *.$(OBJEXT) | *.lo ) \
-	          sf=`echo "$$f" | sed -e 's,\\.[^.]*$$,,'`.c; \
-	          test -f $$sf || sf=$(srcdir)/$$sf; \
-	          of=`echo "$$f" | sed -e 's,^.*/,,' -e 's,\\.[^.]*$$,,'`.$(OBJEXT); \
-	          $(COMPILE) -c $$sf || { rm -f config.h; exit 1; }; \
-	          sh ./exported.sh $$of 1>&5; \
-	          rm -f $$of `echo "$$of" | sed -e 's,\\.$(OBJEXT)$$,.lo,'`; \
-	          ;; \
-	      esac; \
-	    done; \
-	  } 5>&1 \
-	    | sed -e 's,.* ,,' | LC_ALL=C sort | LC_ALL=C uniq \
-	    | { \
-	        if test -f libunistring.sym; then \
-	          symfile='libunistring.sym'; \
-	        else \
-	          symfile='$(srcdir)/libunistring.sym'; \
-	        fi; \
-	        LC_ALL=C join -v 1 - $$symfile; \
-	      } \
-	    | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t && \
+	    { \
+	      for f in $(libunistring_la_SOURCES) $(libunistring_la_LIBADD); do \
+	        case $$f in \
+	          *.res.lo ) ;; \
+	          *.c | *.$(OBJEXT) | *.lo ) \
+	            sf=`echo "$$f" | sed -e 's,\\.[^.]*$$,,'`.c; \
+	            test -f $$sf || sf=$(srcdir)/$$sf; \
+	            of=`echo "$$f" | sed -e 's,^.*/,,' -e 's,\\.[^.]*$$,,'`.$(OBJEXT); \
+	            echo "$(COMPILE) -c $$sf" 1>&6; \
+	            $(COMPILE) -c $$sf || { rm -f config.h; exit 1; }; \
+	            sh ./exported.sh $$of 1>&5; \
+	            rm -f $$of `echo "$$of" | sed -e 's,\\.$(OBJEXT)$$,.lo,'`; \
+	            ;; \
+	        esac; \
+	      done; \
+	    } 5>&1 \
+	      | sed -e 's,.* ,,' | LC_ALL=C sort | LC_ALL=C uniq \
+	      | { \
+	          if test -f libunistring.sym; then \
+	            symfile='libunistring.sym'; \
+	          else \
+	            symfile='$(srcdir)/libunistring.sym'; \
+	          fi; \
+	          LC_ALL=C join -v 1 - $$symfile; \
+	        } \
+	      | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t; \
+	  } 6>&1 && \
 	  if test -f config.h; then \
 	    cat config.h-t >> config.h; \
 	    rm -f config.h-t; \

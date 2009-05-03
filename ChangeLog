@@ -1,5 +1,11 @@
 2009-05-03  Bruno Haible  <bruno@clisp.org>
 
+	* lib/Makefile.am (config.h): Echo the commands that are being
+	executed.
+	Reported by Ralf Wildenhues  <Ralf.Wildenhues@gmx.de>.
+
+2009-05-03  Bruno Haible  <bruno@clisp.org>
+
 	* HACKING (Building): Mention also the configure option
 	--disable-static.
 

@@ -1,5 +1,10 @@
 2009-05-03  Bruno Haible  <bruno@clisp.org>
 
+	* HACKING (Building): Mention also the configure option
+	--disable-static.
+
+2009-05-03  Bruno Haible  <bruno@clisp.org>
+
 	New configure option --disable-namespacing.
 	* configure.ac: New option --disable-namespacing.
 	(NAMESPACING): New substituted variable.

@@ -62,10 +62,14 @@ Building
 
 See the INSTALL file for generic instructions.
 
-You can use the configure option --disable-namespacing to speed up the build
-by a factor of 1.5.  The resulting library is not namespace-clean and
-therefore should not be installed (if you don't want to risk collisions
-with other libraries) and should certainly not be distributed.
+To speed up the build:
+  1) You can use the configure option --disable-namespacing.  The speed up is
+     by a factor of 1.5.  The resulting library is not namespace-clean and
+     therefore should not be installed (if you don't want to risk collisions
+     with other libraries) and should certainly not be distributed.
+  2) You can use the configure option --disable-static.  The speed up is by
+     a factor of 1.6.  The resulting library cannot be used for static
+     linking and therefore should certainly not be distributed.
 
 
 Running the testsuite in valgrind

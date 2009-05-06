@@ -377,7 +377,7 @@ combining classes are attached "first" or "closer" to the base character.
 
 The canonical combining class of a character is a number in the range
 0..255.  The possible values are described in the Unicode Character Database
-@texnl @url{http://www.unicode.org/Public/UNIDATA/UCD.html}.  The list here is
+@texnl{}@url{http://www.unicode.org/Public/UNIDATA/UCD.html}.  The list here is
 not definitive; more values can be added in future versions.
 
 @deftypevr Constant int UC_CCC_NR
@@ -471,7 +471,7 @@ Returns the canonical combining class of a Unicode character.
 Every Unicode character or code point has a @emph{bidirectional category}
 assigned to it.
 
-The bidirectional category guides the bidirectional algorithm@texnl
+The bidirectional category guides the bidirectional algorithm@texnl{}
 (@url{http://www.unicode.org/reports/tr9/}).  The possible values are
 the following.
 

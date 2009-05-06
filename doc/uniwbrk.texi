@@ -43,8 +43,8 @@ word break to be present at the beginning of the string (before
 
 This is a more low-level API.  The word break property is a property defined
 in Unicode Standard Annex #29, section ``Word Boundaries'', see
-@url{http://www.unicode.org/reports/tr29/#Word_Boundaries}.@texnl  It is used
-for determining the word breaks in a string.
+@url{http://www.unicode.org/reports/tr29/#Word_Boundaries}.@texnl{}  It is
+used for determining the word breaks in a string.
 
 The following are the possible values of the word break property.  More values
 may be added in the future.

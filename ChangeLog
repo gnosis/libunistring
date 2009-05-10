@@ -1,3 +1,9 @@
+2009-05-10  Bruno Haible  <bruno@clisp.org>
+
+	* doc/unicase.texi (Case mappings of characters,
+	Case mappings of strings): Explain what title case is.
+	Reported by Paolo Bonzini.
+
 2009-05-06  Bruno Haible  <bruno@clisp.org>
 
 	* doc/libunistring.texi (texnl): Define using a trick by Karl Berry.

@@ -637,7 +637,7 @@ characters that do not represent a number.
 @cindex Unicode character, mirroring
 Character mirroring is used to associate the closing parenthesis character
 to the opening parenthesis character, the closing brace character with the
-closing brace character, and so on.
+opening brace character, and so on.
 
 The following function looks up the mirrored character of a Unicode character.
 

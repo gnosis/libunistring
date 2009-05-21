@@ -19,7 +19,7 @@
 # Rules generated and collected by gnulib-tool.
 include Makefile.gnulib
 
-AUTOMAKE_OPTIONS += subdir-objects
+AUTOMAKE_OPTIONS += 1.11 subdir-objects color-tests
 
 # Ensure that ../lib/config.h is seen before ../config.h.
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/lib -I$(top_builddir)

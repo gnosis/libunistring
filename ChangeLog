@@ -1,3 +1,9 @@
+2009-05-21  Bruno Haible  <bruno@clisp.org>
+
+	Add support for automake 1.11.
+	* m4/fixautomake.m4: Update from GNU gettext.
+	* autogen.sh: Update comment.
+
 2009-05-10  Bruno Haible  <bruno@clisp.org>
 
 	* doc/unictype.texi (Mirrored character): Fix typo.

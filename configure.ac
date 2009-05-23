@@ -21,7 +21,8 @@ AC_INIT
 AC_CONFIG_SRCDIR([lib/unistring/version.in.h])
 AC_CONFIG_AUX_DIR([build-aux])
 . $srcdir/version.sh
-AM_INIT_AUTOMAKE([libunistring], [$VERSION_NUMBER])
+gl_INIT_PACKAGE([libunistring], [$VERSION_NUMBER])
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER([config.h])
 
 dnl Override automake's tar command used for creating distributions.

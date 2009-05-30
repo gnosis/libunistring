@@ -86,27 +86,43 @@ BUILT_SOURCES    += unistring/stdbool.h
 MOSTLYCLEANFILES += unistring/stdbool.h-t
 CLEANFILES       += unistring/stdbool.h
 
+# Produce an unistring/stdint.h that is not compiler dependent.
+# Glibc >= 2 has <stdint.h>.
+# On most other platforms that have it, it is buggy in one way or the other.
 unistring/stdint.h : $(STDINT_H) stdint.mini.h
 	@MKDIR_P@ unistring
 	rm -f $@-t $@
-	if test -n '$(STDINT_H)'; then \
-	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
-	    sed -e 's/@''HAVE_STDINT_H''@/$(HAVE_STDINT_H)/g' \
-	        -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	        -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	        -e 's|@''NEXT_STDINT_H''@|$(NEXT_STDINT_H)|g' \
-	        -e 's/@''HAVE_SYS_TYPES_H''@/$(HAVE_SYS_TYPES_H)/g' \
-	        -e 's/@''HAVE_INTTYPES_H''@/$(HAVE_INTTYPES_H)/g' \
-	        -e 's/@''HAVE_SYS_INTTYPES_H''@/$(HAVE_SYS_INTTYPES_H)/g' \
-	        -e 's/@''HAVE_SYS_BITYPES_H''@/$(HAVE_SYS_BITYPES_H)/g' \
-	        -e 's/include_next/include/' \
-	        < $(srcdir)/stdint.mini.h; \
-	  } > $@-t; \
-	else \
-	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
-	    echo '#include <stdint.h>'; \
-	  } > $@-t; \
-	fi
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  echo '#include <stddef.h>'; \
+	  echo '#if __GLIBC__ >= 2'; \
+	  echo '#include <stdint.h>'; \
+	  echo '#else'; \
+	  if test -f /usr/include/stdint.h; then \
+	    HAVE_STDINT_H='1'; \
+	  else \
+	    HAVE_STDINT_H='defined __MINGW32__ || defined __HAIKU__'; \
+	  fi; \
+	  if test -f /usr/include/inttypes.h; then \
+	    HAVE_INTTYPES_H='1'; \
+	  else \
+	    HAVE_INTTYPES_H='defined __MINGW32__ || defined __HAIKU__'; \
+	  fi; \
+	  if test -f /usr/include/sys/inttypes.h; then \
+	    HAVE_SYS_INTTYPES_H='1'; \
+	  else \
+	    HAVE_SYS_INTTYPES_H='0'; \
+	  fi; \
+	  sed -e 's/@''HAVE_STDINT_H''@/'"$$HAVE_STDINT_H"'/g' \
+	      -e 's|@''INCLUDE_NEXT''@|include|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@||g' \
+	      -e 's|@''NEXT_STDINT_H''@|<stdint.h>|g' \
+	      -e 's/@''HAVE_SYS_TYPES_H''@/1/g' \
+	      -e 's/@''HAVE_INTTYPES_H''@/'"$$HAVE_INTTYPES_H"'/g' \
+	      -e 's/@''HAVE_SYS_INTTYPES_H''@/'"$$HAVE_SYS_INTTYPES_H"'/g' \
+	      -e 's/@''HAVE_SYS_BITYPES_H''@/0/g' \
+	      < $(srcdir)/stdint.mini.h; \
+	  echo '#endif'; \
+	} > $@-t
 	mv $@-t $@
 BUILT_SOURCES    += unistring/stdint.h
 MOSTLYCLEANFILES += unistring/stdint.h-t

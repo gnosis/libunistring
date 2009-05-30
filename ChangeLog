@@ -1,3 +1,12 @@
+2009-05-30  Bruno Haible  <bruno@clisp.org>
+
+	Generate a compiler independent <unistring/stdbool.h>.
+	* lib/stdbool.mini.h: New file, a reduced version of gnulib's
+	lib/stdbool.in.h.
+	* lib/Makefile.am (unistring/stdbool.h): Produce a file that relies
+	on #ifs.
+	Reported by David Byron <dbyron@dbyron.com>.
+
 2009-05-23  Bruno Haible  <bruno@clisp.org>
 
 	* configure.ac (AM_INIT_AUTOMAKE): Add 'silent-rules' option.

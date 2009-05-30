@@ -60,16 +60,27 @@ nobase_nodist_include_HEADERS = \
   unistring/stdbool.h \
   unistring/stdint.h
 
+# Produce an unistring/stdbool.h that is not compiler dependent.
+# GCC >= 2.95 has <stdbool.h>.
+# AIX >= 5.3 has <stdbool.h>.
+# Solaris 10 and some HP-UX 11 versions have <stdbool.h> but it does not
+# necessarily work.
 unistring/stdbool.h : $(STDBOOL_H)
 	@MKDIR_P@ unistring
 	rm -f $@-t $@
-	if test -n '$(STDBOOL_H)'; then \
-	  cp stdbool.h $@-t; \
-	else \
-	  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
-	    echo '#include <stdbool.h>'; \
-	  } > $@-t; \
-	fi
+	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+	  echo '#if !defined _GL_STDBOOL_H'; \
+	  if test -f /usr/include/stdbool.h; then \
+	    echo '#if (__GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 95)) || defined _AIX'; \
+	  else \
+	    echo '#if (__GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 95))'; \
+	  fi; \
+	  echo '#include <stdbool.h>'; \
+	  echo '#else'; \
+	  cat $(srcdir)/stdbool.mini.h; \
+	  echo '#endif'; \
+	  echo '#endif'; \
+	} > $@-t
 	mv $@-t $@
 BUILT_SOURCES    += unistring/stdbool.h
 MOSTLYCLEANFILES += unistring/stdbool.h-t

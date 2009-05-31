@@ -143,8 +143,7 @@ AC_PATH_PROG([DVIPS], [dvips], [$ac_aux_dir_abs/missing dvips])
 AC_PATH_PROG([PERL], [perl], [$ac_aux_dir_abs/missing perl])
 
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_FILES([doc/Makefile],
-                [FIX_MAKEFILE_DISTRIB])
+AC_CONFIG_FILES([doc/Makefile])
 AC_CONFIG_FILES([gnulib-local/Makefile])
 AC_CONFIG_FILES([lib/Makefile])
 AC_CONFIG_FILES([lib/exported.sh])

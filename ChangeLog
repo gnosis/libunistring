@@ -1,3 +1,9 @@
+2009-05-31  Bruno Haible  <bruno@clisp.org>
+
+	* doc/Makefile.am: Use dist-hook instead of old distdir hack.
+	* configure.ac (doc/Makefile.am): Don't invoke FIX_MAKEFILE_DISTRIB.
+	* m4/fixautomake.m4: Remove file.
+
 2009-05-30  Bruno Haible  <bruno@clisp.org>
 
 	Generate a compiler independent <unistring/stdint.h>.

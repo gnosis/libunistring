@@ -851,8 +851,9 @@ that uses @code{libunistring} was installed.
 @section Autoconf macro
 
 @cindex autoconf macro
-GNU Gnulib provides an autoconf macro that test for the availability
-of @code{libunistring}.  It is contained in the Gnulib module@texnl{}
+GNU Gnulib provides an autoconf macro that tests for the availability
+of @code{libunistring}.  It is contained in the Gnulib module
+@samp{libunistring}, see@texnl{}
 @url{http://www.gnu.org/software/gnulib/MODULES.html#module=libunistring}.
 
 @amindex gl_LIBUNISTRING
@@ -864,7 +865,7 @@ the @code{CPPFLAGS} variable, and defines the C macro
 @code{HAVE_LIBUNISTRING=no} and @code{LIBUNISTRING} and @code{LTLIBUNISTRING}
 to empty.
 
-The complexities that @code{AM_ICONV} deals with are the following:
+The complexities that @code{gl_LIBUNISTRING} deals with are the following:
 
 @itemize @bullet
 @item

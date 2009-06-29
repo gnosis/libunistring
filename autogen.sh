@@ -355,6 +355,8 @@ if test $skip_gnulib = false; then
       uninorm/u32-normcoll
       uninorm/u32-normxfrm
       unicase/base
+      unicase/empty-prefix-context
+      unicase/empty-suffix-context
       unicase/locale-language
       unicase/tolower
       unicase/totitle
@@ -363,6 +365,10 @@ if test $skip_gnulib = false; then
       unicase/u8-casecoll
       unicase/u8-casefold
       unicase/u8-casexfrm
+      unicase/u8-ct-casefold
+      unicase/u8-ct-tolower
+      unicase/u8-ct-totitle
+      unicase/u8-ct-toupper
       unicase/u8-is-cased
       unicase/u8-is-casefolded
       unicase/u8-is-lowercase
@@ -375,6 +381,10 @@ if test $skip_gnulib = false; then
       unicase/u16-casecoll
       unicase/u16-casefold
       unicase/u16-casexfrm
+      unicase/u16-ct-casefold
+      unicase/u16-ct-tolower
+      unicase/u16-ct-totitle
+      unicase/u16-ct-toupper
       unicase/u16-is-cased
       unicase/u16-is-casefolded
       unicase/u16-is-lowercase
@@ -387,6 +397,10 @@ if test $skip_gnulib = false; then
       unicase/u32-casecoll
       unicase/u32-casefold
       unicase/u32-casexfrm
+      unicase/u32-ct-casefold
+      unicase/u32-ct-tolower
+      unicase/u32-ct-totitle
+      unicase/u32-ct-toupper
       unicase/u32-is-cased
       unicase/u32-is-casefolded
       unicase/u32-is-lowercase
@@ -419,6 +433,10 @@ if test $skip_gnulib = false; then
         < lib/uninorm.h \
         > lib/uninorm.h.tmp \
     && mv lib/uninorm.h.tmp lib/uninorm.h
+    sed -e 's/extern const casing_/extern LIBUNISTRING_DLL_VARIABLE const casing_/' \
+        < lib/unicase.h \
+        > lib/unicase.h.tmp \
+    && mv lib/unicase.h.tmp lib/unicase.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
     # If we got no texinfo.tex so far, take the snapshot from gnulib.

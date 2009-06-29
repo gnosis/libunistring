@@ -12,6 +12,7 @@ Greek sigma and the Lithuanian i correctly.
 @menu
 * Case mappings of characters::
 * Case mappings of strings::
+* Case mappings of substrings::
 * Case insensitive comparison::
 * Case detection::
 @end menu
@@ -129,6 +130,92 @@ The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
 @end deftypefun
 
+@node Case mappings of substrings
+@section Case mappings of substrings
+
+Case mapping of a substring cannot simply be performed by extracting the
+substring and then applying the case mapping function to it.  This does not
+work because case mapping requires some information about the surrounding
+characters.  The following functions allow to apply case mappings to
+substrings of a given string, while taking into account the characters that
+precede it (the ``prefix'') and the characters that follow it (the ``suffix'').
+
+@deftp Type casing_prefix_context_t
+This data type denotes the case-mapping context that is given by a prefix
+string.  It is an immediate type that can be copied by simple assignment,
+without involving memory allocation.  It is not an array type.
+@end deftp
+
+@deftypevr Constant casing_prefix_context_t unicase_empty_prefix_context
+This constant is the case-mapping context that corresponds to an empty prefix
+string.
+@end deftypevr
+
+The following functions return @code{casing_prefix_context_t} objects:
+
+@deftypefun casing_prefix_context_t u8_casing_prefix_context (const uint8_t *@var{s}, size_t @var{n})
+@deftypefunx casing_prefix_context_t u16_casing_prefix_context (const uint16_t *@var{s}, size_t @var{n})
+@deftypefunx casing_prefix_context_t u32_casing_prefix_context (const uint32_t *@var{s}, size_t @var{n})
+Returns the case-mapping context of a given prefix string.
+@end deftypefun
+
+@deftypefun casing_prefix_context_t u8_casing_prefixes_context (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{a_context})
+@deftypefunx casing_prefix_context_t u16_casing_prefixes_context (const uint16_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{a_context})
+@deftypefunx casing_prefix_context_t u32_casing_prefixes_context (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{a_context})
+Returns the case-mapping context of the prefix concat(@var{a}, @var{s}),
+given the case-mapping context of the prefix @var{a}.
+@end deftypefun
+
+@deftp Type casing_suffix_context_t
+This data type denotes the case-mapping context that is given by a suffix
+string.  It is an immediate type that can be copied by simple assignment,
+without involving memory allocation.  It is not an array type.
+@end deftp
+
+@deftypevr Constant casing_suffix_context_t unicase_empty_suffix_context
+This constant is the case-mapping context that corresponds to an empty suffix
+string.
+@end deftypevr
+
+The following functions return @code{casing_suffix_context_t} objects:
+
+@deftypefun casing_suffix_context_t u8_casing_suffix_context (const uint8_t *@var{s}, size_t @var{n})
+@deftypefunx casing_suffix_context_t u16_casing_suffix_context (const uint16_t *@var{s}, size_t @var{n})
+@deftypefunx casing_suffix_context_t u32_casing_suffix_context (const uint32_t *@var{s}, size_t @var{n})
+Returns the case-mapping context of a given suffix string.
+@end deftypefun
+
+@deftypefun casing_suffix_context_t u8_casing_suffixes_context (const uint8_t *@var{s}, size_t @var{n}, casing_suffix_context_t @var{a_context})
+@deftypefunx casing_suffix_context_t u16_casing_suffixes_context (const uint16_t *@var{s}, size_t @var{n}, casing_suffix_context_t @var{a_context})
+@deftypefunx casing_suffix_context_t u32_casing_suffixes_context (const uint32_t *@var{s}, size_t @var{n}, casing_suffix_context_t @var{a_context})
+Returns the case-mapping context of the suffix concat(@var{s}, @var{a}),
+given the case-mapping context of the suffix @var{a}.
+@end deftypefun
+
+The following functions perform a case mapping, considering the
+prefix context and the suffix context.
+
+@deftypefun {uint8_t *} u8_ct_toupper (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint16_t *} u16_ct_toupper (const uint16_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint32_t *} u32_ct_toupper (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
+Returns the uppercase mapping of a string that is surrounded by a prefix
+and a suffix.
+@end deftypefun
+
+@deftypefun {uint8_t *} u8_ct_tolower (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint16_t *} u16_ct_tolower (const uint16_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint32_t *} u32_ct_tolower (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
+Returns the lowercase mapping of a string that is surrounded by a prefix
+and a suffix.
+@end deftypefun
+
+@deftypefun {uint8_t *} u8_ct_totitle (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint16_t *} u16_ct_totitle (const uint16_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint32_t *} u32_ct_totitle (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
+Returns the titlecase mapping of a string that is surrounded by a prefix
+and a suffix.
+@end deftypefun
+
 @node Case insensitive comparison
 @section Case insensitive comparison
 
@@ -148,6 +235,13 @@ with the @code{u8_cmp2} function is equivalent to comparing @var{s1} and
 
 The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
+@end deftypefun
+
+@deftypefun {uint8_t *} u8_ct_casefold (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint16_t *} u16_ct_casefold (const uint16_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
+@deftypefunx {uint32_t *} u32_ct_casefold (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
+Returns the case folded string.  The case folding takes into account the
+case mapping contexts of the prefix and suffix strings.
 @end deftypefun
 
 @deftypefun int u8_casecmp (const uint8_t *@var{s1}, size_t @var{n1}, const uint8_t *@var{s2}, size_t @var{n2}, const char *@var{iso639_language}, uninorm_t @var{nf}, int *@var{resultp})

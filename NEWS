@@ -1,3 +1,7 @@
+New in 0.9.1:
+* In the include file unicase.h, functions for case mapping of substrings have
+  been added.
+
 New in 0.9:
 * The new include file unicase.h implements case folding.
 * The new include file uninorm.h implements normalization.

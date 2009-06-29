@@ -1,3 +1,13 @@
+2009-06-29  Bruno Haible  <bruno@clisp.org>
+
+	New functions for case mapping of substrings.
+	* autogen.sh (GNULIB_MODULES): Add unicase/* modules relating to
+	context sensitive case mapping. Preprocess also unicase.h.
+	* doc/unicase.texi (Case mappings of substrings): New section.
+	(Case insensitive comparison): Mention u*_ct_casefold functions.
+	* doc/libunistring.texi: Update menu.
+	Reported by Paolo Bonzini.
+
 2009-06-11  Thien-Thi Nguyen  <ttn@gnuvola.org>
 
 	* doc/libunistring.texi (Autoconf macro): Small fixes.

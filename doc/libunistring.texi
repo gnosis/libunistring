@@ -232,6 +232,7 @@ unicase,h
 
 * Case mappings of characters::
 * Case mappings of strings::
+* Case mappings of substrings::
 * Case insensitive comparison::
 * Case detection::
 

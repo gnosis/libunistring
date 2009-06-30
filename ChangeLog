@@ -1,3 +1,7 @@
+2009-06-30  Bruno Haible  <bruno@clisp.org>
+
+	* * doc/unicase.texi (Case mappings of substrings): Add an example.
+
 2009-06-29  Bruno Haible  <bruno@clisp.org>
 
 	New functions for case mapping of substrings.

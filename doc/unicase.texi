@@ -216,6 +216,20 @@ Returns the titlecase mapping of a string that is surrounded by a prefix
 and a suffix.
 @end deftypefun
 
+For example, to uppercase the UTF-8 substring between @code{s + start_index}
+and @code{s + end_index} of a string that extends from @code{s} to
+@code{s + u8_strlen (s)}, you can use the statements
+
+@smallexample
+size_t result_length;
+uint8_t result =
+  u8_ct_toupper (s + start_index, end_index - start_index,
+                 u8_casing_prefix_context (s, start_index),
+                 u8_casing_suffix_context (s + end_index,
+                                           u8_strlen (s) - end_index),
+                 iso639_language, NULL, NULL, &result_length);
+@end smallexample
+
 @node Case insensitive comparison
 @section Case insensitive comparison
 

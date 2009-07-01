@@ -1,5 +1,9 @@
 2009-06-30  Bruno Haible  <bruno@clisp.org>
 
+	* Version 0.9.1 released.
+
+2009-06-30  Bruno Haible  <bruno@clisp.org>
+
 	* woe32dll/unistring-exports.c: Add unicase_empty_prefix_context,
 	unicase_empty_suffix_context.
 

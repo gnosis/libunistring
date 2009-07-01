@@ -1,6 +1,12 @@
 2009-06-30  Bruno Haible  <bruno@clisp.org>
 
-	* * doc/unicase.texi (Case mappings of substrings): Add an example.
+	* version.sh: Bump date.
+	* lib/Makefile.am (LTV_*): Update to 1:0:1.
+	* README: Update version.
+
+2009-06-30  Bruno Haible  <bruno@clisp.org>
+
+	* doc/unicase.texi (Case mappings of substrings): Add an example.
 
 2009-06-29  Bruno Haible  <bruno@clisp.org>
 

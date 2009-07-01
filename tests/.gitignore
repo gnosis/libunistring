@@ -40,6 +40,7 @@
 /test-mbrtowc4.sh
 /test-mbsinit.c
 /test-mbsinit.sh
+/test-memchr.c
 /test-printf-frexp.c
 /test-printf-frexpl.c
 /test-signbit.c
@@ -59,6 +60,7 @@
 /xalloc-die.c
 /xalloc.h
 /xmalloc.c
+/zerosize-ptr.h
 
 # Files generate by the autotools:
 /Makefile.in

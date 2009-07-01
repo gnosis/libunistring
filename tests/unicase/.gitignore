@@ -1,5 +1,7 @@
 # Files brought in by gnulib-tool:
 /test-casecmp.h
+/test-cased.c
+/test-ignorable.c
 /test-is-cased.h
 /test-is-casefolded.h
 /test-is-lowercase.h
@@ -9,6 +11,8 @@
 /test-locale-language.sh
 /test-mapping-part1.h
 /test-mapping-part2.h
+/test-predicate-part1.h
+/test-predicate-part2.h
 /test-u16-casecmp.c
 /test-u16-casecoll.c
 /test-u16-casefold.c

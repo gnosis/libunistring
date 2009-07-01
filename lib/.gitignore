@@ -17,6 +17,7 @@
 /frexpl.c
 /fseterr.c
 /fseterr.h
+/getpagesize.c
 /iconv.in.h
 /iconveh.h
 /iconv_open-aix.gperf
@@ -46,6 +47,8 @@
 /mbrtowc.c
 /mbsinit.c
 /mbsnlen.c
+/memchr.c
+/memchr.valgrind
 /memcmp2.c
 /memcmp2.h
 /memxfrm.c

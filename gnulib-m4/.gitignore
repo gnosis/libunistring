@@ -15,6 +15,7 @@
 /fpieee.m4
 /frexp.m4
 /frexpl.m4
+/getpagesize.m4
 /glibc21.m4
 /gnulib-common.m4
 /gnulib-comp.m4
@@ -51,7 +52,9 @@
 /mbrtowc.m4
 /mbsinit.m4
 /mbstate_t.m4
+/memchr.m4
 /minmax.m4
+/mmap-anon.m4
 /multiarch.m4
 /nocrash.m4
 /printf-frexp.m4

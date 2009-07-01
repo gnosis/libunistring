@@ -1,5 +1,13 @@
 # Files brought in by gnulib-tool:
 /casefold.h
+/cased.c
+/cased.h
+/caseprop.h
+/context.h
+/empty-prefix-context.c
+/empty-suffix-context.c
+/ignorable.c
+/ignorable.h
 /invariant.h
 /locale-language.c
 /locale-languages.gperf
@@ -20,6 +28,8 @@
 /u-casefold.h
 /u-casemap.h
 /u-casexfrm.h
+/u-ct-casefold.h
+/u-ct-totitle.h
 /u-is-cased.h
 /u-is-invariant.h
 /u-totitle.h
@@ -28,6 +38,10 @@
 /u16-casefold.c
 /u16-casemap.c
 /u16-casexfrm.c
+/u16-ct-casefold.c
+/u16-ct-tolower.c
+/u16-ct-totitle.c
+/u16-ct-toupper.c
 /u16-is-cased.c
 /u16-is-casefolded.c
 /u16-is-invariant.c
@@ -42,6 +56,10 @@
 /u32-casefold.c
 /u32-casemap.c
 /u32-casexfrm.c
+/u32-ct-casefold.c
+/u32-ct-tolower.c
+/u32-ct-totitle.c
+/u32-ct-toupper.c
 /u32-is-cased.c
 /u32-is-casefolded.c
 /u32-is-invariant.c
@@ -56,6 +74,10 @@
 /u8-casefold.c
 /u8-casemap.c
 /u8-casexfrm.c
+/u8-ct-casefold.c
+/u8-ct-tolower.c
+/u8-ct-totitle.c
+/u8-ct-toupper.c
 /u8-is-cased.c
 /u8-is-casefolded.c
 /u8-is-invariant.c

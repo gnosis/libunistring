@@ -4,10 +4,12 @@
 /error.h
 /exitfail.c
 /exitfail.h
+/fcntl.in.h
 /gettext.h
 /intprops.h
 /locale.in.h
 /nan.h
+/open.c
 /progname.c
 /progname.h
 /setenv.c
@@ -18,8 +20,10 @@
 /test-c-strcase.sh
 /test-c-strcasecmp.c
 /test-c-strncasecmp.c
+/test-dup2.c
 /test-environ.c
 /test-errno.c
+/test-fcntl.c
 /test-frexpl.c
 /test-fseterr.c
 /test-iconv.c
@@ -41,10 +45,12 @@
 /test-mbsinit.c
 /test-mbsinit.sh
 /test-memchr.c
+/test-open.c
 /test-printf-frexp.c
 /test-printf-frexpl.c
 /test-signbit.c
 /test-stdbool.c
+/test-stddef.c
 /test-stdint.c
 /test-stdlib.c
 /test-strerror.c

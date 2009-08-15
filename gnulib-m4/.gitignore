@@ -2,6 +2,7 @@
 /00gnulib.m4
 /alloca.m4
 /codeset.m4
+/dup2.m4
 /eealloc.m4
 /environ.m4
 /errno_h.m4
@@ -11,6 +12,7 @@
 /exponentf.m4
 /exponentl.m4
 /extensions.m4
+/fcntl_h.m4
 /float_h.m4
 /fpieee.m4
 /frexp.m4
@@ -55,8 +57,10 @@
 /memchr.m4
 /minmax.m4
 /mmap-anon.m4
+/mode_t.m4
 /multiarch.m4
 /nocrash.m4
+/open.m4
 /printf-frexp.m4
 /printf-frexpl.m4
 /printf.m4
@@ -65,6 +69,7 @@
 /signbit.m4
 /size_max.m4
 /stdbool.m4
+/stddef_h.m4
 /stdint.m4
 /stdint_h.m4
 /stdlib_h.m4

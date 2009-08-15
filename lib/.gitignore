@@ -9,6 +9,7 @@
 /c-strcaseeq.h
 /c-strncasecmp.c
 /config.charset
+/dup2.c
 /errno.in.h
 /float+.h
 /float.in.h
@@ -71,6 +72,7 @@
 /signbitl.c
 /size_max.h
 /stdbool.in.h
+/stddef.in.h
 /stdint.in.h
 /stdio-impl.h
 /stdlib.in.h

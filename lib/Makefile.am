@@ -65,7 +65,7 @@ nobase_nodist_include_HEADERS = \
 # AIX >= 5.3 has <stdbool.h>.
 # Solaris 10 and some HP-UX 11 versions have <stdbool.h> but it does not
 # necessarily work.
-unistring/stdbool.h : $(STDBOOL_H)
+unistring/stdbool.h : $(STDBOOL_H) stdbool.mini.h
 	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
@@ -85,6 +85,7 @@ unistring/stdbool.h : $(STDBOOL_H)
 BUILT_SOURCES    += unistring/stdbool.h
 MOSTLYCLEANFILES += unistring/stdbool.h-t
 CLEANFILES       += unistring/stdbool.h
+EXTRA_DIST       += stdbool.mini.h
 
 # Produce an unistring/stdint.h that is not compiler dependent.
 # Glibc >= 2 has <stdint.h>.

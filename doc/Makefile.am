@@ -176,7 +176,7 @@ dist-html-monolithic:
 	cp -p $$d/$$file $(distdir)/$$file || exit 1
 
 # We would like to put libunistring_*.html into EXTRA_DIST, but it doesn't work.
-dist-html-split:
+dist-html-split: libunistring_toc.html
 	$(mkdir_p) $(distdir)/
 	file=libunistring_toc.html; \
 	if test -f $$file; then d=.; else d=$(srcdir); fi; \

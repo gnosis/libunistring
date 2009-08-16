@@ -1,5 +1,9 @@
 2009-08-16  Bruno Haible  <bruno@clisp.org>
 
+	* doc/Makefile.am (dist-html-split): Depend on libunistring_toc.html.
+
+2009-08-16  Bruno Haible  <bruno@clisp.org>
+
 	Fix build error when a non-GNU C compiler or Solaris is used.
 	* lib/Makefile.am (unistring/stdbool.h): Depend on stdbool.mini.h.
 	(EXTRA_DIST): Add stdbool.mini.h.

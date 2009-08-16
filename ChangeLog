@@ -1,5 +1,10 @@
 2009-08-16  Bruno Haible  <bruno@clisp.org>
 
+	* version.sh: Bump version number and date.
+	* README: Update version.
+
+2009-08-16  Bruno Haible  <bruno@clisp.org>
+
 	* doc/Makefile.am (dist-html-split): Depend on libunistring_toc.html.
 
 2009-08-16  Bruno Haible  <bruno@clisp.org>

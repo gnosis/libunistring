@@ -1,3 +1,7 @@
+2009-08-17  Bruno Haible  <bruno@clisp.org>
+
+	* Version 0.9.1.1 released.
+
 2009-08-16  Bruno Haible  <bruno@clisp.org>
 
 	* version.sh: Bump version number and date.

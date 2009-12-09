@@ -1,3 +1,11 @@
+2009-12-09  Bruno Haible  <bruno@clisp.org>
+
+	Ensure _UNUSED_PARAMETER_ is defined in the public header files.
+	* lib/unistring/cdefs.h: New file, based on gnulib/m4/gnulib-common.m4.
+	* lib/Makefile.am (nobase_nodist_include_HEADERS): Add it.
+	* gnulib-local/lib/unistr.h.diff: Include unistring/cdefs.h.
+	Reported by Mike Gran <spk121@yahoo.com>.
+
 2009-09-01  Bruno Haible  <bruno@clisp.org>
 
 	* README.woe32: Put the -mno-cygwin option into CC and CXX.

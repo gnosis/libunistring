@@ -155,6 +155,9 @@ CLEANFILES       += unistring/iconveh.h
 # unistring/version.h is public.
 nobase_nodist_include_HEADERS += unistring/version.h
 
+# unistring/cdefs.h is not public, but is included by other header files.
+nobase_nodist_include_HEADERS += unistring/cdefs.h
+
 # unistring/woe32dll.h is not public, but is included by other header files.
 nobase_nodist_include_HEADERS += unistring/woe32dll.h
 

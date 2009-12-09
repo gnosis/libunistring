@@ -1,5 +1,5 @@
-*** unistr.h.orig	2009-04-05 12:22:17.000000000 +0200
---- unistr.h	2009-04-10 18:57:37.000000000 +0200
+*** unistr.h.orig	2009-05-03 23:06:37.000000000 +0200
+--- unistr.h	2009-12-09 21:25:58.000000000 +0100
 ***************
 *** 19,26 ****
   
@@ -10,10 +10,13 @@
   
   /* Get size_t.  */
   #include <stddef.h>
---- 19,29 ----
+--- 19,32 ----
   
   #include "unitypes.h"
   
++ /* Get common macros for C.  */
++ #include <unistring/cdefs.h>
++ 
 + /* Get inline if available.  */
 + #include <unistring/inline.h>
 + 

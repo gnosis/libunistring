@@ -1,3 +1,8 @@
+2009-12-12  Bruno Haible  <bruno@clisp.org>
+
+	* lib/libunistring.rc: Untabify.
+	* woe32dll/export.h: Likewise.
+
 2009-12-09  Bruno Haible  <bruno@clisp.org>
 
 	Ensure _UNUSED_PARAMETER_ is defined in the public header files.

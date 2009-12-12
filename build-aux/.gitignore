@@ -1,4 +1,5 @@
 # Files brought in by gnulib-tool:
+/arg-nonnull.h
 /config.rpath
 /link-warning.h
 

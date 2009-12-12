@@ -1,7 +1,9 @@
 # Files brought in by gnulib-tool:
 /00gnulib.m4
 /alloca.m4
+/cloexec.m4
 /codeset.m4
+/dos.m4
 /dup2.m4
 /eealloc.m4
 /environ.m4
@@ -46,6 +48,7 @@
 /localename.m4
 /locale_h.m4
 /longlong.m4
+/lstat.m4
 /malloc.m4
 /malloca.m4
 /math_h.m4
@@ -61,13 +64,16 @@
 /multiarch.m4
 /nocrash.m4
 /open.m4
+/pathmax.m4
 /printf-frexp.m4
 /printf-frexpl.m4
 /printf.m4
+/putenv.m4
 /relocatable-lib.m4
 /setenv.m4
 /signbit.m4
 /size_max.m4
+/stat.m4
 /stdbool.m4
 /stddef_h.m4
 /stdint.m4
@@ -75,6 +81,9 @@
 /stdlib_h.m4
 /strerror.m4
 /string_h.m4
+/symlink.m4
+/sys_stat_h.m4
+/time_h.m4
 /unistd_h.m4
 /vasnprintf.m4
 /wchar.m4

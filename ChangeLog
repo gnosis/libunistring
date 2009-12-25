@@ -1,3 +1,13 @@
+2009-12-24  Bruno Haible  <bruno@clisp.org>
+
+	Update after gnulib added module 'unused-parameter'.
+	* gnulib-local/lib/unistr.h.diff: Replace the #include of
+	"unused-parameter.h".
+	* lib/unistring/cdefs.in.h: Renamed from lib/unistring/cdefs.h. Replace
+	the _UNUSED_PARAMETER_ with a placeholder for _GL_UNUSED_PARAMETER.
+	* lib/Makefile.am (unistring/cdefs.h): New rule.
+	(BUILT_SOURCES, MOSTLYCLEANFILES, CLEANFILES): Augment.
+
 2009-12-12  Bruno Haible  <bruno@clisp.org>
 
 	* lib/libunistring.rc: Untabify.

@@ -17,15 +17,6 @@
 #ifndef _UNISTRING_CDEFS_H
 #define _UNISTRING_CDEFS_H
 
-/* Define as a marker that can be attached to function parameter declarations
-   for parameters that are not used.  This helps to reduce warnings, such as
-   from GCC -Wunused-parameter.  */
-#ifndef _UNUSED_PARAMETER_
-# if __GNUC__ >= 3 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 7)
-#  define _UNUSED_PARAMETER_ __attribute__ ((__unused__))
-# else
-#  define _UNUSED_PARAMETER_
-# endif
-#endif
+/* The definition of _GL_UNUSED_PARAMETER is copied here.  */
 
 #endif /* _UNISTRING_CDEFS_H */

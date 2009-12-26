@@ -1,5 +1,9 @@
 2009-12-26  Bruno Haible  <bruno@clisp.org>
 
+	* Version 0.9.2 released.
+
+2009-12-26  Bruno Haible  <bruno@clisp.org>
+
 	* version.sh: Bump version number and date.
 	* README: Update version.
 	* lib/Makefile.am (LTV_*): Update to 1:1:1.

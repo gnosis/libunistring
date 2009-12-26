@@ -7,12 +7,15 @@
 /error.h
 /exitfail.c
 /exitfail.h
+/fcntl.c
 /fcntl.in.h
+/getdtablesize.c
 /gettext.h
 /init.sh
 /intprops.h
 /locale.in.h
 /lstat.c
+/macros.h
 /nan.h
 /open.c
 /pathmax.h
@@ -21,6 +24,7 @@
 /putenv.c
 /same-inode.h
 /setenv.c
+/signature.h
 /stat.c
 /strerror.c
 /symlink.c
@@ -41,6 +45,7 @@
 /test-fcntl.c
 /test-frexpl.c
 /test-fseterr.c
+/test-getdtablesize.c
 /test-iconv.c
 /test-isnand-nolibm.c
 /test-isnand.h
@@ -50,6 +55,7 @@
 /test-isnanl.h
 /test-locale.c
 /test-localename.c
+/test-lock.c
 /test-lstat.c
 /test-lstat.h
 /test-malloca.c

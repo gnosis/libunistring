@@ -2,6 +2,7 @@
 /arg-nonnull.h
 /config.rpath
 /link-warning.h
+/unused-parameter.h
 
 # Files brought in by "automake --add-missing --copy":
 /compile

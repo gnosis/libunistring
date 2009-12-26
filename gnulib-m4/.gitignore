@@ -14,11 +14,14 @@
 /exponentf.m4
 /exponentl.m4
 /extensions.m4
+/fcntl.m4
+/fcntl-o.m4
 /fcntl_h.m4
 /float_h.m4
 /fpieee.m4
 /frexp.m4
 /frexpl.m4
+/getdtablesize.m4
 /getpagesize.m4
 /glibc21.m4
 /gnulib-common.m4
@@ -47,6 +50,7 @@
 /locale-zh.m4
 /localename.m4
 /locale_h.m4
+/lock.m4
 /longlong.m4
 /lstat.m4
 /malloc.m4
@@ -83,6 +87,8 @@
 /string_h.m4
 /symlink.m4
 /sys_stat_h.m4
+/thread.m4
+/threadlib.m4
 /time_h.m4
 /unistd_h.m4
 /vasnprintf.m4
@@ -94,4 +100,5 @@
 /wint_t.m4
 /xalloc.m4
 /xsize.m4
+/yield.m4
 

@@ -167,6 +167,7 @@ unistring/cdefs.h : unistring/cdefs.in.h
 BUILT_SOURCES    += unistring/cdefs.h
 MOSTLYCLEANFILES += unistring/cdefs.h-t
 CLEANFILES       += unistring/cdefs.h
+EXTRA_DIST       += unistring/cdefs.in.h
 
 # unistring/woe32dll.h is not public, but is included by other header files.
 nobase_nodist_include_HEADERS += unistring/woe32dll.h

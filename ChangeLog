@@ -1,5 +1,12 @@
 2009-12-26  Bruno Haible  <bruno@clisp.org>
 
+	* version.sh: Bump version number and date.
+	* README: Update version.
+	* lib/Makefile.am (LTV_*): Update to 1:1:1.
+	* NEWS: Mention what changed.
+
+2009-12-26  Bruno Haible  <bruno@clisp.org>
+
 	* lib/libunistring.rc: Update.
 
 2009-12-26  Bruno Haible  <bruno@clisp.org>

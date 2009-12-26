@@ -302,7 +302,7 @@ AM_CPPFLAGS += -DDEPENDS_ON_LIBICONV=1
 # Libtool's library version information for libunistring.
 # See the libtool documentation, section "Library interface versions".
 LTV_CURRENT=1
-LTV_REVISION=0
+LTV_REVISION=1
 LTV_AGE=1
 
 # How to build libunistring.la.

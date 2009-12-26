@@ -1,3 +1,7 @@
+New in 0.9.2:
+* The function uc_locale_language now uses the locale of the current thread,
+  if a thread-specific locale has been set.
+
 New in 0.9.1:
 * In the include file unicase.h, functions for case mapping of substrings have
   been added.

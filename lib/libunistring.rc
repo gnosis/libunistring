@@ -24,7 +24,7 @@ BEGIN
             VALUE "FileDescription", "LGPLed libunistring for Windows NT/2000/XP/Vista/7 and Windows 95/98/ME\0"
             VALUE "FileVersion", PACKAGE_VERSION_STRING "\0"
             VALUE "InternalName", "unistring.dll\0"
-            VALUE "LegalCopyright", "Copyright (C) 2001-2009\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001-2010\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "unistring.dll\0"
             VALUE "ProductName", "libunistring: Unicode string library\0"

@@ -324,8 +324,11 @@ that it operates on Unicode strings.
 @deftypefun {uint8_t *} u8_stpncpy (uint8_t *@var{dest}, const uint8_t *@var{src}, size_t @var{n})
 @deftypefunx {uint16_t *} u16_stpncpy (uint16_t *@var{dest}, const uint16_t *@var{src}, size_t @var{n})
 @deftypefunx {uint32_t *} u32_stpncpy (uint32_t *@var{dest}, const uint32_t *@var{src}, size_t @var{n})
-Copies no more than @var{n} units of @var{src} to @var{dest}, returning the
-address of the last unit written into @var{dest}.
+Copies no more than @var{n} units of @var{src} to @var{dest}.  Returns a
+pointer past the last non-NUL unit written into @var{dest}.  In other words,
+if the units written into @var{dest} include a NUL, the return value is the
+address of the first such NUL unit, otherwise it is
+@code{@var{dest} + @var{n}}.
 
 This function is similar to @posixfunc{stpncpy}, except that it operates on
 Unicode strings.

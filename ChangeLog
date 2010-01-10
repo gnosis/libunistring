@@ -1,3 +1,9 @@
+2010-01-10  Bruno Haible  <bruno@clisp.org>
+
+	* doc/unistr.texi (Elementary string functions on NUL terminated
+	strings): Change description of u*_stpncpy return value to be
+	consistent with stpncpy in glibc.
+
 2010-01-01  Bruno Haible  <bruno@clisp.org>
 
 	* Version 0.9.2.1 released.

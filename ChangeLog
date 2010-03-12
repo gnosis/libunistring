@@ -1,3 +1,9 @@
+2010-03-12  Bruno Haible  <bruno@clisp.org>
+
+	Fix libtool failure with gnulib C++ tests.
+	* configure.ac: Add LT_LANG([C++]) invocation.
+	Reported by Ludovic Courtès <ludo@gnu.org>.
+
 2010-01-10  Bruno Haible  <bruno@clisp.org>
 
 	* doc/unistr.texi (Elementary string functions on NUL terminated

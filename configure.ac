@@ -1,5 +1,5 @@
 dnl Configuration for the toplevel directory of GNU libunistring
-dnl Copyright (C) 2009 Free Software Foundation, Inc.
+dnl Copyright (C) 2009-2010 Free Software Foundation, Inc.
 dnl
 dnl This program is free software: you can redistribute it and/or modify
 dnl it under the terms of the GNU General Public License as published by
@@ -57,6 +57,10 @@ LT_INIT([win32-dll])
 dnl Prepares the libtool configuration for handling of Windows resources, and
 dnl sets the RC variable to a program that compiles Windows resource files.
 LT_LANG([Windows Resource])
+
+dnl Prepares the libtool configuration for handling of C++ programs, needed
+dnl by the gnulib test suite.
+LT_LANG([C++])
 
 dnl On mingw and Cygwin, we can activate special Makefile rules which add
 dnl version information to the shared libraries and executables.

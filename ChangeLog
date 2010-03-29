@@ -1,3 +1,8 @@
+2010-03-29  Bruno Haible  <bruno@clisp.org>
+
+	Undo last change, not needed any more.
+	* configure.ac: Remove LT_LANG([C++]) invocation.
+
 2010-03-12  Bruno Haible  <bruno@clisp.org>
 
 	Fix libtool failure with gnulib C++ tests.

@@ -1,5 +1,11 @@
 2010-05-02  Bruno Haible  <bruno@clisp.org>
 
+	* version.sh: Bump version number and date.
+	* README: Update version.
+	* lib/Makefile.am (LTV_*): Update to 1:2:1.
+
+2010-05-02  Bruno Haible  <bruno@clisp.org>
+
 	* gnulib-m4/gnulib-cache.m4: Updated by gnulib-tool.
 
 2010-03-30  Bruno Haible  <bruno@clisp.org>

@@ -10,6 +10,7 @@
 /fcntl.c
 /fcntl.in.h
 /getdtablesize.c
+/getpagesize.c
 /gettext.h
 /init.sh
 /intprops.h
@@ -47,6 +48,7 @@
 /test-fseterr.c
 /test-getdtablesize.c
 /test-iconv.c
+/test-iconv-h.c
 /test-isnand-nolibm.c
 /test-isnand.h
 /test-isnanf-nolibm.c

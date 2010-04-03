@@ -86,6 +86,7 @@
 /stdlib_h.m4
 /strerror.m4
 /string_h.m4
+/strncat.m4
 /symlink.m4
 /sys_stat_h.m4
 /thread.m4

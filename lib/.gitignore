@@ -83,6 +83,7 @@
 /striconveha.c
 /striconveha.h
 /string.in.h
+/strncat.c
 /unicase.h
 /uniconv.h
 /unictype.h

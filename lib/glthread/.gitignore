@@ -1,0 +1,5 @@
+# Files brought in by gnulib-tool:
+/lock.c
+/lock.h
+/threadlib.c
+

@@ -86,6 +86,7 @@
 /test-striconveh.c
 /test-striconveha.c
 /test-string.c
+/test-strncat.c
 /test-symlink.c
 /test-symlink.h
 /test-sys_stat.c

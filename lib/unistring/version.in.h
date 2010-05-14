@@ -1,5 +1,5 @@
 /* Meta information about GNU libunistring.
-   Copyright (C) 2009 Free Software Foundation, Inc.
+   Copyright (C) 2009-2010 Free Software Foundation, Inc.
    Written by Bruno Haible <bruno@clisp.org>, 2009.
 
    This program is free software: you can redistribute it and/or modify it
@@ -27,7 +27,9 @@ extern "C" {
 #endif
 
 
-#define _LIBUNISTRING_VERSION @HEXVERSION@    /* version number: (major<<8) + minor */
+/* Version number: (major<<16) + (minor<<8) + subminor
+   except that for versions <= 0.9.3 the value was 0x000009. */
+#define _LIBUNISTRING_VERSION @HEXVERSION@
 extern LIBUNISTRING_DLL_VARIABLE const int _libunistring_version; /* Likewise */
 
 

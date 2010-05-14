@@ -1,3 +1,8 @@
+New in 0.9.4:
+* It is now easier to detect the subminor version: The value of the variable
+  _libunistring_version and of the macro _LIBUNISTRING_VERSION now includes
+  also the subminor version.
+
 New in 0.9.3:
 * Bug fixes in unistr.h functions:
   - The functions u16_to_u32, u16_to_u8, u8_to_u32, u8_to_u16 now fail when

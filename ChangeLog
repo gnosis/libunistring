@@ -1,3 +1,10 @@
+2010-05-14  Bruno Haible  <bruno@clisp.org>
+
+	Publicize also the subminor version number.
+	* lib/unistring/version.in.h (_LIBUNISTRING_VERSION,
+	_libunistring_version): Include also the subminor version.
+	* configure.ac (HEXVERSION): Likewise.
+
 2010-05-02  Bruno Haible  <bruno@clisp.org>
 
 	* Version 0.9.3 released.

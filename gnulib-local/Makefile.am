@@ -1,5 +1,5 @@
 ## Makefile for the gnulib-local directory of GNU libunistring
-## Copyright (C) 2006-2009 Free Software Foundation, Inc.
+## Copyright (C) 2006-2010 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -19,12 +19,12 @@
 # Generate this list with
 # find . '(' -name Makefile.am ')' -prune -o -type f '!' '(' -name '*.orig' -or -name '*~' ')' -printf '%P\n' | sort | tr '\012' @ | sed 's/@$/%/;s/@/ \\@/g' | tr @% '\012\012'
 EXTRA_DIST = \
-lib/unicase.h.diff \
-lib/uniconv.h.diff \
-lib/unictype.h.diff \
-lib/unilbrk.h.diff \
-lib/uninorm.h.diff \
-lib/unistr.h.diff \
-lib/unitypes.h.diff \
-lib/uniwidth.h.diff \
+lib/unicase.in.h.diff \
+lib/uniconv.in.h.diff \
+lib/unictype.in.h.diff \
+lib/unilbrk.in.h.diff \
+lib/uninorm.in.h.diff \
+lib/unistr.in.h.diff \
+lib/unitypes.in.h.diff \
+lib/uniwidth.in.h.diff \
 modules/unictype/category-none-tests.diff

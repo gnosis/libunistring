@@ -1,3 +1,26 @@
+2010-05-16  Bruno Haible  <bruno@clisp.org>
+
+	Update after gnulib changed.
+	* gnulib-local/lib/unicase.in.h.diff: Renamed from
+	gnulib-local/lib/unicase.h.diff.
+	* gnulib-local/lib/uniconv.in.h.diff: Renamed from
+	gnulib-local/lib/uniconv.h.diff.
+	* gnulib-local/lib/unictype.in.h.diff: Renamed from
+	gnulib-local/lib/unictype.h.diff.
+	* gnulib-local/lib/unilbrk.in.h.diff: Renamed from
+	gnulib-local/lib/unilbrk.h.diff.
+	* gnulib-local/lib/uninorm.in.h.diff: Renamed from
+	gnulib-local/lib/uninorm.h.diff.
+	* gnulib-local/lib/unistr.in.h.diff: Renamed from
+	gnulib-local/lib/unistr.h.diff.
+	* gnulib-local/lib/unitypes.in.h.diff: Renamed from
+	gnulib-local/lib/unitypes.h.diff.
+	* gnulib-local/lib/uniwidth.in.h.diff: Renamed from
+	gnulib-local/lib/uniwidth.h.diff.
+	* gnulib-local/Makefile.am (EXTRA_DIST): Update.
+	* gnulib-local/modules/unictype/category-none-tests.diff: Update.
+	* autogen.sh: Update.
+
 2010-05-14  Bruno Haible  <bruno@clisp.org>
 
 	Publicize also the subminor version number.

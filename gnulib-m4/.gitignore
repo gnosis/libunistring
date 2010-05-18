@@ -44,6 +44,7 @@
 /lib-ld.m4
 /lib-link.m4
 /lib-prefix.m4
+/libunistring-base.m4
 /localcharset.m4
 /locale-fr.m4
 /locale-ja.m4

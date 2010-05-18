@@ -420,23 +420,23 @@ if test $skip_gnulib = false; then
     # Change lib/unistr.h to be usable standalone.
     sed -e 's/ifdef GNULIB_[A-Za-z0-9_]*/if 1/' -e 's/defined GNULIB_[A-Za-z0-9_]*/1/g' \
         -e 's/HAVE_INLINE/UNISTRING_HAVE_INLINE/g' \
-        < lib/unistr.h \
-        > lib/unistr.h.tmp \
-    && mv lib/unistr.h.tmp lib/unistr.h
+        < lib/unistr.in.h \
+        > lib/unistr.in.h.tmp \
+    && mv lib/unistr.in.h.tmp lib/unistr.in.h
     # Change lib/unictype.h and lib/uninorm.h for shared libraries on Woe32 systems.
     sed -e 's/extern const uc_general_category_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_general_category_t UC_/' \
         -e 's/extern const uc_property_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_property_t UC_/' \
-        < lib/unictype.h \
-        > lib/unictype.h.tmp \
-    && mv lib/unictype.h.tmp lib/unictype.h
+        < lib/unictype.in.h \
+        > lib/unictype.in.h.tmp \
+    && mv lib/unictype.in.h.tmp lib/unictype.in.h
     sed -e 's/extern const struct unicode_normalization_form /extern LIBUNISTRING_DLL_VARIABLE const struct unicode_normalization_form /' \
-        < lib/uninorm.h \
-        > lib/uninorm.h.tmp \
-    && mv lib/uninorm.h.tmp lib/uninorm.h
+        < lib/uninorm.in.h \
+        > lib/uninorm.in.h.tmp \
+    && mv lib/uninorm.in.h.tmp lib/uninorm.in.h
     sed -e 's/extern const casing_/extern LIBUNISTRING_DLL_VARIABLE const casing_/' \
-        < lib/unicase.h \
-        > lib/unicase.h.tmp \
-    && mv lib/unicase.h.tmp lib/unicase.h
+        < lib/unicase.in.h \
+        > lib/unicase.in.h.tmp \
+    && mv lib/unicase.in.h.tmp lib/unicase.in.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
     # If we got no texinfo.tex so far, take the snapshot from gnulib.

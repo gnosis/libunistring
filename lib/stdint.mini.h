@@ -1,4 +1,4 @@
-/* Copyright (C) 2001-2002, 2004-2009 Free Software Foundation, Inc.
+/* Copyright (C) 2001-2002, 2004-2010 Free Software Foundation, Inc.
    Written by Paul Eggert, Bruno Haible, Sam Steingold, Peter Burwood.
    This file is part of gnulib.
 
@@ -121,7 +121,6 @@ typedef unsigned int unistring_uint32_t;
 /* Avoid collision with Solaris 2.5.1 <pthread.h> etc.  */
 #define _UINT8_T
 #define _UINT32_T
-#define _UINT64_T
 
 
 #endif /* _UNISTRING_STDINT_H */

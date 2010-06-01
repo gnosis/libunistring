@@ -1,3 +1,9 @@
+2010-06-01  Bruno Haible  <bruno@clisp.org>
+
+	Avoid possible bad interaction with Solaris 2.5.1 <pthread.h>.
+	* lib/stdint.mini.h (_UINT64_T): Don't define.
+	Reported by Ben Pfaff <blp@cs.stanford.edu>.
+
 2010-05-16  Bruno Haible  <bruno@clisp.org>
 
 	Update after gnulib changed.

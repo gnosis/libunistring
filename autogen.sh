@@ -71,12 +71,6 @@ if test $skip_gnulib = false; then
   fi
   # Skip the gnulib-tool step if gnulib-tool was not found.
   if test -n "$GNULIB_TOOL"; then
-    if test -f m4/gnulib-cache.m4; then
-      mv -f m4/gnulib-cache.m4 m4/gnulib-cache.m4~
-    fi
-    if test -f lib/Makefile.gnulib; then
-      mv -f lib/Makefile.gnulib lib/Makefile.gnulib~
-    fi
     GNULIB_MODULES='
       unitypes
       unistr/base

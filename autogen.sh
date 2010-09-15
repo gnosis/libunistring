@@ -412,7 +412,8 @@ if test $skip_gnulib = false; then
       --with-tests --lgpl --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local \
       --import $GNULIB_MODULES
     # Change lib/unistr.h to be usable standalone.
-    sed -e 's/ifdef GNULIB_[A-Za-z0-9_]*/if 1/' -e 's/defined GNULIB_[A-Za-z0-9_]*/1/g' \
+    sed -e 's/if GNULIB_[A-Za-z0-9_]* || .*/if 1/g' \
+        -e 's/if GNULIB_[A-Za-z0-9_]*/if 1/g' \
         -e 's/HAVE_INLINE/UNISTRING_HAVE_INLINE/g' \
         < lib/unistr.in.h \
         > lib/unistr.in.h.tmp \

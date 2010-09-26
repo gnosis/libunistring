@@ -1,3 +1,9 @@
+2010-09-26  Bruno Haible  <bruno@clisp.org>
+
+	Fix exported symbol list in VPATH builds after 2010-05-16 change.
+	* lib/Makefile.am (libunistring.sym): Find header files in the right
+	directory.
+
 2010-09-23  Bruno Haible  <bruno@clisp.org>
 
 	Update after gnulib changed.

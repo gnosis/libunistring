@@ -215,7 +215,13 @@ HEADERS_WITH_EXTERNS = \
 # '-export-symbols', but we don't use this option, because it would prevent us
 # from building some of the gnulib unit tests.
 libunistring.sym : $(HEADERS_WITH_EXTERNS)
-	for f in $(HEADERS_WITH_EXTERNS); do cat $(srcdir)/$$f; done \
+	for f in $(HEADERS_WITH_EXTERNS); do \
+	  if test -f $$f; then \
+	    cat $$f; \
+	  else \
+	    cat $(srcdir)/$$f; \
+	  fi; \
+	done \
 	  | $(srcdir)/declared.sh | LC_ALL=C sort | LC_ALL=C uniq \
 	  | grep -v '^_UC' \
 	  > $@-t

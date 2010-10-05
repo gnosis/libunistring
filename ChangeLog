@@ -1,3 +1,9 @@
+2010-10-04  Bruno Haible  <bruno@clisp.org>
+
+	Update after gnulib changed.
+	* lib/Makefile.am (libunistring_la_LDFLAGS): Remove 'no-undefined' and
+	dependencies.
+
 2010-09-26  Bruno Haible  <bruno@clisp.org>
 
 	Fix exported symbol list in VPATH builds after 2010-05-16 change.

@@ -315,5 +315,4 @@ LTV_AGE=1
 # How to build libunistring.la.
 libunistring_la_LDFLAGS += \
   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
-  -rpath $(libdir) \
-  @INTL_MACOSX_LIBS@ -no-undefined
+  -rpath $(libdir)

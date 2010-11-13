@@ -17,6 +17,7 @@ essentially the equivalent of what @code{<string.h>} is for C strings.
 
 @cindex validity
 @cindex verification
+@cindex well-formed
 The following function is available to verify the integrity of a Unicode string.
 
 @deftypefun {const uint8_t *} u8_check (const uint8_t *@var{s}, size_t @var{n})
@@ -266,8 +267,10 @@ character in a Unicode string.
 @deftypefunx {const uint16_t *} u16_prev (ucs4_t *@var{puc}, const uint16_t *@var{s}, const uint16_t *@var{start})
 @deftypefunx {const uint32_t *} u32_prev (ucs4_t *@var{puc}, const uint32_t *@var{s}, const uint32_t *@var{start})
 Backward iteration step.  Advances the pointer to point to the previous
-character, or returns NULL if the beginning of the string had been reached.
+character (the one that ends at @code{@var{s}}), or returns NULL if the
+beginning of the string (specified by @code{@var{start}}) had been reached.
 Puts the character's @code{ucs4_t} representation in @code{*@var{puc}}.
+Note that this function works only on well-formed Unicode strings.
 @end deftypefun
 
 The following functions determine the length of a Unicode string.

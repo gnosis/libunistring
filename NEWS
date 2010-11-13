@@ -2,6 +2,8 @@ New in 0.9.4:
 * It is now easier to detect the subminor version: The value of the variable
   _libunistring_version and of the macro _LIBUNISTRING_VERSION now includes
   also the subminor version.
+* The functions u8_mbtouc and u8_mbtouc_unsafe now handle ill-formed UTF-8
+  input in a better way, that is more compliant with W3C recommendations.
 * The functions u8_strcoll, u16_strcoll, u32_strcoll now produce results that
   are less dependent on the iconv implementation in use.
 

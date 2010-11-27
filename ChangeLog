@@ -1,3 +1,8 @@
+2010-11-27  Bruno Haible  <bruno@clisp.org>
+
+	Export also undocumented symbols.
+	* lib/Makefile.am (libunistring.sym): Don't remove _UC* symbols.
+
 2010-11-13  Bruno Haible  <bruno@clisp.org>
 
 	Improve documentation.

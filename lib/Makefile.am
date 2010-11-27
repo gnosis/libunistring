@@ -209,8 +209,10 @@ HEADERS_WITH_EXTERNS = \
   unistring/version.in.h
 
 # List of exported symbols.
-# We extract it from the header files that get installed, removing symbols
-# start with "_UC".
+# We extract it from the header files that get installed.
+# We keep symbols that start with "_UC", because they may be needed for
+# compiling newer versions of gnulib modules when the gnulib module
+# 'libunistring-optional' is in use.
 # This file has the same format as the one expected by the libtool option
 # '-export-symbols', but we don't use this option, because it would prevent us
 # from building some of the gnulib unit tests.
@@ -223,7 +225,6 @@ libunistring.sym : $(HEADERS_WITH_EXTERNS)
 	  fi; \
 	done \
 	  | $(srcdir)/declared.sh | LC_ALL=C sort | LC_ALL=C uniq \
-	  | grep -v '^_UC' \
 	  > $@-t
 	mv $@-t $@
 # We distribute it because declared.sh relies on GNU sed.

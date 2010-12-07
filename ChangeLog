@@ -1,3 +1,8 @@
+2010-12-07  Bruno Haible  <bruno@clisp.org>
+
+	Effects of renaming u8_strcmp on Solaris platforms.
+	* lib/Makefile.am (LTV_*): Bump to 2:0:0.
+
 2010-11-27  Bruno Haible  <bruno@clisp.org>
 
 	Export also undocumented symbols.

@@ -1,6 +1,6 @@
 New in 0.9.4:
 * The data tables and line breaking algorithm have been updated to Unicode
-  version 5.2.0.
+  version 6.0.0.
 * In the include file unictype.h, functions for new predefined properties
   have been added:
     uc_is_property_cased

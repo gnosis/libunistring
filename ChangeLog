@@ -1,3 +1,8 @@
+2011-01-09  Bruno Haible  <bruno@clisp.org>
+
+	Bump copyright year.
+	* lib/libunistring.rc: Add year 2011.
+
 2010-12-07  Bruno Haible  <bruno@clisp.org>
 
 	Effects of renaming u8_strcmp on Solaris platforms.

@@ -1,5 +1,10 @@
 2011-01-09  Bruno Haible  <bruno@clisp.org>
 
+	Update to Unicode 5.2.0.
+	* doc/unictype.texi: Mention the 7 new character properties.
+
+2011-01-09  Bruno Haible  <bruno@clisp.org>
+
 	Bump copyright year.
 	* lib/libunistring.rc: Add year 2011.
 

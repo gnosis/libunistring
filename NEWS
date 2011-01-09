@@ -1,4 +1,17 @@
 New in 0.9.4:
+* The data tables and line breaking algorithm have been updated to Unicode
+  version 5.2.0.
+* In the include file unictype.h, functions for new predefined properties
+  have been added:
+    uc_is_property_cased
+    uc_is_property_case_ignorable
+    uc_is_property_changes_when_lowercased
+    uc_is_property_changes_when_uppercased
+    uc_is_property_changes_when_titlecased
+    uc_is_property_changes_when_casefolded
+    uc_is_property_changes_when_casemapped
+  But it's recommended to use the case mapping functions from unicase.h
+  instead.
 * It is now easier to detect the subminor version: The value of the variable
   _libunistring_version and of the macro _LIBUNISTRING_VERSION now includes
   also the subminor version.

@@ -702,6 +702,13 @@ The following properties are related to case folding.
 @deftypevrx Constant uc_property_t UC_PROPERTY_LOWERCASE
 @deftypevrx Constant uc_property_t UC_PROPERTY_OTHER_LOWERCASE
 @deftypevrx Constant uc_property_t UC_PROPERTY_TITLECASE
+@deftypevrx Constant uc_property_t UC_PROPERTY_CASED
+@deftypevrx Constant uc_property_t UC_PROPERTY_CASE_IGNORABLE
+@deftypevrx Constant uc_property_t UC_PROPERTY_CHANGES_WHEN_LOWERCASED
+@deftypevrx Constant uc_property_t UC_PROPERTY_CHANGES_WHEN_UPPERCASED
+@deftypevrx Constant uc_property_t UC_PROPERTY_CHANGES_WHEN_TITLECASED
+@deftypevrx Constant uc_property_t UC_PROPERTY_CHANGES_WHEN_CASEFOLDED
+@deftypevrx Constant uc_property_t UC_PROPERTY_CHANGES_WHEN_CASEMAPPED
 @deftypevrx Constant uc_property_t UC_PROPERTY_SOFT_DOTTED
 @end deftypevr
 
@@ -840,6 +847,13 @@ The following properties are related to case folding.
 @deftypefunx bool uc_is_property_lowercase (ucs4_t @var{uc})
 @deftypefunx bool uc_is_property_other_lowercase (ucs4_t @var{uc})
 @deftypefunx bool uc_is_property_titlecase (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_cased (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_case_ignorable (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_changes_when_lowercased (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_changes_when_uppercased (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_changes_when_titlecased (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_changes_when_casefolded (ucs4_t @var{uc})
+@deftypefunx bool uc_is_property_changes_when_casemapped (ucs4_t @var{uc})
 @deftypefunx bool uc_is_property_soft_dotted (ucs4_t @var{uc})
 @end deftypefun
 

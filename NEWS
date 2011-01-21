@@ -19,6 +19,8 @@ New in 0.9.4:
   input in a better way, that is more compliant with W3C recommendations.
 * The functions u8_strcoll, u16_strcoll, u32_strcoll now produce results that
   are less dependent on the iconv implementation in use.
+* The functions u8_strstr, u16_strstr, u32_strstr now perform in O(n) time
+  worst-case, where n is the sum of the lengths of the argument strings.
 
 New in 0.9.3:
 * Bug fixes in unistr.h functions:

@@ -19,6 +19,7 @@ in the presence of specific Unicode characters.
 * Digit value::
 * Numeric value::
 * Mirrored character::
+* Arabic shaping::
 * Properties::
 * Scripts::
 * Blocks::
@@ -645,6 +646,163 @@ The following function looks up the mirrored character of a Unicode character.
 Stores the mirrored character of a Unicode character @var{uc} in
 @code{*@var{puc}} and returns @code{true}, if it exists.  Otherwise it
 stores @var{uc} unmodified in @code{*@var{puc}} and returns @code{false}.
+@end deftypefun
+
+@node Arabic shaping
+@section Arabic shaping
+
+@cindex Arabic shaping
+@cindex joining of Arabic characters
+When Arabic characters are rendered, after bidi reordering has taken
+place, the shape of the glyphs are modified so that many adjacent glyphs
+are joined.  Two character properties describe how this ``Arabic shaping''
+takes place: the joining type and the joining group.
+
+@menu
+* Joining type::
+* Joining group::
+@end menu
+
+@node Joining type
+@subsection Joining type of Arabic characters
+
+@cindex joining type
+The joining type of a character describes on which of the left and right
+neighbour characters the character's shape depends, and which of the two
+neighbour characters are rendered depending on this character.
+
+The joining type has the following possible values:
+
+@deftypevr Constant int UC_JOINING_TYPE_U
+``Non joining'': Characters of this joining type prohibit joining.
+@end deftypevr
+
+@deftypevr Constant int UC_JOINING_TYPE_T
+``Transparent'': Characters of this joining type are skipped when
+considering joining.
+@end deftypevr
+
+@deftypevr Constant int UC_JOINING_TYPE_C
+``Join causing'': Characters of this joining type cause their neighbour
+characters to change their shapes but don't change their own shape.
+@end deftypevr
+
+@deftypevr Constant int UC_JOINING_TYPE_L
+``Left joining'': Characters of this joining type have two shapes,
+isolated and initial.  Such characters currently don't exist.
+@end deftypevr
+
+@deftypevr Constant int UC_JOINING_TYPE_R
+``Right joining'': Characters of this joining type have two shapes,
+isolated and final.
+@end deftypevr
+
+@deftypevr Constant int UC_JOINING_TYPE_D
+``Dual joining'': Characters of this joining type have four shapes,
+initial, medial, final, and isolated.
+@end deftypevr
+
+The following functions implement the association between a joining type
+and its name.
+
+@deftypefun {const char *} uc_joining_type_name (int @var{joining_type})
+Returns the name of a joining type.
+@end deftypefun
+
+@deftypefun int uc_joining_type_byname (const char *@var{joining_type_name})
+Returns the joining type given by name, e.g.@ @code{"D"}.
+@end deftypefun
+
+The following function gives the joining type of every Unicode character.
+
+@deftypefun int uc_joining_type (ucs4_t @var{uc})
+Returns the joining type of a Unicode character.
+@end deftypefun
+
+@node Joining group
+@subsection Joining group of Arabic characters
+
+@cindex joining group
+The joining group of a character describes how the character's shape
+is modified in the four contexts of dual-joining characters or in the
+two contexts of right-joining characters.
+
+The joining group has the following possible values:
+
+@deftypevr Constant int UC_JOINING_GROUP_NONE
+@deftypevrx Constant int UC_JOINING_GROUP_AIN
+@deftypevrx Constant int UC_JOINING_GROUP_ALAPH
+@deftypevrx Constant int UC_JOINING_GROUP_ALEF
+@deftypevrx Constant int UC_JOINING_GROUP_BEH
+@deftypevrx Constant int UC_JOINING_GROUP_BETH
+@deftypevrx Constant int UC_JOINING_GROUP_BURUSHASKI_YEH_BARREE
+@deftypevrx Constant int UC_JOINING_GROUP_DAL
+@deftypevrx Constant int UC_JOINING_GROUP_DALATH_RISH
+@deftypevrx Constant int UC_JOINING_GROUP_E
+@deftypevrx Constant int UC_JOINING_GROUP_FARSI_YEH
+@deftypevrx Constant int UC_JOINING_GROUP_FE
+@deftypevrx Constant int UC_JOINING_GROUP_FEH
+@deftypevrx Constant int UC_JOINING_GROUP_FINAL_SEMKATH
+@deftypevrx Constant int UC_JOINING_GROUP_GAF
+@deftypevrx Constant int UC_JOINING_GROUP_GAMAL
+@deftypevrx Constant int UC_JOINING_GROUP_HAH
+@deftypevrx Constant int UC_JOINING_GROUP_HE
+@deftypevrx Constant int UC_JOINING_GROUP_HEH
+@deftypevrx Constant int UC_JOINING_GROUP_HEH_GOAL
+@deftypevrx Constant int UC_JOINING_GROUP_HETH
+@deftypevrx Constant int UC_JOINING_GROUP_KAF
+@deftypevrx Constant int UC_JOINING_GROUP_KAPH
+@deftypevrx Constant int UC_JOINING_GROUP_KHAPH
+@deftypevrx Constant int UC_JOINING_GROUP_KNOTTED_HEH
+@deftypevrx Constant int UC_JOINING_GROUP_LAM
+@deftypevrx Constant int UC_JOINING_GROUP_LAMADH
+@deftypevrx Constant int UC_JOINING_GROUP_MEEM
+@deftypevrx Constant int UC_JOINING_GROUP_MIM
+@deftypevrx Constant int UC_JOINING_GROUP_NOON
+@deftypevrx Constant int UC_JOINING_GROUP_NUN
+@deftypevrx Constant int UC_JOINING_GROUP_NYA
+@deftypevrx Constant int UC_JOINING_GROUP_PE
+@deftypevrx Constant int UC_JOINING_GROUP_QAF
+@deftypevrx Constant int UC_JOINING_GROUP_QAPH
+@deftypevrx Constant int UC_JOINING_GROUP_REH
+@deftypevrx Constant int UC_JOINING_GROUP_REVERSED_PE
+@deftypevrx Constant int UC_JOINING_GROUP_SAD
+@deftypevrx Constant int UC_JOINING_GROUP_SADHE
+@deftypevrx Constant int UC_JOINING_GROUP_SEEN
+@deftypevrx Constant int UC_JOINING_GROUP_SEMKATH
+@deftypevrx Constant int UC_JOINING_GROUP_SHIN
+@deftypevrx Constant int UC_JOINING_GROUP_SWASH_KAF
+@deftypevrx Constant int UC_JOINING_GROUP_SYRIAC_WAW
+@deftypevrx Constant int UC_JOINING_GROUP_TAH
+@deftypevrx Constant int UC_JOINING_GROUP_TAW
+@deftypevrx Constant int UC_JOINING_GROUP_TEH_MARBUTA
+@deftypevrx Constant int UC_JOINING_GROUP_TEH_MARBUTA_GOAL
+@deftypevrx Constant int UC_JOINING_GROUP_TETH
+@deftypevrx Constant int UC_JOINING_GROUP_WAW
+@deftypevrx Constant int UC_JOINING_GROUP_YEH
+@deftypevrx Constant int UC_JOINING_GROUP_YEH_BARREE
+@deftypevrx Constant int UC_JOINING_GROUP_YEH_WITH_TAIL
+@deftypevrx Constant int UC_JOINING_GROUP_YUDH
+@deftypevrx Constant int UC_JOINING_GROUP_YUDH_HE
+@deftypevrx Constant int UC_JOINING_GROUP_ZAIN
+@deftypevrx Constant int UC_JOINING_GROUP_ZHAIN
+@end deftypevr
+
+The following functions implement the association between a joining group
+and its name.
+
+@deftypefun {const char *} uc_joining_group_name (int @var{joining_group})
+Returns the name of a joining group.
+@end deftypefun
+
+@deftypefun int uc_joining_group_byname (const char *@var{joining_group_name})
+Returns the joining group given by name, e.g.@ @code{"Teh_Marbuta"}.
+@end deftypefun
+
+The following function gives the joining group of every Unicode character.
+
+@deftypefun int uc_joining_group (ucs4_t @var{uc})
+Returns the joining group of a Unicode character.
 @end deftypefun
 
 @node Properties

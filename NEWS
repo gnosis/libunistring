@@ -1,6 +1,14 @@
 New in 0.9.4:
 * The data tables and line breaking algorithm have been updated to Unicode
   version 6.0.0.
+* In the include file unictype.h, functions for the Arabic joining type and
+  the Arabic joining group have been added:
+    uc_joining_type_name
+    uc_joining_type_byname
+    uc_joining_type
+    uc_joining_group_name
+    uc_joining_group_byname
+    uc_joining_group
 * In the include file unictype.h, functions for new predefined properties
   have been added:
     uc_is_property_cased

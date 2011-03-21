@@ -199,6 +199,7 @@ unictype.h
 * Digit value::
 * Numeric value::
 * Mirrored character::
+* Arabic shaping::
 * Properties::
 * Scripts::
 * Blocks::

@@ -1,3 +1,9 @@
+2011-03-21  Bruno Haible  <bruno@clisp.org>
+
+	Add support for Arabic shaping properties.
+	* doc/libunistring.texi: Update menu.
+	* doc/unictype.texi (Arabic shaping): New section.
+
 2011-01-09  Bruno Haible  <bruno@clisp.org>
 
 	Update to Unicode 6.0.0.

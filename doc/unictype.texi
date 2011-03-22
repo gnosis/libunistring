@@ -14,7 +14,7 @@ in the presence of specific Unicode characters.
 @menu
 * General category::
 * Canonical combining class::
-* Bidirectional category::
+* Bidi class::
 * Decimal digit value::
 * Digit value::
 * Numeric value::
@@ -464,114 +464,120 @@ The following function looks up the canonical combining class of a character.
 Returns the canonical combining class of a Unicode character.
 @end deftypefun
 
-@node Bidirectional category
-@section Bidirectional category
+@node Bidi class
+@section Bidi class
 
+@cindex bidi class
 @cindex bidirectional category
+@cindex Unicode character, bidi class
 @cindex Unicode character, bidirectional category
-Every Unicode character or code point has a @emph{bidirectional category}
-assigned to it.
+Every Unicode character or code point has a @emph{bidi class} assigned to it.
+Before Unicode 4.0, this concept was known as @emph{bidirectional category}.
 
-The bidirectional category guides the bidirectional algorithm@texnl{}
+The bidi class guides the bidirectional algorithm@texnl{}
 (@url{http://www.unicode.org/reports/tr9/}).  The possible values are
 the following.
 
 @deftypevr Constant int UC_BIDI_L
-The bidirectional category for `Left-to-Right`'' characters.
+The bidi class for `Left-to-Right`'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_LRE
-The bidirectional category for ``Left-to-Right Embedding'' characters.
+The bidi class for ``Left-to-Right Embedding'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_LRO
-The bidirectional category for ``Left-to-Right Override'' characters.
+The bidi class for ``Left-to-Right Override'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_R
-The bidirectional category for ``Right-to-Left'' characters.
+The bidi class for ``Right-to-Left'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_AL
-The bidirectional category for ``Right-to-Left Arabic'' characters.
+The bidi class for ``Right-to-Left Arabic'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_RLE
-The bidirectional category for ``Right-to-Left Embedding'' characters.
+The bidi class for ``Right-to-Left Embedding'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_RLO
-The bidirectional category for ``Right-to-Left Override'' characters.
+The bidi class for ``Right-to-Left Override'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_PDF
-The bidirectional category for ``Pop Directional Format'' characters.
+The bidi class for ``Pop Directional Format'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_EN
-The bidirectional category for ``European Number'' characters.
+The bidi class for ``European Number'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_ES
-The bidirectional category for ``European Number Separator'' characters.
+The bidi class for ``European Number Separator'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_ET
-The bidirectional category for ``European Number Terminator'' characters.
+The bidi class for ``European Number Terminator'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_AN
-The bidirectional category for ``Arabic Number'' characters.
+The bidi class for ``Arabic Number'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_CS
-The bidirectional category for ``Common Number Separator'' characters.
+The bidi class for ``Common Number Separator'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_NSM
-The bidirectional category for ``Non-Spacing Mark'' characters.
+The bidi class for ``Non-Spacing Mark'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_BN
-The bidirectional category for ``Boundary Neutral'' characters.
+The bidi class for ``Boundary Neutral'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_B
-The bidirectional category for ``Paragraph Separator'' characters.
+The bidi class for ``Paragraph Separator'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_S
-The bidirectional category for ``Segment Separator'' characters.
+The bidi class for ``Segment Separator'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_WS
-The bidirectional category for ``Whitespace'' characters.
+The bidi class for ``Whitespace'' characters.
 @end deftypevr
 
 @deftypevr Constant int UC_BIDI_ON
-The bidirectional category for ``Other Neutral'' characters.
+The bidi class for ``Other Neutral'' characters.
 @end deftypevr
 
 The following functions implement the association between a bidirectional
 category and its name.
 
-@deftypefun {const char *} uc_bidi_category_name (int @var{category})
-Returns the name of a bidirectional category.
+@deftypefun {const char *} uc_bidi_class_name (int @var{bidi_class})
+@deftypefunx {const char *} uc_bidi_category_name (int @var{category})
+Returns the name of a bidi class.
 @end deftypefun
 
-@deftypefun int uc_bidi_category_byname (const char *@var{category_name})
-Returns the bidirectional category given by name, e.g@. @code{"LRE"}.
+@deftypefun int uc_bidi_class_byname (const char *@var{bidi_class_name})
+@deftypefunx int uc_bidi_category_byname (const char *@var{category_name})
+Returns the bidi class given by name, e.g@. @code{"LRE"}.
 @end deftypefun
 
 The following functions view bidirectional categories as sets of Unicode
 characters.
 
-@deftypefun int uc_bidi_category (ucs4_t @var{uc})
-Returns the bidirectional category of a Unicode character.
+@deftypefun int uc_bidi_class (ucs4_t @var{uc})
+@deftypefunx int uc_bidi_category (ucs4_t @var{uc})
+Returns the bidi class of a Unicode character.
 @end deftypefun
 
-@deftypefun bool uc_is_bidi_category (ucs4_t @var{uc}, int @var{category})
-Tests whether a Unicode character belongs to a given bidirectional category.
+@deftypefun bool uc_is_bidi_class (ucs4_t @var{uc}, int @var{bidi_class})
+@deftypefunx bool uc_is_bidi_category (ucs4_t @var{uc}, int @var{category})
+Tests whether a Unicode character belongs to a given bidi class.
 @end deftypefun
 
 @node Decimal digit value

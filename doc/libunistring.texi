@@ -194,7 +194,7 @@ unictype.h
 
 * General category::
 * Canonical combining class::
-* Bidirectional category::
+* Bidi class::
 * Decimal digit value::
 * Digit value::
 * Numeric value::

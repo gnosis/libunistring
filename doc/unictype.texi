@@ -66,6 +66,7 @@ The following are the predefined general category value.  Additional general
 categories may be added in the future.
 
 @deftypevr Constant uc_general_category_t UC_CATEGORY_L
+@deftypevrx Constant uc_general_category_t UC_CATEGORY_LC
 @deftypevrx Constant uc_general_category_t UC_CATEGORY_Lu
 @deftypevrx Constant uc_general_category_t UC_CATEGORY_Ll
 @deftypevrx Constant uc_general_category_t UC_CATEGORY_Lt
@@ -108,6 +109,10 @@ The following are alias names for predefined General category values.
 
 @deftypevr Macro uc_general_category_t UC_LETTER
 This is another name for @code{UC_CATEGORY_L}.
+@end deftypevr
+
+@deftypevr Macro uc_general_category_t UC_CASED_LETTER
+This is another name for @code{UC_CATEGORY_LC}.
 @end deftypevr
 
 @deftypevr Macro uc_general_category_t UC_UPPERCASE_LETTER
@@ -312,6 +317,7 @@ The following are the predefined general category value as bit masks.
 Additional general categories may be added in the future.
 
 @deftypevr Macro uint32_t UC_CATEGORY_MASK_L
+@deftypevrx Macro uint32_t UC_CATEGORY_MASK_LC
 @deftypevrx Macro uint32_t UC_CATEGORY_MASK_Lu
 @deftypevrx Macro uint32_t UC_CATEGORY_MASK_Ll
 @deftypevrx Macro uint32_t UC_CATEGORY_MASK_Lt

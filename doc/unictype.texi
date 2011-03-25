@@ -287,13 +287,22 @@ viewing the categories as sets of characters.
 The following functions associate general categories with their name.
 
 @deftypefun {const char *} uc_general_category_name (uc_general_category_t @var{category})
-Returns the name of a general category.
+Returns the name of a general category, more precisely, the abbreviated name.
+Returns NULL if the general category corresponds to a bit mask that does not
+have a name.
+@end deftypefun
+
+@deftypefun {const char *} uc_general_category_long_name (uc_general_category_t @var{category})
+Returns the long name of a general category.
 Returns NULL if the general category corresponds to a bit mask that does not
 have a name.
 @end deftypefun
 
 @deftypefun uc_general_category_t uc_general_category_byname (const char *@var{category_name})
-Returns the general category given by name, e.g@. @code{"Lu"}.
+Returns the general category given by name, e.g@. @code{"Lu"}, or by long
+name, e.g@. @code{"Uppercase Letter"}.
+This lookup ignores spaces, underscores, or hyphens as word separators and is
+case-insignificant.
 @end deftypefun
 
 The following functions view general categories as sets of Unicode characters.

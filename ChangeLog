@@ -1,5 +1,12 @@
 2011-03-25  Bruno Haible  <bruno@clisp.org>
 
+	Support long names of general category values.
+	* doc/unictype.texi (Object oriented API): Document
+	uc_general_category_long_name. Mention that uc_general_category_byname
+	recognizes long names.
+
+2011-03-25  Bruno Haible  <bruno@clisp.org>
+
 	Add support for general category group LC.
 	* doc/unictype.texi (Object oriented API): Mention UC_CATEGORY_LC,
 	UC_CASED_LETTER.

@@ -1,5 +1,11 @@
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
+	Allow omitting spaces in joining group names.
+	* doc/unictype.texi (Joining group): Add details about how
+	uc_joining_group_byname works.
+
+2011-03-26  Bruno Haible  <bruno@clisp.org>
+
 	Support long names of joining types.
 	* doc/unictype.texi (Joining type): Document
 	uc_joining_type_long_name. Mention that uc_joining_type_byname

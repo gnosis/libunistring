@@ -858,6 +858,8 @@ Returns the name of a joining group.
 
 @deftypefun int uc_joining_group_byname (const char *@var{joining_group_name})
 Returns the joining group given by name, e.g@. @code{"Teh_Marbuta"}.
+This lookup ignores spaces, underscores, or hyphens as word separators and is
+case-insignificant.
 @end deftypefun
 
 The following function gives the joining group of every Unicode character.

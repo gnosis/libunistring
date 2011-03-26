@@ -1,5 +1,11 @@
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
+	Update after gnulib changed.
+	* autogen.sh (GNULIB_MODULES): Use unictype/bidiclass-all instead of
+	unictype/bidicategory-all.
+
+2011-03-26  Bruno Haible  <bruno@clisp.org>
+
 	Support names and long names of canonical combining classes.
 	* doc/unictype.texi (Canonical combining class): Mention UC_CCC_ATA.
 	Document the functions uc_combining_class_name,

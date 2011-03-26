@@ -1,7 +1,14 @@
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
+	Support long names of joining types.
+	* doc/unictype.texi (Joining type): Document
+	uc_joining_type_long_name. Mention that uc_joining_type_byname
+	recognizes long names.
+
+2011-03-26  Bruno Haible  <bruno@clisp.org>
+
 	Support long names of bidi classes.
-	* doc/unictype.texi (Object oriented API): Document
+	* doc/unictype.texi (Bidi class): Document
 	uc_bidi_class_long_name. Mention that uc_bidi_class_byname recognizes
 	long names.
 

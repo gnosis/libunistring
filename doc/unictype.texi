@@ -763,8 +763,15 @@ and its name.
 Returns the name of a joining type.
 @end deftypefun
 
+@deftypefun {const char *} uc_joining_type_long_name (int @var{joining_type})
+Returns the long name of a joining type.
+@end deftypefun
+
 @deftypefun int uc_joining_type_byname (const char *@var{joining_type_name})
-Returns the joining type given by name, e.g.@ @code{"D"}.
+Returns the joining type given by name, e.g@. @code{"D"}, or by long name,
+e.g@. @code{"Dual Joining}.
+This lookup ignores spaces, underscores, or hyphens as word separators and is
+case-insignificant.
 @end deftypefun
 
 The following function gives the joining type of every Unicode character.

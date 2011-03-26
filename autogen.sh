@@ -281,7 +281,7 @@ if test $skip_gnulib = false; then
       unictype/bidiclass-all
       unictype/block-all
       unictype/category-all
-      unictype/combining-class
+      unictype/combining-class-all
       unictype/ctype-alnum
       unictype/ctype-alpha
       unictype/ctype-blank

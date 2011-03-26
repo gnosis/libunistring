@@ -7,6 +7,8 @@
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
 	Support names and long names of canonical combining classes.
+	* autogen.sh (GNULIB_MODULES): Use unictype/combining-class-all instead
+	of unictype/combining-class.
 	* doc/unictype.texi (Canonical combining class): Mention UC_CCC_ATA.
 	Document the functions uc_combining_class_name,
 	uc_combining_class_long_name, uc_combining_class_byname.

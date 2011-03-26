@@ -425,6 +425,10 @@ The canonical combining class value for ``Attached Below Left'' characters.
 The canonical combining class value for ``Attached Below'' characters.
 @end deftypevr
 
+@deftypevr Constant int UC_CCC_ATA
+The canonical combining class value for ``Attached Above'' characters.
+@end deftypevr
+
 @deftypevr Constant int UC_CCC_ATAR
 The canonical combining class value for ``Attached Above Right'' characters.
 @end deftypevr
@@ -472,6 +476,28 @@ The canonical combining class value for ``Double Above'' characters.
 @deftypevr Constant int UC_CCC_IS
 The canonical combining class value for ``Iota Subscript'' characters.
 @end deftypevr
+
+The following functions associate canonical combining classes with their name.
+
+@deftypefun {const char *} uc_combining_class_name (int @var{ccc})
+Returns the name of a canonical combining class, more precisely, the
+abbreviated name.
+Returns NULL if the canonical combining class is a numeric value without a
+name.
+@end deftypefun
+
+@deftypefun {const char *} uc_combining_class_long_name (int @var{ccc})
+Returns the long name of a canonical combining class.
+Returns NULL if the canonical combining class is a numeric value without a
+name.
+@end deftypefun
+
+@deftypefun int uc_combining_class_byname (const char *@var{ccc_name})
+Returns the canonical combining class given by name, e.g@. @code{"BL"}, or by
+long name, e.g@. @code{"Below Left"}.
+This lookup ignores spaces, underscores, or hyphens as word separators and is
+case-insignificant.
+@end deftypefun
 
 The following function looks up the canonical combining class of a character.
 

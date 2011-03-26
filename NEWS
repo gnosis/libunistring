@@ -3,6 +3,11 @@ New in 0.9.4:
   version 6.0.0.
 * In the include file unictype.h, constants are defined for the group of
   general categories LC ("Cased Letter").
+* In the include file unictype.h, functions for associating canonical
+  combining classes with names have been added:
+    uc_combining_class_name
+    uc_combining_class_long_name
+    uc_combining_class_byname
 * In the include file unictype.h, functions for the Arabic joining type and
   the Arabic joining group have been added:
     uc_joining_type_name

@@ -35,6 +35,8 @@
 2011-03-21  Bruno Haible  <bruno@clisp.org>
 
 	Add support for Arabic shaping properties.
+	* autogen.sh (GNULIB_MODULES): Add unictype/joiningtype-all,
+	unictype/joininggroup-all.
 	* doc/libunistring.texi: Update menu.
 	* doc/unictype.texi (Arabic shaping): New section.
 

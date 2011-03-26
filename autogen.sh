@@ -296,6 +296,8 @@ if test $skip_gnulib = false; then
       unictype/ctype-xdigit
       unictype/decimal-digit
       unictype/digit
+      unictype/joininggroup-all
+      unictype/joiningtype-all
       unictype/mirror
       unictype/numeric
       unictype/property-all

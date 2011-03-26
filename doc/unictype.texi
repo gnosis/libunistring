@@ -1028,6 +1028,10 @@ with the given name exists, the result will satisfy the
 this predicate and must not be passed to functions that expect an
 @code{uc_property_t} argument.
 
+This lookup ignores spaces, underscores, or hyphens as word separators, is
+case-insignificant, and supports the aliases listed in Unicode's
+@file{PropertyAliases.txt} file.
+
 This function references a big table of all predefined properties.  Its use
 can significantly increase the size of your application.
 @end deftypefun

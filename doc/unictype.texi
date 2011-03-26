@@ -600,12 +600,19 @@ category and its name.
 
 @deftypefun {const char *} uc_bidi_class_name (int @var{bidi_class})
 @deftypefunx {const char *} uc_bidi_category_name (int @var{category})
-Returns the name of a bidi class.
+Returns the name of a bidi class, more precisely, the abbreviated name.
+@end deftypefun
+
+@deftypefun {const char *} uc_bidi_class_long_name (int @var{bidi_class})
+Returns the long name of a bidi class.
 @end deftypefun
 
 @deftypefun int uc_bidi_class_byname (const char *@var{bidi_class_name})
 @deftypefunx int uc_bidi_category_byname (const char *@var{category_name})
-Returns the bidi class given by name, e.g@. @code{"LRE"}.
+Returns the bidi class given by name, e.g@. @code{"LRE"}, or by long name,
+e.g@. @code{"Left-to-Right Embedding"}.
+This lookup ignores spaces, underscores, or hyphens as word separators and is
+case-insignificant.
 @end deftypefun
 
 The following functions view bidirectional categories as sets of Unicode

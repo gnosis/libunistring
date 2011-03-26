@@ -37,8 +37,10 @@ New in 0.9.4:
 * In the include file unictype.h, functions for returning long names of
   property values have been added:
     uc_general_category_long_name
+    uc_bidi_class_long_name
   The functions
     uc_general_category_byname
+    uc_bidi_class_byname
   have been extended to recognize long names as well as short names.
 * It is now easier to detect the subminor version: The value of the variable
   _libunistring_version and of the macro _LIBUNISTRING_VERSION now includes

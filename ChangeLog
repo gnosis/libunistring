@@ -1,5 +1,12 @@
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
+	Support long names of bidi classes.
+	* doc/unictype.texi (Object oriented API): Document
+	uc_bidi_class_long_name. Mention that uc_bidi_class_byname recognizes
+	long names.
+
+2011-03-26  Bruno Haible  <bruno@clisp.org>
+
 	Update after gnulib changed.
 	* autogen.sh (GNULIB_MODULES): Use unictype/bidiclass-all instead of
 	unictype/bidicategory-all.

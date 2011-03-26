@@ -28,7 +28,7 @@ Denotes canonical decomposition.
 @end deftypevr
 
 @deftypevr Constant int UC_DECOMP_FONT
-UCD marker: @code{<font>}.  Denotes a font variant (e.g. a blackletter form).
+UCD marker: @code{<font>}.  Denotes a font variant (e.g@. a blackletter form).
 @end deftypevr
 
 @deftypevr Constant int UC_DECOMP_NOBREAK

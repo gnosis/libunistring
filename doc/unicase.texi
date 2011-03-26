@@ -91,7 +91,7 @@ The @var{nf} argument designates the normalization.
 
 @cindex locale language
 These functions are locale dependent.  The @var{iso639_language} argument
-identifies the language (e.g. @code{"tr"} for Turkish).  NULL means to use
+identifies the language (e.g@. @code{"tr"} for Turkish).  NULL means to use
 locale independent case mappings.
 
 @deftypefun {const char *} uc_locale_language ()

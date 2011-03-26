@@ -850,7 +850,7 @@ Returns the name of a joining group.
 @end deftypefun
 
 @deftypefun int uc_joining_group_byname (const char *@var{joining_group_name})
-Returns the joining group given by name, e.g.@ @code{"Teh_Marbuta"}.
+Returns the joining group given by name, e.g@. @code{"Teh_Marbuta"}.
 @end deftypefun
 
 The following function gives the joining group of every Unicode character.
@@ -1013,7 +1013,7 @@ Other miscellaneous properties are:
 The following function looks up a property by its name.
 
 @deftypefun uc_property_t uc_property_byname (const char *@var{property_name})
-Returns the property given by name, e.g. @code{"White space"}.  If a property
+Returns the property given by name, e.g@. @code{"White space"}.  If a property
 with the given name exists, the result will satisfy the
 @code{uc_property_is_valid} predicate.  Otherwise the result will not satisfy
 this predicate and must not be passed to functions that expect an

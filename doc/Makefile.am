@@ -33,7 +33,7 @@ info_TEXINFOS = libunistring.texi
 # List of texinfo sources @included by libunistring.texi, excluding version.texi.
 libunistring_TEXINFOS = \
   unitypes.texi unistr.texi uniconv.texi unistdio.texi uniname.texi \
-  unictype.texi uniwidth.texi uniwbrk.texi unilbrk.texi unigbrk.texi \
+  unictype.texi uniwidth.texi unigbrk.texi uniwbrk.texi unilbrk.texi \
   uninorm.texi unicase.texi uniregex.texi \
   gpl.texi lgpl.texi fdl.texi
 

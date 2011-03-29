@@ -1,3 +1,24 @@
+2011-03-29  Bruno Haible  <bruno@clisp.org>
+
+	Add grapheme cluster break functions.
+	* autogen.sh (GNULIB_MODULES): Add unigbrk/*.
+	* gnulib-local/lib/unigbrk.in.h.diff: New file.
+	* gnulib-local/Makefile.am (EXTRA_DIST): Add lib/unigbrk.in.h.diff.
+	* lib/Makefile.am (nobase_include_HEADERS, HEADERS_WITH_EXTERNS): Add
+	unigbrk.h.
+	* doc/Makefile.am (libunistring_TEXINFOS): Move unigbrk.texi before
+	uniwbrk.texi.
+	* doc/libunistring.texi: Move chapter unigbrk.h before chapter
+	uniwbrk.h.
+	* doc/unigbrk.texi (unigbrk.h): Add more index entries. Enhance the
+	explanation of what a grapheme cluster is.
+	(Grapheme cluster break property): Add missing quotes. Avoid imperative
+	form.
+	* doc/uniwbrk.texi (uniwbrk.h): Add more index entries.
+	* AUTHORS: List Ben Pfaff.
+	* README: Mention the new include file unigbrk.h.
+	* NEWS: Likewise.
+
 2011-03-28  Ben Pfaff  <blp@cs.stanford.edu>
 
 	Document grapheme cluster break functions.

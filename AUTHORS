@@ -1,1 +1,9 @@
-Bruno Haible <bruno@clisp.org>
+Authors of GNU libunistring
+
+The following contributions warranted legal paper exchanges with the
+Free Software Foundation.  See also the ChangeLog and THANKS files in this
+package and the ChangeLog file in gnulib (where most of the code is imported
+from).
+
+Bruno Haible        <bruno@clisp.org>           all files
+Ben Pfaff           <blp@cs.stanford.edu>       unigbrk

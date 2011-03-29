@@ -1,5 +1,5 @@
 ## Makefile for the lib subdirectory of GNU libunistring.
-## Copyright (C) 2009-2010 Free Software Foundation, Inc.
+## Copyright (C) 2009-2011 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -36,6 +36,7 @@ nobase_include_HEADERS = \
   uniname.h \
   unictype.h \
   uniwidth.h \
+  unigbrk.h \
   uniwbrk.h \
   unilbrk.h \
   uninorm.h \
@@ -200,6 +201,7 @@ HEADERS_WITH_EXTERNS = \
   uniname.h \
   unictype.h \
   uniwidth.h \
+  unigbrk.h \
   uniwbrk.h \
   unilbrk.h \
   uninorm.h \

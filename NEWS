@@ -1,6 +1,10 @@
 New in 0.9.4:
 * The data tables and line breaking algorithm have been updated to Unicode
   version 6.0.0.
+* A new include file unigbrk.h is provided. It declares functions for
+  grapheme cluster breaking, that is, determining the boundaries between
+  graphemes. See the documentation chapter "Grapheme cluster breaks in strings"
+  for details.
 * In the include file unictype.h, constants are defined for the group of
   general categories LC ("Cased Letter").
 * In the include file unictype.h, functions for associating canonical

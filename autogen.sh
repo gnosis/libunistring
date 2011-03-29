@@ -314,6 +314,19 @@ if test $skip_gnulib = false; then
       uniwidth/u32-strwidth
       uniwidth/u32-width
       uniwidth/width
+      unigbrk/base
+      unigbrk/u8-grapheme-breaks
+      unigbrk/u8-grapheme-next
+      unigbrk/u8-grapheme-prev
+      unigbrk/u16-grapheme-breaks
+      unigbrk/u16-grapheme-next
+      unigbrk/u16-grapheme-prev
+      unigbrk/u32-grapheme-breaks
+      unigbrk/u32-grapheme-next
+      unigbrk/u32-grapheme-prev
+      unigbrk/uc-gbrk-prop
+      unigbrk/uc-is-grapheme-break
+      unigbrk/ulc-grapheme-breaks
       uniwbrk/base
       uniwbrk/u8-wordbreaks
       uniwbrk/u16-wordbreaks

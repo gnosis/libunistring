@@ -2,17 +2,30 @@
 @chapter Grapheme cluster breaks in strings @code{<unigbrk.h>}
 
 @cindex grapheme cluster breaks
+@cindex grapheme cluster boundaries
 @cindex breaks, grapheme cluster
+@cindex boundaries, between grapheme clusters
 This include file declares functions for determining where in a string
 ``grapheme clusters'' start and end.  A ``grapheme cluster'' is an
 approximation to a user-perceived character, which sometimes
-corresponds to multiple Unicode characters.  The letter @samp{@'e},
+corresponds to multiple Unicode characters.  Editing operations such as
+mouse selection, cursor movement, and backspacing often operate on
+grapheme clusters as units, not on individual characters.
+
+Some grapheme clusters are built from a base character and a combining
+character.  The letter @samp{@'e},
 for example, is most commonly represented in Unicode as a single
 character U+00E8 @sc{LATIN SMALL LETTER E WITH ACUTE}.  It is,
 however, equally valid to use the pair of characters U+0065 @sc{LATIN
 SMALL LETTER E} followed by U+0301 @sc{COMBINING ACUTE ACCENT}.  Since
 the user would perceive this pair of characters as a single character,
 they would be grouped into a single grapheme cluster.
+
+But there are also grapheme clusters that consist of several base characters.
+For example, a Devanagari letter and a Devanagari vowel sign that follows it
+may form a grapheme cluster.  Similarly, some pairs of Thai characters and
+Hangul syllables (formed by two or three Hangul characters) are grapheme
+clusters.
 
 @menu
 * Grapheme cluster breaks in a string::
@@ -65,10 +78,11 @@ grapheme cluster break at start of text.
 @node Grapheme cluster break property
 @section Grapheme cluster break property
 
-This is a more low-level API.  The grapheme cluster break property is a property defined
-in Unicode Standard Annex #29, section ``Grapheme Cluster Boundaries, see
-@url{http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries}.@texnl{}  It is
-used for determining the grapheme cluster breaks in a string.
+This is a more low-level API.  The grapheme cluster break property is a
+property defined in Unicode Standard Annex #29, section ``Grapheme Cluster
+Boundaries'', see
+@url{http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries}.@texnl{}
+It is used for determining the grapheme cluster breaks in a string.
 
 The following are the possible values of the grapheme cluster break
 property.  More values may be added in the future.
@@ -87,7 +101,8 @@ property.  More values may be added in the future.
 @deftypevrx Constant int GBP_LVT
 @end deftypevr
 
-The following function looks up the grapheme cluster break property of a character.
+The following function looks up the grapheme cluster break property of a
+character.
 
 @deftypefun int uc_graphemeclusterbreak_property (ucs4_t @var{uc})
 Returns the Grapheme_Cluster_Break property of a Unicode character.
@@ -102,7 +117,7 @@ Returns true if there is an grapheme cluster boundary between Unicode
 characters @var{a} and @var{b}.
 
 There is always a grapheme cluster break at the start or end of text.
-Specify zero for @var{a} or @var{b} to indicate start of text or end
+You can specify zero for @var{a} or @var{b} to indicate start of text or end
 of text, respectively.
 
 This implements the extended (not legacy) grapheme cluster rules

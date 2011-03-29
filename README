@@ -11,6 +11,7 @@ It consists of the following parts:
   uniname.h    character names
   unictype.h   character classification and properties
   uniwidth.h   string width when using nonproportional fonts
+  unigbrk.h    grapheme cluster breaks
   uniwbrk.h    word breaks
   unilbrk.h    line breaking algorithm
   uninorm.h    normalization (composition and decomposition)

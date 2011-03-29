@@ -1,3 +1,11 @@
+2011-03-28  Ben Pfaff  <blp@cs.stanford.edu>
+
+	Document grapheme cluster break functions.
+	* doc/Makefile.am (libunistring_TEXINFOS): Add unigbrk.texi.
+	* doc/libunistring.texi: Include unigbrk.texi and refer to it from
+	the text and tables of content.
+	* doc/unigbrk.texi: New file.
+
 2011-03-26  Bruno Haible  <bruno@clisp.org>
 
 	Allow omitting spaces in property names.

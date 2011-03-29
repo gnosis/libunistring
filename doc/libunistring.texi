@@ -160,6 +160,7 @@ A copy of the license is included in @ref{GNU GPL}.
 * uniwidth.h::                  Display width
 * uniwbrk.h::                   Word breaks in strings
 * unilbrk.h::                   Line breaking
+* unigbrk.h::                   Grapheme cluster breaking
 * uninorm.h::                   Normalization forms
 * unicase.h::                   Case mappings
 * uniregex.h::                  Regular expressions
@@ -221,6 +222,11 @@ uniwbrk.h
 * Word breaks in a string::
 * Word break property::
 
+unigbrk.h
+
+* Grapheme cluster breaks in a string::
+* Grapheme cluster break property::
+
 uninorm.h
 
 * Decomposition of characters::
@@ -279,6 +285,8 @@ string width when using nonproportional fonts
 word breaks
 @item <unilbrk.h>
 line breaking algorithm
+@item <unigbrk.h>
+grapheme cluster breaks
 @item <uninorm.h>
 normalization (composition and decomposition)
 @item <unicase.h>
@@ -757,6 +765,7 @@ NULL is returned and @code{errno} is set.
 @include uniwidth.texi
 @include uniwbrk.texi
 @include unilbrk.texi
+@include unigbrk.texi
 @include uninorm.texi
 @include unicase.texi
 @include uniregex.texi

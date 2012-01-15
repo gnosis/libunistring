@@ -1,3 +1,13 @@
+2012-01-15  Bruno Haible  <bruno@clisp.org>
+
+	Support for MSVC 9.
+	* woe32dll/export.h (VARIABLE): Define to empty if not using GCC.
+
+2011-01-28  Bruno Haible  <bruno@clisp.org>
+
+	Add a comment.
+	* woe32dll/export.h: Add a reference to the woe32dll writeup.
+
 2011-10-18  Bruno Haible  <bruno@clisp.org>
 
 	* m4/libtool.m4: Update from libtool-2.4.2, with modifications.

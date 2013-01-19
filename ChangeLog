@@ -1,3 +1,11 @@
+2013-01-19  Bruno Haible  <bruno@clisp.org>
+
+	Fix license headers to be LGPL.
+	* lib/stdbool.mini.h: Change license to LGPLv3+.
+	* woe32dll/export.h: Likewise.
+	* woe32dll/unistring-exports.c: Likewise.
+	Reported by Ryan Schmidt.
+
 2012-04-29  Bruno Haible  <bruno@clisp.org>
 
 	Allow use of autoconf-2.69 and automake-1.12.

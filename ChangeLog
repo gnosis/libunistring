@@ -1,5 +1,15 @@
 2014-08-08  Daiki Ueno  <ueno@gnu.org>
 
+	Replace deprecated $(mkdir_p) usage.
+	Problem report and trivial fix by Nitin A Kamble in:
+	https://lists.gnu.org/archive/html/bug-libunistring/2012-07/msg00000.html
+	* doc/Makefile.am (installdirs-dvi, installdirs-ps)
+	(installdirs-pdf, install-html-monolithic, install-html-split)
+	(installdirs-html, dist-html-monolithic, dist-html-split): Use
+	$(MKDIR_P) instead of deprecated $(mkdir_p).
+
+2014-08-08  Daiki Ueno  <ueno@gnu.org>
+
 	Fix parallel make race when generating unistring/cdefs.h.
 	Trivial fix by Richard Purdie in:
 	http://lists.openembedded.org/pipermail/openembedded-core/2012-April/059850.html

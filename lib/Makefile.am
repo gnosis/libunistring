@@ -159,7 +159,7 @@ nobase_nodist_include_HEADERS += unistring/version.h
 
 # unistring/cdefs.h is not public, but is included by other header files.
 nobase_nodist_include_HEADERS += unistring/cdefs.h
-unistring/cdefs.h : unistring/cdefs.in.h
+unistring/cdefs.h : unistring/cdefs.in.h $(UNUSED_PARAMETER_H)
 	@MKDIR_P@ unistring
 	rm -f $@-t $@
 	sed -e '/definition of _GL_UNUSED_PARAMETER/r $(UNUSED_PARAMETER_H)' \

@@ -1,3 +1,12 @@
+2014-08-08  Daiki Ueno  <ueno@gnu.org>
+
+	Fix parallel make race when generating unistring/cdefs.h.
+	Trivial fix by Richard Purdie in:
+	http://lists.openembedded.org/pipermail/openembedded-core/2012-April/059850.html
+	* lib/Makefile.am (unistring/cdefs.h): Add $(UNUSED_PARAMETER_H)
+	to prerequisites.
+	Reported by Ludovic Courtès.
+
 2013-01-19  Bruno Haible  <bruno@clisp.org>
 
 	Fix license headers to be LGPL.

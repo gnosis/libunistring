@@ -1,5 +1,7 @@
 # Files brought in by gnulib-tool:
 /bidi_byname.c
+/bidi_byname.gperf
+/bidi_longname.c
 /bidi_name.c
 /bidi_of.c
 /bidi_of.h
@@ -22,6 +24,8 @@
 /categ_Cs.h
 /categ_L.c
 /categ_L.h
+/categ_LC.c
+/categ_LC.h
 /categ_Ll.c
 /categ_Ll.h
 /categ_Lm.c
@@ -85,6 +89,8 @@
 /categ_and.c
 /categ_and_not.c
 /categ_byname.c
+/categ_byname.gperf
+/categ_longname.c
 /categ_name.c
 /categ_none.c
 /categ_of.c
@@ -93,6 +99,12 @@
 /categ_test.c
 /combining.c
 /combining.h
+/combiningclass.c
+/combiningclass.h
+/combiningclass_byname.c
+/combiningclass_byname.gperf
+/combiningclass_longname.c
+/combiningclass_name.c
 /ctype_alnum.c
 /ctype_alnum.h
 /ctype_alpha.c
@@ -122,6 +134,18 @@
 /digit.c
 /digit.h
 /identsyntaxmap.h
+/joininggroup_byname.c
+/joininggroup_byname.gperf
+/joininggroup_name.c
+/joininggroup_name.h
+/joininggroup_of.c
+/joininggroup_of.h
+/joiningtype_byname.c
+/joiningtype_byname.gperf
+/joiningtype_longname.c
+/joiningtype_name.c
+/joiningtype_of.c
+/joiningtype_of.h
 /mirror.c
 /mirror.h
 /numeric.c
@@ -166,6 +190,20 @@
 /pr_bidi_whitespace.h
 /pr_byname.c
 /pr_byname.gperf
+/pr_case_ignorable.c
+/pr_case_ignorable.h
+/pr_cased.c
+/pr_cased.h
+/pr_changes_when_casefolded.c
+/pr_changes_when_casefolded.h
+/pr_changes_when_casemapped.c
+/pr_changes_when_casemapped.h
+/pr_changes_when_lowercased.c
+/pr_changes_when_lowercased.h
+/pr_changes_when_titlecased.c
+/pr_changes_when_titlecased.h
+/pr_changes_when_uppercased.c
+/pr_changes_when_uppercased.h
 /pr_combining.c
 /pr_combining.h
 /pr_composite.c
@@ -301,4 +339,3 @@
 # "make distclean"):
 /pr_byname.h
 /scripts_byname.h
-

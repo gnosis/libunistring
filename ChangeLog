@@ -1,3 +1,8 @@
+2014-09-01  Daiki Ueno  <ueno@gnu.org>
+
+	* configure.ac (AM_INIT_AUTOMAKE): Add dist-xz, so that xz-compressed
+	.tar.xz tarballs will be distributed alongside .tar.gz ones.
+
 2014-08-08  Daiki Ueno  <ueno@gnu.org>
 
 	Replace deprecated $(mkdir_p) usage.

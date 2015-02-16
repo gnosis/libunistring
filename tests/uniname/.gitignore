@@ -1,4 +1,5 @@
 # Files brought in by gnulib-tool:
+/NameAliases.txt
 /UnicodeDataNames.txt
 /test-uninames.c
 /test-uninames.sh

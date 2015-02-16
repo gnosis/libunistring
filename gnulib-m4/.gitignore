@@ -48,6 +48,7 @@
 /isnanf.m4
 /isnanl.m4
 /iswblank.m4
+/langinfo_h.m4
 /lcmessage.m4
 /ldexpl.m4
 /lib-ld.m4
@@ -96,6 +97,7 @@
 /size_max.m4
 /ssize_t.m4
 /stat.m4
+/stdalign.m4
 /stdbool.m4
 /stddef_h.m4
 /stdint.m4

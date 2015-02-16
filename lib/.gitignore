@@ -41,6 +41,7 @@
 /isnanl.c
 /iswblank.c
 /itold.c
+/langinfo.in.h
 /localcharset.c
 /localcharset.h
 /localename.c

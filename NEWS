@@ -1,3 +1,9 @@
+New in 0.9.5:
+* The data tables and line breaking algorithm have been updated to Unicode
+  version 7.0.0.
+* In the include file uniname.h, the function unicode_name_character
+  has been extended to look for name aliases.
+
 New in 0.9.4:
 * The data tables and line breaking algorithm have been updated to Unicode
   version 6.0.0.

@@ -23,7 +23,8 @@ Returns the filled @var{buf}, or NULL if the character does not have a name.
 
 @deftypefun ucs4_t unicode_name_character (const char *@var{name})
 Looks up the Unicode character with a given name, in upper- or lowercase
-ASCII.  Returns the character if found, or @code{UNINAME_INVALID} if not found.
+ASCII.  @var{NAME} can also be an alias name of a character.
+Returns the character if found, or @code{UNINAME_INVALID} if not found.
 @end deftypefun
 
 @deftypevr Macro ucs4_t UNINAME_INVALID

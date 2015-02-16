@@ -1,5 +1,9 @@
 2015-02-16  Daiki Ueno  <ueno@gnu.org>
 
+	* Version 0.9.5 released.
+
+2015-02-16  Daiki Ueno  <ueno@gnu.org>
+
 	* doc/uniname.texi (uniname.h): Document that
 	unicode_name_character now also looks for aliases.
 

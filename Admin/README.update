@@ -1,0 +1,59 @@
+-*- outline -*-
+
+This file attemps to describe the procedure of updating Gnulib to the
+latest Unicode standard.
+
+First, read the Unicode release note carefully and understand any
+changes which might affect Gnulib.  In particular, changes in the text
+segmentation algoritms (provided by unilbrk.h, uniwbrk.h, unigbrk.h)
+often require manual adjustment of files.
+
+* Regenerating the Gnulib source code
+
+The tables in Gnulib are updated using a couple of tools:
+'lib/gen-uni-tables.c' and 'lib/uniname/gen-uninames.lisp'.  To make
+things easier, wrapper scripts are included in this directory:
+'gen-uni-tables' and 'gen-uninames'.
+
+Those scripts respect the GNULIB_SRCDIR and UCD environment variables.
+GNULIB_SRCDIR points to the absolute path of the Gnulib checkout, and
+UCD points to the directory containing the Unicode UCD.
+
+  $ export GNULIB_SRCDIR=..
+  $ export UCD=..
+  $ ./gen-uni-tables
+  $ ./gen-uninames
+
+Note that 'gen-uni-tables' sometimes fails when a large portion of
+Unicode data changes.  In that case, errors are reported as assertion
+failures and you will need to adjust 'lib/gen-uni-tables.c'.
+
+Also note that the files under 'lib/uniwidth' and 'tests/uniwidth' are
+not updated automatically.  You need to merge the generated *.part
+file by hand.
+
+* Updating the version numbers of modules
+
+The 'libunistring-optional' module in Gnulib allows you to use the
+system libunistring when possible (i.e., when certain modules are
+equal to or older than the system libunistring).  This is done by
+checking the version specified with gl_LIBUNISTRING_MODULE invocation
+in modules:
+
+  $ cat modules/uniwidth/width
+  ...
+  configure.ac:
+  gl_LIBUNISTRING_MODULE([0.9.6], [uniwidth/width])
+  ...
+
+If you update Gnulib to the new Unicode standard, you also need to
+bump the version of affected modules.  To identify affected modules,
+you can use the following command:
+
+  $ (cd $GNULIB_SRCDIR && git show --oneline --name-only $COMMIT | tail -n+2) \
+    | ./containing | LC_ALL=C sort | uniq \
+    | ./dependent | LC_ALL=C sort | uniq
+
+where 'containing' and 'dependent' are scripts included here.
+
+Daiki Ueno <ueno@gnu.org>

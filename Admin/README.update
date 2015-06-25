@@ -1,23 +1,33 @@
 -*- outline -*-
 
-This file attemps to describe the procedure of updating Gnulib to the
-latest Unicode standard.
+The substance of libunistring is maintained in Gnulib:
 
-First, read the Unicode release note carefully and understand any
-changes which might affect Gnulib.  In particular, changes in the text
-segmentation algoritms (provided by unilbrk.h, uniwbrk.h, unigbrk.h)
-often require manual adjustment of files.
+  http://git.savannah.gnu.org/cgit/gnulib.git
+
+This file attempts to describe the procedure of updating Gnulib to the
+latest Unicode release.  Also, a few scripts are included here to make
+the update job easier.  All those scripts respect the following
+environment variables
+
+- GNULIB_SRCDIR, which points to the absolute path of the Gnulib
+- UCD, which points to the directory containing the Unicode UCD
+
+Before updating, read the Unicode release note carefully and
+understand any changes that might affect Gnulib.  In particular,
+changes in the text segmentation algorithms (provided by unilbrk.h,
+uniwbrk.h, unigbrk.h) often require manual adjustment of source files.
+
+The release notes are typically available at:
+
+  http://unicode.org/versions/Unicode<VERSION>/
 
 * Regenerating the Gnulib source code
 
-The tables in Gnulib are updated using a couple of tools:
-'lib/gen-uni-tables.c' and 'lib/uniname/gen-uninames.lisp'.  To make
-things easier, wrapper scripts are included in this directory:
-'gen-uni-tables' and 'gen-uninames'.
+The source files in Gnulib are updated using a couple of tools:
+'lib/gen-uni-tables.c' and 'lib/uniname/gen-uninames.lisp'.
 
-Those scripts respect the GNULIB_SRCDIR and UCD environment variables.
-GNULIB_SRCDIR points to the absolute path of the Gnulib checkout, and
-UCD points to the directory containing the Unicode UCD.
+You can use wrapper scripts included in this directory:
+'gen-uni-tables' and 'gen-uninames' as follows:
 
   $ export GNULIB_SRCDIR=..
   $ export UCD=..
@@ -29,13 +39,13 @@ Unicode data changes.  In that case, errors are reported as assertion
 failures and you will need to adjust 'lib/gen-uni-tables.c'.
 
 Also note that the files under 'lib/uniwidth' and 'tests/uniwidth' are
-not updated automatically.  You need to merge the generated *.part
-file by hand.
+currently _not_ updated automatically.  You need to merge the
+generated *.part file by hand.
 
 * Updating the version numbers of modules
 
 The 'libunistring-optional' module in Gnulib allows you to use the
-system libunistring when possible (i.e., when certain modules are
+system libunistring, when possible (i.e., when certain modules are
 equal to or older than the system libunistring).  This is done by
 checking the version specified with gl_LIBUNISTRING_MODULE invocation
 in modules:
@@ -46,14 +56,19 @@ in modules:
   gl_LIBUNISTRING_MODULE([0.9.6], [uniwidth/width])
   ...
 
-If you update Gnulib to the new Unicode standard, you also need to
-bump the version of affected modules.  To identify affected modules,
-you can use the following command:
+The version specified as the first argument should be incremented when
+the behavior of the module changes.  Thus, if you regenerate the
+Gnulib source files for the latest Unicode release, you will also need
+to bump the version of affected modules.
+
+To identify affected modules, you can use the following command:
 
   $ (cd $GNULIB_SRCDIR && git show --oneline --name-only $COMMIT | tail -n+2) \
     | ./containing | LC_ALL=C sort | uniq \
     | ./dependent | LC_ALL=C sort | uniq
 
-where 'containing' and 'dependent' are scripts included here.
+where $COMMIT is a git commit ID, which points to the regeneration,
+and 'containing' and 'dependent' are scripts included here.  Note that
+this command takes some time to complete.
 
 Daiki Ueno <ueno@gnu.org>

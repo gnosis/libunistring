@@ -1,6 +1,7 @@
 # Files brought in by gnulib-tool:
+/HangulSyllableNames.txt
 /NameAliases.txt
-/UnicodeDataNames.txt
+/UnicodeData.txt
 /test-uninames.c
 /test-uninames.sh
 

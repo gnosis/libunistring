@@ -1,3 +1,9 @@
+2015-06-25  Daiki Ueno  <ueno@gnu.org>
+
+	* version.sh: Bump version number and date.
+	* README: Update version.
+	* NEWS: Mention 0.9.6 changes.
+
 2015-02-16  Daiki Ueno  <ueno@gnu.org>
 
 	* Version 0.9.5 released.

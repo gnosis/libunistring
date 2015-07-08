@@ -18,6 +18,7 @@
 /test-strncpy.h
 /test-strnlen.h
 /test-u-strstr.h
+/test-u-strtok.h
 /test-u16-check.c
 /test-u16-chr.c
 /test-u16-cmp.c
@@ -51,6 +52,7 @@
 /test-u16-strncpy.c
 /test-u16-strnlen.c
 /test-u16-strstr.c
+/test-u16-strtok.c
 /test-u16-to-u32.c
 /test-u16-to-u8.c
 /test-u16-uctomb.c
@@ -87,6 +89,7 @@
 /test-u32-strncpy.c
 /test-u32-strnlen.c
 /test-u32-strstr.c
+/test-u32-strtok.c
 /test-u32-to-u16.c
 /test-u32-to-u8.c
 /test-u32-uctomb.c
@@ -123,6 +126,7 @@
 /test-u8-strncpy.c
 /test-u8-strnlen.c
 /test-u8-strstr.c
+/test-u8-strtok.c
 /test-u8-to-u16.c
 /test-u8-to-u32.c
 /test-u8-uctomb.c

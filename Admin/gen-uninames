@@ -103,6 +103,21 @@ sed -e 's/ *$//' -e '/^#/d' -e '/^$/d' < "$UCD/NameAliases.txt" \
          "$GNULIB_SRCDIR/lib/uniname/uninames.h" \
          "$tmp/NameAliases.txt"
 
+# Copy necessary files from UCD
+for dstfile in "$GNULIB_SRCDIR/tests/uniname/UnicodeData.txt" \
+             "$GNULIB_SRCDIR/tests/uniname/NameAliases.txt" ; do
+  srcfile=`expr "$dstfile" : '.*/\(.*\)'`
+  if test -f "$UCD/$srcfile"; then
+    srcfile="$UCD/$srcfile"
+  elif test -f "$UCD/auxiliary/$srcfile"; then
+    srcfile="$UCD/auxiliary/$srcfile"
+  else
+    func_fatal_error "cannot find $srcfile"
+  fi
+
+  sed 's/ *$//' < "$srcfile" > "$dstfile"
+done
+
 rm -rf "$tmp"
 
 # Undo the effect of the previous 'trap' command. Some shellology:

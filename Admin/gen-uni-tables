@@ -132,9 +132,7 @@ ver=`sed -n -e 's/.*Version \([0-9.]*\).*/\1/p' < "$UCD/ReadMe.txt"`
 # Copy necessary files from UCD
 for dstfile in "$GNULIB_SRCDIR/tests/uninorm/NormalizationTest.txt" \
              "$GNULIB_SRCDIR/tests/uniwbrk/WordBreakTest.txt" \
-             "$GNULIB_SRCDIR/tests/unigbrk/GraphemeBreakTest.txt" \
-             "$GNULIB_SRCDIR/tests/uniname/UnicodeData.txt" \
-             "$GNULIB_SRCDIR/tests/uniname/NameAliases.txt" ; do
+             "$GNULIB_SRCDIR/tests/unigbrk/GraphemeBreakTest.txt" ; do
   srcfile=`expr "$dstfile" : '.*/\(.*\)'`
   if test -f "$UCD/$srcfile"; then
     srcfile="$UCD/$srcfile"

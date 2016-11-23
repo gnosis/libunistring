@@ -796,7 +796,7 @@ make sure all dependencies are installed.  They are listed in the file
 @cindex installation
 Then you can proceed to build and install the library, as described in the
 file @file{INSTALL}.  For installation on Windows systems, please refer to
-the file @file{README.woe32}.
+the file @file{README.windows}.
 
 @node Compiler options
 @section Compiler options

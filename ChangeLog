@@ -1,3 +1,10 @@
+2016-11-23  Bruno Haible  <bruno@clisp.org>
+
+	Drop the nickname "woe32".
+	* README.windows: Renamed from README.woe32.
+	* doc/libunistring.texi (Installation): Update.
+	* Makefile.am (EXTRA_DIST): Update.
+
 2015-06-25  Daiki Ueno  <ueno@gnu.org>
 
 	* version.sh: Bump version number and date.

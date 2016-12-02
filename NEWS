@@ -1,3 +1,6 @@
+New in 0.9.7:
+* The license has changed from LGPLv3+ to "LGPLv3+ or GPLv2"
+
 New in 0.9.6:
 * The data tables and line breaking algorithm have been updated to Unicode
   version 8.0.0.

@@ -424,7 +424,7 @@ if test $skip_gnulib = false; then
       relocatable-lib-lgpl
     '
     $GNULIB_TOOL --lib=libunistring --source-base=lib --m4-base=gnulib-m4 --tests-base=tests \
-      --with-tests --lgpl --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local \
+      --with-tests --lgpl=3orGPLv2 --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local \
       --import $GNULIB_MODULES
     # Change lib/unistr.h to be usable standalone.
     sed -e 's/if GNULIB_[A-Za-z0-9_]* || .*/if 1/g' \

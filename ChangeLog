@@ -1,5 +1,13 @@
 2016-12-02  Bruno Haible  <bruno@clisp.org>
 
+	Change license to LGPLv3+ or GPLv2.
+	* README (Copyright): Rewrite section.
+	* doc/libunistring.texi (Licenses): Change accordingly.
+	* autogen.sh: Pass option --lgpl=3orGPLv2 to gnulib-tool.
+	Reported by Nikos Mavrogiannopoulos.
+
+2016-12-02  Bruno Haible  <bruno@clisp.org>
+
 	Allow use of automake-1.15.
 	* autogen.sh: Update comments. Make sure to get new versions of files
 	brought in by automake.

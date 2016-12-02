@@ -86,7 +86,7 @@ This manual is for GNU libunistring.
 
 @ignore
 @c This was: @copying but it triggers a makeinfo 4.13 bug
-Copyright (C) 2001-2010 Free Software Foundation, Inc.
+Copyright (C) 2001-2016 Free Software Foundation, Inc.
 
 This manual is free documentation.  It is dually licensed under the
 GNU FDL and the GNU GPL.  This means that you can redistribute this
@@ -118,7 +118,7 @@ A copy of the license is included in @ref{GNU GPL}.
 @page
 @vskip 0pt plus 1filll
 @c @insertcopying
-Copyright (C) 2001-2010 Free Software Foundation, Inc.
+Copyright (C) 2001-2016 Free Software Foundation, Inc.
 
 This manual is free documentation.  It is dually licensed under the
 GNU FDL and the GNU GPL.  This means that you can redistribute this
@@ -937,9 +937,27 @@ particular file or directory.  Here is a summary:
 
 @itemize @bullet
 @item
-The @code{libunistring} library is covered by the
-GNU Lesser General Public License (LGPL).
-A copy of the license is included in @ref{GNU LGPL}.
+The @code{libunistring} library and its header files are dual-licensed under
+"the GNU LGPLv3+ or the GNU GPLv2". This means, you can use it under either
+@itemize
+@item @minus{}
+the terms of the GNU Lesser General Public License (LGPL) version 3 or
+(at your option) any later version, or
+@item @minus{}
+the terms of the GNU General Public License (GPL) version 2, or
+@item @minus{}
+the same dual license "the GNU LGPLv3+ or the GNU GPLv2".
+@end itemize
+You find the GNU LGPL version 3 in @ref{GNU LGPL}.  This license is
+based on the GNU GPL version 3, see @ref{GNU GPL}.
+@*
+You can find the GNU GPL version 2 at
+@url{https://www.gnu.org/licenses/old-licenses/gpl-2.0.html}.
+@*
+Note: This dual license makes it possible for the @code{libunistring} library
+to be used by packages under GPLv2 or GPLv2+ licenses, in particular. See
+the table in @url{https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility}.
+
 
 @item
 This manual is free documentation.  It is dually licensed under the

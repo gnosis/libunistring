@@ -54,7 +54,6 @@
 /test-categ_of.c
 /test-categ_or.c
 /test-categ_test_withtable.c
-/test-combining.c
 /test-combiningclass.c
 /test-combiningclass_byname.c
 /test-combiningclass_longname.c

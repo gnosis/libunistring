@@ -1,0 +1,18 @@
+# Files brought in by gnulib-tool:
+/GraphemeBreakTest.txt
+/test-u16-grapheme-breaks.c
+/test-u16-grapheme-next.c
+/test-u16-grapheme-prev.c
+/test-u32-grapheme-breaks.c
+/test-u32-grapheme-next.c
+/test-u32-grapheme-prev.c
+/test-u8-grapheme-breaks.c
+/test-u8-grapheme-next.c
+/test-u8-grapheme-prev.c
+/test-uc-gbrk-prop.c
+/test-uc-gbrk-prop.h
+/test-uc-is-grapheme-break.c
+/test-uc-is-grapheme-break.sh
+/test-ulc-grapheme-breaks.c
+/test-ulc-grapheme-breaks.sh
+

@@ -11,8 +11,8 @@
 /c-strcaseeq.h
 /c-strncasecmp.c
 /config.charset
-/dup2.c
 /errno.in.h
+/flexmember.h
 /float+.h
 /float.c
 /float.in.h
@@ -21,7 +21,8 @@
 /frexpl.c
 /fseterr.c
 /fseterr.h
-/getpagesize.c
+/hard-locale.c
+/hard-locale.h
 /iconv.c
 /iconv.in.h
 /iconv_close.c
@@ -42,6 +43,7 @@
 /iswblank.c
 /itold.c
 /langinfo.in.h
+/limits.in.h
 /localcharset.c
 /localcharset.h
 /localename.c
@@ -63,8 +65,6 @@
 /memchr.valgrind
 /memcmp2.c
 /memcmp2.h
-/memxfrm.c
-/memxfrm.h
 /minmax.h
 /printf-args.c
 /printf-args.h

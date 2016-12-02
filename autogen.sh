@@ -4,7 +4,7 @@
 # also regenerates all aclocal.m4, config.h.in, Makefile.in, configure files
 # with new versions of autoconf or automake.
 #
-# This script requires autoconf-2.63..2.69 and automake-1.11..1.12 in the PATH.
+# This script requires autoconf-2.63..2.69 and automake-1.11..1.15 in the PATH.
 # It also requires either
 #   - the GNULIB_TOOL environment variable pointing to the gnulib-tool script
 #     in a gnulib checkout, or
@@ -12,7 +12,7 @@
 # It also requires
 #   - the gperf program.
 
-# Copyright (C) 2003-2012 Free Software Foundation, Inc.
+# Copyright (C) 2003-2016 Free Software Foundation, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -459,4 +459,6 @@ fi
 build-aux/fixaclocal aclocal -I m4 -I gnulib-m4
 autoconf
 autoheader && touch config.h.in
+# Make sure we get new versions of files brought in by automake.
+(cd build-aux && rm -f ar-lib compile depcomp install-sh mdate-sh missing test-driver)
 automake --add-missing --copy

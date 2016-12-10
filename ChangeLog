@@ -1,3 +1,12 @@
+2016-12-10  Bruno Haible  <bruno@clisp.org>
+
+	Make the generated <unistring/stdint.h> work for GCC >= 4.5
+	when GCC is not the system's default compiler.
+	* lib/Makefile.am (unistring/stdint.h): When the compiler is
+	GCC >= 4.5, include its <stdint.h> file.
+	Reported by Marcin Cieślak and analyzed by Krzysztof Malinowski
+	at <https://savannah.gnu.org/bugs/?45783>.
+
 2016-12-02  Daiki Ueno  <ueno@gnu.org>
 
 	* version.sh: Bump version number and date.

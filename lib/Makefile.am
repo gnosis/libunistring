@@ -91,6 +91,7 @@ EXTRA_DIST       += stdbool.mini.h
 
 # Produce an unistring/stdint.h that is not compiler dependent.
 # Glibc >= 2 has <stdint.h>.
+# GCC >= 4.5 provides <stdint.h>, see https://gcc.gnu.org/gcc-4.5/changes.html.
 # On most other platforms that have it, it is buggy in one way or the other.
 unistring/stdint.h : $(STDINT_H) stdint.mini.h
 	@MKDIR_P@ unistring
@@ -103,7 +104,7 @@ unistring/stdint.h : $(STDINT_H) stdint.mini.h
 	  if test -f /usr/include/stdint.h; then \
 	    HAVE_STDINT_H='1'; \
 	  else \
-	    HAVE_STDINT_H='defined __MINGW32__ || defined __HAIKU__'; \
+	    HAVE_STDINT_H='defined __MINGW32__ || defined __HAIKU__ || ((__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)) && !defined __NetBSD__)'; \
 	  fi; \
 	  if test -f /usr/include/inttypes.h; then \
 	    HAVE_INTTYPES_H='1'; \
@@ -115,6 +116,8 @@ unistring/stdint.h : $(STDINT_H) stdint.mini.h
 	  else \
 	    HAVE_SYS_INTTYPES_H='0'; \
 	  fi; \
+	  sed_escape_ampersands='s/&/\\&/g'; \
+	  HAVE_STDINT_H=`echo "$$HAVE_STDINT_H" | sed -e "$$sed_escape_ampersands"`; \
 	  sed -e 's/@''HAVE_STDINT_H''@/'"$$HAVE_STDINT_H"'/g' \
 	      -e 's|@''INCLUDE_NEXT''@|include|g' \
 	      -e 's|@''PRAGMA_SYSTEM_HEADER''@||g' \

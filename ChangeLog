@@ -1,3 +1,8 @@
+2016-12-26  Bruno Haible  <bruno@clisp.org>
+
+	Clarify which version of texinfo.tex is used.
+	* autogen.sh (TEXINFO_VERSION): New variable.
+
 2016-12-10  Bruno Haible  <bruno@clisp.org>
 
 	Make the generated <unistring/stdint.h> work for GCC >= 4.5

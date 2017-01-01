@@ -43,6 +43,8 @@ while :; do
   esac
 done
 
+TEXINFO_VERSION=4.13
+
 if test $skip_gnulib = false; then
   # texinfo.tex
   # The most recent snapshot of it is available in the gnulib repository.
@@ -51,7 +53,7 @@ if test $skip_gnulib = false; then
   # but that is too old (does not support @arrow{}). So take the version which
   # matches the latest stable texinfo release.
   if test ! -f build-aux/texinfo.tex; then
-    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'http://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_4_13' \
+    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'http://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_'`echo $TEXINFO_VERSION | sed -e 's/[.]/_/g'` \
         && mv build-aux/texinfo.tex.tmp build-aux/texinfo.tex; \
     } || rm -f build-aux/texinfo.tex.tmp
   fi

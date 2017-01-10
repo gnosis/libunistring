@@ -1,3 +1,9 @@
+2017-01-10  Bruno Haible  <bruno@clisp.org>
+
+	Modernize URLs.
+	* README: Prefer https over http or ftp URLs.
+	* DEPENDENCIES: Likewise.
+
 2016-12-26  Bruno Haible  <bruno@clisp.org>
 
 	Clarify which version of texinfo.tex is used.

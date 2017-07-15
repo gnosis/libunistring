@@ -464,3 +464,5 @@ autoheader && touch config.h.in
 # Make sure we get new versions of files brought in by automake.
 (cd build-aux && rm -f ar-lib compile depcomp install-sh mdate-sh missing test-driver)
 automake --add-missing --copy
+# Get rid of autom4te.cache directory.
+rm -rf autom4te.cache

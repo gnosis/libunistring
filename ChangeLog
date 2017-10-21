@@ -1,3 +1,26 @@
+2017-10-21  Bruno Haible  <bruno@clisp.org>
+
+	Upgrade to newer libtool.
+	* m4/libtool.m4: Update from libtool-2.4.6, with modifications.
+	2017-10-21  Bruno Haible  <bruno@clisp.org>
+		Fix -export-symbols and -export-symbols-regex support on
+		Solaris 11.3.
+		* m4/libtool.m4 (_LT_CMD_GLOBAL_SYMBOLS): Adjust symcode for
+		Solaris.
+	2009-04-23  Bruno Haible  <bruno@clisp.org>
+		Fix recognition of "nm" command.
+		* m4/libtool.m4 (LT_PATH_NM): Try "nm" program also when
+		compiling for mingw in a cygwin environment.
+	2008-04-06  Bruno Haible  <bruno@clisp.org>
+		* m4/libtool.m4 (LT_INIT): When setting LIBTOOL, use
+		CONFIG_SHELL; don't assume that the Makefile.in will set SHELL
+		to ${CONFIG_SHELL}.
+	* m4/ltoptions.m4: Likewise.
+	* m4/ltsugar.m4: Likewise.
+	* m4/ltversion.m4: Likewise.
+	* m4/lt~obsolete.m4: Likewise.
+	* build-aux/ltmain.sh: Likewise.
+
 2017-07-15  Bruno Haible  <bruno@clisp.org>
 
 	Get rid of autom4te.cache directory (left over from autoconf, automake).

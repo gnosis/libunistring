@@ -133,6 +133,11 @@ Returns the canonical character decomposition mapping of the Unicode character
 
 When a decomposition exists, @code{@var{decomposition}[0..@var{n}-1]} is filled
 and @var{n} is returned.  Otherwise -1 is returned.
+
+Note: This function returns the (simple) ``canonical decomposition'' of
+@var{uc}.  If you want the ``full canonical decomposition'' of @var{uc},
+that is, the recursive application of ``canonical decomposition'', use the
+function @code{u*_normalize} with argument @code{UNINORM_NFD} instead.
 @end deftypefun
 
 @node Composition of characters

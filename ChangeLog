@@ -1,3 +1,10 @@
+2017-11-18  Bruno Haible  <bruno@clisp.org>
+
+	Clarify the effect of uc_canonical_decomposition.
+	Prompted by a report by DaeHyun Sung <sungdh86@gmail.com>.
+	* doc/uninorm.texi (Decomposition of characters): Clarify.
+	* doc/libunistring.texi: Bump copyright year.
+
 2017-10-21  Bruno Haible  <bruno@clisp.org>
 
 	Upgrade to newer libtool.

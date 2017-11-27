@@ -329,6 +329,7 @@ if test $skip_gnulib = false; then
       unigbrk/uc-gbrk-prop
       unigbrk/uc-is-grapheme-break
       unigbrk/ulc-grapheme-breaks
+      unigbrk/uc-grapheme-breaks
       uniwbrk/base
       uniwbrk/u8-wordbreaks
       uniwbrk/u16-wordbreaks

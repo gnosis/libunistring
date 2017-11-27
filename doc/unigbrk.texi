@@ -44,6 +44,11 @@ clusters in a string.
 Returns the start of the next grapheme cluster following @var{s},
 or @var{end} if no grapheme cluster break is encountered before it.
 Returns NULL if and only if @code{@var{s} == @var{end}}.
+
+Note that these functions do not handle the case when a character
+outside of the range between @var{s} and @var{end} is needed to
+determine the boundary.  Use @func{_grapheme_breaks} functions for such
+cases.
 @end deftypefun
 
 @deftypefun void u8_grapheme_prev (const uint8_t *@var{s}, const uint8_t *@var{start})
@@ -52,6 +57,11 @@ Returns NULL if and only if @code{@var{s} == @var{end}}.
 Returns the start of the grapheme cluster preceding @var{s}, or
 @var{start} if no grapheme cluster break is encountered before it.
 Returns NULL if and only if @code{@var{s} == @var{start}}.
+
+Note that these functions do not handle the case when a character
+outside of the range between @var{start} and @var{s} is needed to
+determine the boundary.  Use @func{_grapheme_breaks} functions for such
+cases.
 @end deftypefun
 
 The following functions determine all of the grapheme cluster
@@ -61,8 +71,9 @@ boundaries in a string.
 @deftypefunx void u16_grapheme_breaks (const uint16_t *@var{s}, size_t @var{n}, char *@var{p})
 @deftypefunx void u32_grapheme_breaks (const uint32_t *@var{s}, size_t @var{n}, char *@var{p})
 @deftypefunx void ulc_grapheme_breaks (const char *@var{s}, size_t @var{n}, char *@var{p})
+@deftypefunx void uc_grapheme_breaks (const ucs_t *@var{s}, size_t @var{n}, char *@var{p})
 Determines the grapheme cluster break points in @var{s}, an array of
-@var{n} units, and stores the result at @code{@var{p}[0..@var{n}-1]}.
+@var{n} units, and stores the result at @code{@var{p}[0..@var{nx}-1]}.
 @table @asis
 @item @code{@var{p}[i] = 1}
 means that there is a grapheme cluster boundary between
@@ -73,6 +84,13 @@ same grapheme cluster.
 @end table
 @code{@var{p}[0]} is always set to 1, because there is always a
 grapheme cluster break at start of text.
+
+In addition to the above variants for UTF-8, UTF-16, and UTF-32 strings,
+@code{<unigbrk.h>} provides another variant: @func{uc_grapheme_breaks}.
+
+This is similar to @func{u32_grapheme_breaks}, but it accepts any
+characters which may not be represented in UTF-32, such as control
+characters.
 @end deftypefun
 
 @node Grapheme cluster break property
@@ -99,6 +117,12 @@ property.  More values may be added in the future.
 @deftypevrx Constant int GBP_T
 @deftypevrx Constant int GBP_LV
 @deftypevrx Constant int GBP_LVT
+@deftypevrx Constant int GBP_RI
+@deftypevrx Constant int GBP_ZWJ
+@deftypevrx Constant int GBP_EB
+@deftypevrx Constant int GBP_EM
+@deftypevrx Constant int GBP_GAZ
+@deftypevrx Constant int GBP_EBG
 @end deftypevr
 
 The following function looks up the grapheme cluster break property of a
@@ -123,4 +147,8 @@ of text, respectively.
 This implements the extended (not legacy) grapheme cluster rules
 described in the Unicode standard, because the standard says that they
 are preferred.
+
+Note that this function do not handle the case when three ore more
+consecutive characters are needed to determine the boundary.  Use
+@func{uc_grapheme_breaks} for such cases.
 @end deftypefun

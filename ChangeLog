@@ -1,3 +1,14 @@
+2017-11-27  Daiki Ueno  <ueno@gnu.org>
+
+	unigbrk: Import new module unigbrk/uc-grapheme-breaks
+	* autogen.sh (GNULIB_MODULES): Pull unigbrk/uc-grapheme-breaks.
+	* doc/unigbrk.texi (Grapheme cluster breaks in a string): Mention
+	the limitations of *_grapheme_next and *_grapheme_prev functions
+	and suggest *_grapheme_breaks instead.
+	(Grapheme cluster break property): Document newly added
+	properties; mention the limitations of uc_is_grapheme_break and
+	suggest to use uc_grapheme_breaks instead.
+
 2017-11-18  Bruno Haible  <bruno@clisp.org>
 
 	Clarify the effect of uc_canonical_decomposition.

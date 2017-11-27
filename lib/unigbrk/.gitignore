@@ -1,5 +1,6 @@
 # Files brought in by gnulib-tool:
 /gbrkprop.h
+/u-grapheme-breaks.h
 /u16-grapheme-breaks.c
 /u16-grapheme-next.c
 /u16-grapheme-prev.c
@@ -10,6 +11,7 @@
 /u8-grapheme-next.c
 /u8-grapheme-prev.c
 /uc-gbrk-prop.c
+/uc-grapheme-breaks.c
 /uc-is-grapheme-break.c
 /ulc-grapheme-breaks.c
 

@@ -11,6 +11,8 @@
 /test-u8-grapheme-prev.c
 /test-uc-gbrk-prop.c
 /test-uc-gbrk-prop.h
+/test-uc-grapheme-breaks.c
+/test-uc-grapheme-breaks.sh
 /test-uc-is-grapheme-break.c
 /test-uc-is-grapheme-break.sh
 /test-ulc-grapheme-breaks.c

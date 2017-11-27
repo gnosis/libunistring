@@ -64,6 +64,15 @@ may be added in the future.
 @deftypevrx Constant int WBP_MIDNUM
 @deftypevrx Constant int WBP_NUMERIC
 @deftypevrx Constant int WBP_EXTENDNUMLET
+@deftypevrx Constant int WBP_RI
+@deftypevrx Constant int WBP_DQ
+@deftypevrx Constant int WBP_SQ
+@deftypevrx Constant int WBP_HL
+@deftypevrx Constant int WBP_ZWJ
+@deftypevrx Constant int WBP_EB
+@deftypevrx Constant int WBP_EM
+@deftypevrx Constant int WBP_GAZ
+@deftypevrx Constant int WBP_EBG
 @end deftypevr
 
 The following function looks up the word break property of a character.

@@ -1,5 +1,11 @@
 2017-11-27  Daiki Ueno  <ueno@gnu.org>
 
+	uniwbrk: Define new word break property values
+	* doc/uniwbrk.texi (Word break property): Document WBP_RI, WBP_DQ,
+	WBP_SQ, WBP_HL, WBP_ZWJ, WBP_EB, WBP_EM, WBP_GAZ, and WBP_EBG.
+
+2017-11-27  Daiki Ueno  <ueno@gnu.org>
+
 	unigbrk: Import new module unigbrk/uc-grapheme-breaks
 	* autogen.sh (GNULIB_MODULES): Pull unigbrk/uc-grapheme-breaks.
 	* doc/unigbrk.texi (Grapheme cluster breaks in a string): Mention

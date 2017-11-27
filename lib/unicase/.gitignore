@@ -15,6 +15,7 @@
 /special-casing-table.gperf
 /special-casing.c
 /special-casing.h
+/special-casing.in.h
 /tocasefold.c
 /tocasefold.h
 /tolower.c
@@ -96,4 +97,3 @@
 # "make distclean"):
 /locale-languages.h
 /special-casing-table.h
-

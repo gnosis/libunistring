@@ -1,3 +1,10 @@
+New in 0.9.8:
+* The data tables and line breaking algorithm have been updated to Unicode
+  version 9.0.0.
+* In the include file unigbrk.h, the function uc_grapheme_breaks has
+  been added to accommodate the new UAX#29 rules involving 3 or more
+  consecutive characters.
+
 New in 0.9.7:
 * The license has changed from LGPLv3+ to "LGPLv3+ or GPLv2"
 

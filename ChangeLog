@@ -1,3 +1,11 @@
+2017-11-30  Daiki Ueno  <ueno@gnu.org>
+
+	* version.sh: Bump version number and date.
+	* README: Update version.
+	* NEWS: Mention 0.9.8 changes.
+	* lib/Makefile.am (LTV_CURRENT, LTV_AGE): Bump for
+	uc_grapheme_breaks.
+
 2017-11-27  Daiki Ueno  <ueno@gnu.org>
 
 	uniwbrk: Define new word break property values

@@ -1,3 +1,18 @@
+2017-12-10  Bruno Haible  <bruno@clisp.org>
+
+	Documentation updates.
+	Mostly based on feedback by Richard Stallman <rms@gnu.org>.
+	* doc/wchar_t.texi: New file, extracted from doc/libunistring.texi.
+	* doc/Makefile.am (libunistring_TEXINFOS): Add it.
+	* doc/libunistring.texi: Move "The wchar_t mess" section to an appendix.
+	* doc/unitypes.texi: Explain difference between uint32_t and ucs4_t.
+	* doc/unistr.texi (Elementary string functions,
+	Elementary string functions on NUL terminated strings): Add subsection
+	structure.
+	* doc/unictype.texi (Object oriented API): Explain each general category
+	once only.
+	* doc/unistdio.texi, doc/uninorm.texi, doc/unicase.texi: Small changes.
+
 2017-11-30  Daiki Ueno  <ueno@gnu.org>
 
 	* version.sh: Bump version number and date.

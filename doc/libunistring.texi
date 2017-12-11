@@ -31,7 +31,19 @@
 @include version.texi
 
 @c Location of the POSIX specification on the web.
-@set POSIXURL http://www.opengroup.org/onlinepubs/9699919799
+@set POSIXURL http://pubs.opengroup.org/onlinepubs/9699919799
+
+@c Macro for referencing a POSIX header.
+@ifinfo
+@macro posixheader{header}
+@code{<\header\>}
+@end macro
+@end ifinfo
+@ifnotinfo
+@macro posixheader{header}
+@uref{@value{POSIXURL}/basedefs/\header\.html,,@code{<\header\>}}
+@end macro
+@end ifnotinfo
 
 @c Macro for referencing a POSIX function.
 @c We don't write it as func(), see section "GNU Manuals" of the
@@ -166,6 +178,7 @@ A copy of the license is included in @ref{GNU GPL}.
 * uniregex.h::                  Regular expressions
 * Using the library::           How to link with the library and use it?
 * More functionality::          More advanced functionality
+* The wchar_t mess::            Why @code{wchar_t *} strings are useless
 * Licenses::                    Licenses
 
 * Index::                       General Index
@@ -180,7 +193,6 @@ Introduction
 * Locale encodings::            What is a locale encoding?
 * In-memory representation::    How to represent strings in memory?
 * char * strings::              What to keep in mind with @code{char *} strings
-* The wchar_t mess::            Why @code{wchar_t *} strings are useless
 * Unicode strings::             How are Unicode strings represented?
 
 unistr.h
@@ -190,6 +202,26 @@ unistr.h
 * Elementary string functions::
 * Elementary string functions with memory allocation::
 * Elementary string functions on NUL terminated strings::
+
+Elementary string functions
+
+* Iterating::
+* Creating Unicode strings::
+* Copying Unicode strings::
+* Comparing Unicode strings::
+* Searching for a character::
+* Counting characters::
+
+Elementary string functions on NUL terminated strings
+
+* Iterating over a NUL terminated Unicode string::
+* Length::
+* Copying a NUL terminated Unicode string::
+* Comparing NUL terminated Unicode strings::
+* Duplicating a NUL terminated Unicode string::
+* Searching for a character in a NUL terminated Unicode string::
+* Searching for a substring::
+* Tokenizing::
 
 unictype.h
 
@@ -304,8 +336,8 @@ in general, contain characters of all kinds of scripts.  The text processing
 functions provided by this library handle all scripts and all languages.
 
 libunistring is for you if your application already uses the ISO C / POSIX
-@code{<ctype.h>}, @code{<wctype.h>} functions and the text it operates on is
-provided by the user and can be in any language.
+@posixheader{ctype.h}, @posixheader{wctype.h} functions and the text it
+operates on is provided by the user and can be in any language.
 
 libunistring is also for you if your application uses Unicode strings as
 internal in-memory representation.
@@ -390,7 +422,7 @@ in multiple languages present in the same document or even in the same line
 of text.
 
 But use of Unicode is not everything.  Internationalization usually consists
-of three features:
+of four features:
 @itemize @bullet
 @item
 Use of Unicode where needed for text processing.  This is what this library
@@ -402,6 +434,10 @@ GNU gettext is about.
 Use of locale specific conventions for date and time formats, for numeric
 formatting, or for sorting of text.  This can be done adequately with the
 POSIX APIs and the implementation of locales in the GNU C library.
+@item
+In graphical user interfaces, adapting the GUI to the default text direction
+of the current locale (see
+@url{https://en.wikipedia.org/wiki/Right-to-left,right-to-left languages}).
 @end itemize
 
 @node Locale encodings
@@ -415,7 +451,7 @@ yet universally implemented and not widely used.)
 @cindex locale categories
 The locale is partitioned into several aspects, called the ``categories''
 of the locale.  The main various aspects are:
-@itemize
+@itemize @bullet
 @item
 The character encoding and the character properties.  This is the
 @code{LC_CTYPE} category.
@@ -453,7 +489,7 @@ this country earlier.
 
 The legacy locale encodings, ISO-8859-15 (which supplanted ISO-8859-1 in
 most of Europe), ISO-8859-2, KOI8-R, EUC-JP, etc., are still in use in
-many places, though.
+some places, though.
 
 UTF-16 and UTF-32 are not used as locale encodings, because they are not
 ASCII compatible.
@@ -463,7 +499,7 @@ ASCII compatible.
 
 There are three ways of representing strings in memory of a running
 program.
-@itemize
+@itemize @bullet
 @item
 As @samp{char *} strings.  Such strings are represented in locale encoding.
 This approach is employed when not much text processing is done by the
@@ -479,6 +515,21 @@ threads operating on the same data but in different locales.
 As @samp{wchar_t *}, a.k.a@. ``wide strings''.  This approach is misguided,
 see @ref{The wchar_t mess}.
 @end itemize
+
+Of course, a @samp{char *} string can, in some cases, be encoded in UTF-8.
+You will use the data type depending on what you can guarantee about how
+it's encoded: If a string is encoded in the locale encoding, or if you
+don't know how it's encoded, use @samp{char *}.  If, on the other hand,
+you can @emph{guarantee} that it is UTF-8 encoded, then you can use the
+UTF-8 string type, @code{uint8_t *}, for it.
+
+The five types @code{char *}, @code{uint8_t *}, @code{uint16_t *},
+@code{uint32_t *}, and @code{wchar_t *} are incompatible types at the C
+level.  Therefore, @samp{gcc -Wall} will produce a warning if, by mistake,
+your code contains a mismatch between these types.  In the context of
+using GNU libunistring, even a warning about a mismatch between
+@code{char *} and @code{uint8_t *} is a sign of a bug in your code
+that you should not try to silence through a cast.
 
 @node char * strings
 @section @samp{char *} strings
@@ -509,9 +560,9 @@ The important fact to remember is:
 @end cartouche
 
 As a consequence:
-@itemize
+@itemize @bullet
 @item
-The @code{<ctype.h>} API is useless in this context; it does not work in
+The @posixheader{ctype.h} API is useless in this context; it does not work in
 multibyte locales.
 @item
 The @posixfunc{strlen} function does not return the number of characters
@@ -546,7 +597,7 @@ functions do not work with multibyte strings.
 
 The workarounds can be found in GNU gnulib
 @url{http://www.gnu.org/software/gnulib/}.
-@itemize
+@itemize @bullet
 @item
 gnulib has modules @samp{mbchar}, @samp{mbiter}, @samp{mbuiter} that
 represent multibyte characters and allow to iterate across a multibyte
@@ -577,7 +628,7 @@ preferable to these functions; see below.
 @end itemize
 
 The second problem with the C library API is that it has some assumptions built-in that are not valid in some languages:
-@itemize
+@itemize @bullet
 @item
 It assumes that there are only two forms of every character: uppercase
 and lowercase.  This is not true for Croatian, where the character
@@ -611,58 +662,6 @@ rather than on characters.
 
 This is implemented in this library, through the functions declared in @code{<unicase.h>}, see @ref{unicase.h}.
 
-@node The wchar_t mess
-@section The @code{wchar_t} mess
-
-@cindex wchar_t, type
-The ISO C and POSIX standard creators made an attempt to fix the first
-problem mentioned in the previous section.  They introduced
-@itemize
-@item
-a type @samp{wchar_t}, designed to encapsulate an entire character,
-@item
-a ``wide string'' type @samp{wchar_t *}, and
-@item
-functions declared in @code{<wctype.h>} that were meant to supplant the
-ones in @code{<ctype.h>}.
-@end itemize
-
-Unfortunately, this API and its implementation has numerous problems:
-
-@itemize
-@item
-On AIX and Windows platforms, @code{wchar_t} is a 16-bit type.  This
-means that it can never accommodate an entire Unicode character.  Either
-the @code{wchar_t *} strings are limited to characters in UCS-2 (the
-``Basic Multilingual Plane'' of Unicode), or --- if @code{wchar_t *}
-strings are encoded in UTF-16 --- a @code{wchar_t} represents only half
-of a character in the worst case, making the @code{<wctype.h>} functions
-pointless.
-
-@item
-On Solaris and FreeBSD, the @code{wchar_t} encoding is locale dependent
-and undocumented.  This means, if you want to know any property of a
-@code{wchar_t} character, other than the properties defined by
-@code{<wctype.h>} --- such as whether it's a dash, currency symbol,
-paragraph separator, or similar ---, you have to convert it to
-@code{char *} encoding first, by use of the function @posixfunc{wctomb}.
-
-@item
-When you read a stream of wide characters, through the functions
-@posixfunc{fgetwc} and @posixfunc{fgetws}, and when the input stream/file is
-not in the expected encoding, you have no way to determine the invalid
-byte sequence and do some corrective action.  If you use these
-functions, your program becomes ``garbage in - more garbage out'' or
-``garbage in - abort''.
-@end itemize
-
-As a consequence, it is better to use multibyte strings, as explained in
-the previous section.  Such multibyte strings can bypass limitations
-of the @code{wchar_t} type, if you use functions defined in gnulib and
-libunistring for text processing.  They can also faithfully transport
-malformed characters that were present in the input, without requiring
-the program to produce garbage or abort.
-
 @node Unicode strings
 @section Unicode strings
 
@@ -670,7 +669,7 @@ libunistring supports Unicode strings in three representations:
 @cindex UTF-8, strings
 @cindex UTF-16, strings
 @cindex UTF-32, strings
-@itemize
+@itemize @bullet
 @item
 UTF-8 strings, through the type @samp{uint8_t *}.  The units are bytes
 (@code{uint8_t}).
@@ -683,7 +682,7 @@ memory words (@code{uint32_t}).
 @end itemize
 
 As with C strings, there are two variants:
-@itemize
+@itemize @bullet
 @item
 Unicode strings with a terminating NUL character are represented as
 a pointer to the first unit of the string.  There is a unit containing
@@ -928,6 +927,8 @@ For the rendering of Unicode strings outside of the context of a given toolkit
 (KDE/Qt or GNOME/Gtk), we recommend the Pango library:
 @url{http://www.pango.org/}.
 
+@include wchar_t.texi
+
 @node Licenses
 @appendix Licenses
 @cindex Licenses
@@ -939,7 +940,7 @@ particular file or directory.  Here is a summary:
 @item
 The @code{libunistring} library and its header files are dual-licensed under
 "the GNU LGPLv3+ or the GNU GPLv2". This means, you can use it under either
-@itemize
+@itemize @bullet
 @item @minus{}
 the terms of the GNU Lesser General Public License (LGPL) version 3 or
 (at your option) any later version, or

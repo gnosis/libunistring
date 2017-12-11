@@ -209,6 +209,9 @@ The following functions apply a Unicode normalization form to a Unicode string.
 @deftypefunx {uint16_t *} u16_normalize (uninorm_t @var{nf}, const uint16_t *@var{s}, size_t @var{n}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
 @deftypefunx {uint32_t *} u32_normalize (uninorm_t @var{nf}, const uint32_t *@var{s}, size_t @var{n}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Returns the specified normalization form of a string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @node Normalizing comparisons
@@ -241,6 +244,9 @@ sequence, in such a way that comparing @code{u8_normxfrm (@var{s1})} and
 comparing @var{s1} and @var{s2} with the @code{u8_normcoll} function.
 
 @var{nf} must be either @code{UNINORM_NFC} or @code{UNINORM_NFKC}.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun int u8_normcoll (const uint8_t *@var{s1}, size_t @var{n1}, const uint8_t *@var{s2}, size_t @var{n2}, uninorm_t @var{nf}, int *@var{resultp})

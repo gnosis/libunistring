@@ -65,200 +65,199 @@ not an array type.
 The following are the predefined general category value.  Additional general
 categories may be added in the future.
 
+The @code{UC_CATEGORY_*} constants reflect the systematic general category
+values assigned by the Unicode Consortium.  Whereas the other @code{UC_*}
+macros are aliases, for use when readable code is preferred.
+
 @deftypevr Constant uc_general_category_t UC_CATEGORY_L
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_LC
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Lu
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Ll
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Lt
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Lm
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Lo
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_M
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Mn
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Mc
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Me
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_N
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Nd
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Nl
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_No
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_P
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Pc
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Pd
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Ps
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Pe
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Pi
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Pf
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Po
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_S
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Sm
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Sc
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Sk
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_So
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Z
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Zs
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Zl
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Zp
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_C
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Cc
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Cf
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Cs
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Co
-@deftypevrx Constant uc_general_category_t UC_CATEGORY_Cn
+@deftypevrx Macro uc_general_category_t UC_LETTER
+This represents the general category ``Letter''.
 @end deftypevr
 
-The following are alias names for predefined General category values.
-
-@deftypevr Macro uc_general_category_t UC_LETTER
-This is another name for @code{UC_CATEGORY_L}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_LC
+@deftypevrx Macro uc_general_category_t UC_CASED_LETTER
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_CASED_LETTER
-This is another name for @code{UC_CATEGORY_LC}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Lu
+@deftypevrx Macro uc_general_category_t UC_UPPERCASE_LETTER
+This represents the general category ``Letter, uppercase''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_UPPERCASE_LETTER
-This is another name for @code{UC_CATEGORY_Lu}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Ll
+@deftypevrx Macro uc_general_category_t UC_LOWERCASE_LETTER
+This represents the general category ``Letter, lowercase''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_LOWERCASE_LETTER
-This is another name for @code{UC_CATEGORY_Ll}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Lt
+@deftypevrx Macro uc_general_category_t UC_TITLECASE_LETTER
+This represents the general category ``Letter, titlecase''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_TITLECASE_LETTER
-This is another name for @code{UC_CATEGORY_Lt}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Lm
+@deftypevrx Macro uc_general_category_t UC_MODIFIER_LETTER
+This represents the general category ``Letter, modifier''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_MODIFIER_LETTER
-This is another name for @code{UC_CATEGORY_Lm}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Lo
+@deftypevrx Macro uc_general_category_t UC_OTHER_LETTER
+This represents the general category ``Letter, other''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OTHER_LETTER
-This is another name for @code{UC_CATEGORY_Lo}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_M
+@deftypevrx Macro uc_general_category_t UC_MARK
+This represents the general category ``Marker''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_MARK
-This is another name for @code{UC_CATEGORY_M}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Mn
+@deftypevrx Macro uc_general_category_t UC_NON_SPACING_MARK
+This represents the general category ``Marker, nonspacing''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_NON_SPACING_MARK
-This is another name for @code{UC_CATEGORY_Mn}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Mc
+@deftypevrx Macro uc_general_category_t UC_COMBINING_SPACING_MARK
+This represents the general category ``Marker, spacing combining''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_COMBINING_SPACING_MARK
-This is another name for @code{UC_CATEGORY_Mc}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Me
+@deftypevrx Macro uc_general_category_t UC_ENCLOSING_MARK
+This represents the general category ``Marker, enclosing''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_ENCLOSING_MARK
-This is another name for @code{UC_CATEGORY_Me}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_N
+@deftypevrx Macro uc_general_category_t UC_NUMBER
+This represents the general category ``Number''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_NUMBER
-This is another name for @code{UC_CATEGORY_N}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Nd
+@deftypevrx Macro uc_general_category_t UC_DECIMAL_DIGIT_NUMBER
+This represents the general category ``Number, decimal digit''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_DECIMAL_DIGIT_NUMBER
-This is another name for @code{UC_CATEGORY_Nd}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Nl
+@deftypevrx Macro uc_general_category_t UC_LETTER_NUMBER
+This represents the general category ``Number, letter''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_LETTER_NUMBER
-This is another name for @code{UC_CATEGORY_Nl}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_No
+@deftypevrx Macro uc_general_category_t UC_OTHER_NUMBER
+This represents the general category ``Number, other''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OTHER_NUMBER
-This is another name for @code{UC_CATEGORY_No}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_P
+@deftypevrx Macro uc_general_category_t UC_PUNCTUATION
+This represents the general category ``Punctuation''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_PUNCTUATION
-This is another name for @code{UC_CATEGORY_P}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Pc
+@deftypevrx Macro uc_general_category_t UC_CONNECTOR_PUNCTUATION
+This represents the general category ``Punctuation, connector''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_CONNECTOR_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Pc}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Pd
+@deftypevrx Macro uc_general_category_t UC_DASH_PUNCTUATION
+This represents the general category ``Punctuation, dash''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_DASH_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Pd}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Ps
+@deftypevrx Macro uc_general_category_t UC_OPEN_PUNCTUATION
+This represents the general category ``Punctuation, open'', a.k.a. ``start punctuation''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OPEN_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Ps} (``start punctuation'').
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Pe
+@deftypevrx Macro uc_general_category_t UC_CLOSE_PUNCTUATION
+This represents the general category ``Punctuation, close'', a.k.a. ``end punctuation''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_CLOSE_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Pe} (``end punctuation'').
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Pi
+@deftypevrx Macro uc_general_category_t UC_INITIAL_QUOTE_PUNCTUATION
+This represents the general category ``Punctuation, initial quote''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_INITIAL_QUOTE_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Pi}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Pf
+@deftypevrx Macro uc_general_category_t UC_FINAL_QUOTE_PUNCTUATION
+This represents the general category ``Punctuation, final quote''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_FINAL_QUOTE_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Pf}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Po
+@deftypevrx Macro uc_general_category_t UC_OTHER_PUNCTUATION
+This represents the general category ``Punctuation, other''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OTHER_PUNCTUATION
-This is another name for @code{UC_CATEGORY_Po}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_S
+@deftypevrx Macro uc_general_category_t UC_SYMBOL
+This represents the general category ``Symbol''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_SYMBOL
-This is another name for @code{UC_CATEGORY_S}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Sm
+@deftypevrx Macro uc_general_category_t UC_MATH_SYMBOL
+This represents the general category ``Symbol, math''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_MATH_SYMBOL
-This is another name for @code{UC_CATEGORY_Sm}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Sc
+@deftypevrx Macro uc_general_category_t UC_CURRENCY_SYMBOL
+This represents the general category ``Symbol, currency''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_CURRENCY_SYMBOL
-This is another name for @code{UC_CATEGORY_Sc}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Sk
+@deftypevrx Macro uc_general_category_t UC_MODIFIER_SYMBOL
+This represents the general category ``Symbol, modifier''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_MODIFIER_SYMBOL
-This is another name for @code{UC_CATEGORY_Sk}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_So
+@deftypevrx Macro uc_general_category_t UC_OTHER_SYMBOL
+This represents the general category ``Symbol, other''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OTHER_SYMBOL
-This is another name for @code{UC_CATEGORY_So}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Z
+@deftypevrx Macro uc_general_category_t UC_SEPARATOR
+This represents the general category ``Separator''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_SEPARATOR
-This is another name for @code{UC_CATEGORY_Z}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Zs
+@deftypevrx Macro uc_general_category_t UC_SPACE_SEPARATOR
+This represents the general category ``Separator, space''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_SPACE_SEPARATOR
-This is another name for @code{UC_CATEGORY_Zs}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Zl
+@deftypevrx Macro uc_general_category_t UC_LINE_SEPARATOR
+This represents the general category ``Separator, line''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_LINE_SEPARATOR
-This is another name for @code{UC_CATEGORY_Zl}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Zp
+@deftypevrx Macro uc_general_category_t UC_PARAGRAPH_SEPARATOR
+This represents the general category ``Separator, paragraph''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_PARAGRAPH_SEPARATOR
-This is another name for @code{UC_CATEGORY_Zp}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_C
+@deftypevrx Macro uc_general_category_t UC_OTHER
+This represents the general category ``Other''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_OTHER
-This is another name for @code{UC_CATEGORY_C}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Cc
+@deftypevrx Macro uc_general_category_t UC_CONTROL
+This represents the general category ``Other, control''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_CONTROL
-This is another name for @code{UC_CATEGORY_Cc}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Cf
+@deftypevrx Macro uc_general_category_t UC_FORMAT
+This represents the general category ``Other, format''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_FORMAT
-This is another name for @code{UC_CATEGORY_Cf}.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Cs
+@deftypevrx Macro uc_general_category_t UC_SURROGATE
+This represents the general category ``Other, surrogate''.
+All code points in this category are invalid characters.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_SURROGATE
-This is another name for @code{UC_CATEGORY_Cs}.  All code points in this
-category are invalid characters.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Co
+@deftypevrx Macro uc_general_category_t UC_PRIVATE_USE
+This represents the general category ``Other, private use''.
 @end deftypevr
 
-@deftypevr Macro uc_general_category_t UC_PRIVATE_USE
-This is another name for @code{UC_CATEGORY_Co}.
-@end deftypevr
-
-@deftypevr Macro uc_general_category_t UC_UNASSIGNED
-This is another name for @code{UC_CATEGORY_Cn}.  Some code points in this
-category are invalid characters.
+@deftypevr Constant uc_general_category_t UC_CATEGORY_Cn
+@deftypevrx Macro uc_general_category_t UC_UNASSIGNED
+This represents the general category ``Other, not assigned''.
+Some code points in this category are invalid characters.
 @end deftypevr
 
 The following functions combine general categories, like in a boolean algebra,

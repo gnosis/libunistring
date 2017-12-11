@@ -106,6 +106,9 @@ Returns the uppercase mapping of a string.
 
 The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_tolower (const uint8_t *@var{s}, size_t @var{n}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -115,6 +118,9 @@ Returns the lowercase mapping of a string.
 
 The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_totitle (const uint8_t *@var{s}, size_t @var{n}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -128,6 +134,9 @@ are being mapped to lower case.
 
 The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @node Case mappings of substrings
@@ -200,6 +209,9 @@ prefix context and the suffix context.
 @deftypefunx {uint32_t *} u32_ct_toupper (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Returns the uppercase mapping of a string that is surrounded by a prefix
 and a suffix.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_ct_tolower (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -207,6 +219,9 @@ and a suffix.
 @deftypefunx {uint32_t *} u32_ct_tolower (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Returns the lowercase mapping of a string that is surrounded by a prefix
 and a suffix.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_ct_totitle (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -214,6 +229,9 @@ and a suffix.
 @deftypefunx {uint32_t *} u32_ct_totitle (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Returns the titlecase mapping of a string that is surrounded by a prefix
 and a suffix.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 For example, to uppercase the UTF-8 substring between @code{s + start_index}
@@ -249,6 +267,9 @@ with the @code{u8_cmp2} function is equivalent to comparing @var{s1} and
 
 The @var{nf} argument identifies the normalization form to apply after the
 case-mapping.  It can also be NULL, for no normalization.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u8_ct_casefold (const uint8_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
@@ -256,6 +277,9 @@ case-mapping.  It can also be NULL, for no normalization.
 @deftypefunx {uint32_t *} u32_ct_casefold (const uint32_t *@var{s}, size_t @var{n}, casing_prefix_context_t @var{prefix_context}, casing_suffix_context_t @var{suffix_context}, const char *@var{iso639_language}, uninorm_t @var{nf}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Returns the case folded string.  The case folding takes into account the
 case mapping contexts of the prefix and suffix strings.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun int u8_casecmp (const uint8_t *@var{s1}, size_t @var{n1}, const uint8_t *@var{s2}, size_t @var{n2}, const char *@var{iso639_language}, uninorm_t @var{nf}, int *@var{resultp})
@@ -290,6 +314,9 @@ equivalent to comparing @var{s1} and @var{s2} with @code{u8_casecoll}.
 
 @var{nf} must be either @code{UNINORM_NFC}, @code{UNINORM_NFKC}, or NULL for
 no normalization.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun int u8_casecoll (const uint8_t *@var{s1}, size_t @var{n1}, const uint8_t *@var{s2}, size_t @var{n2}, const char *@var{iso639_language}, uninorm_t @var{nf}, int *@var{resultp})

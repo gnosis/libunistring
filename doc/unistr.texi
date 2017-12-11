@@ -35,30 +35,60 @@ The following functions perform conversions between the different forms of Unico
 
 @deftypefun {uint16_t *} u8_to_u16 (const uint8_t *@var{s}, size_t @var{n}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-8 string to an UTF-16 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint32_t *} u8_to_u32 (const uint8_t *@var{s}, size_t @var{n}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-8 string to an UTF-32 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u16_to_u8 (const uint16_t *@var{s}, size_t @var{n}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-16 string to an UTF-8 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint32_t *} u16_to_u32 (const uint16_t *@var{s}, size_t @var{n}, uint32_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-16 string to an UTF-32 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint8_t *} u32_to_u8 (const uint32_t *@var{s}, size_t @var{n}, uint8_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-32 string to an UTF-8 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @deftypefun {uint16_t *} u32_to_u16 (const uint32_t *@var{s}, size_t @var{n}, uint16_t *@var{resultbuf}, size_t *@var{lengthp})
 Converts an UTF-32 string to an UTF-16 string.
+
+The @var{resultbuf} and @var{lengthp} arguments are as described in
+chapter @ref{Conventions}.
 @end deftypefun
 
 @node Elementary string functions
 @section Elementary string functions
+
+@menu
+* Iterating::
+* Creating Unicode strings::
+* Copying Unicode strings::
+* Comparing Unicode strings::
+* Searching for a character::
+* Counting characters::
+@end menu
+
+@node Iterating
+@subsection Iterating over a Unicode string
 
 @cindex iterating
 The following functions inspect and return details about the first character
@@ -75,9 +105,9 @@ This function is similar to @posixfunc{mblen}, except that it operates on a
 Unicode string and that @var{s} must not be NULL.
 @end deftypefun
 
-@deftypefun int u8_mbtouc_unsafe (ucs4_t *@var{puc}, const uint8_t *@var{s}, size_t @var{n})
-@deftypefunx int u16_mbtouc_unsafe (ucs4_t *@var{puc}, const uint16_t *@var{s}, size_t @var{n})
-@deftypefunx int u32_mbtouc_unsafe (ucs4_t *@var{puc}, const uint32_t *@var{s}, size_t @var{n})
+@deftypefun int u8_mbtouc (ucs4_t *@var{puc}, const uint8_t *@var{s}, size_t @var{n})
+@deftypefunx int u16_mbtouc (ucs4_t *@var{puc}, const uint16_t *@var{s}, size_t @var{n})
+@deftypefunx int u32_mbtouc (ucs4_t *@var{puc}, const uint32_t *@var{s}, size_t @var{n})
 Returns the length (number of units) of the first character in @var{s},
 putting its @code{ucs4_t} representation in @code{*@var{puc}}.  Upon failure,
 @code{*@var{puc}} is set to @code{0xfffd}, and an appropriate number of units
@@ -85,17 +115,21 @@ is returned.
 
 The number of available units, @var{n}, must be > 0.
 
+This function fails if an invalid sequence of units is encountered at the
+beginning of @var{s}, or if additional units (after the @var{n} provided units)
+would be needed to form a character.
+
 This function is similar to @posixfunc{mbtowc}, except that it operates on a
 Unicode string, @var{puc} and @var{s} must not be NULL, @var{n} must be > 0,
 and the NUL character is not treated specially.
 @end deftypefun
 
-@deftypefun int u8_mbtouc (ucs4_t *@var{puc}, const uint8_t *@var{s}, size_t @var{n})
-@deftypefunx int u16_mbtouc (ucs4_t *@var{puc}, const uint16_t *@var{s}, size_t @var{n})
-@deftypefunx int u32_mbtouc (ucs4_t *@var{puc}, const uint32_t *@var{s}, size_t @var{n})
-This function is like @code{u8_mbtouc_unsafe}, except that it will detect an
-invalid UTF-8 character, even if the library is compiled without
-@option{--enable-safety}.
+@deftypefun int u8_mbtouc_unsafe (ucs4_t *@var{puc}, const uint8_t *@var{s}, size_t @var{n})
+@deftypefunx int u16_mbtouc_unsafe (ucs4_t *@var{puc}, const uint16_t *@var{s}, size_t @var{n})
+@deftypefunx int u32_mbtouc_unsafe (ucs4_t *@var{puc}, const uint32_t *@var{s}, size_t @var{n})
+This function is identical to @code{u8_mbtouc}/@code{u16_mbtouc}/@code{u32_mbtouc}.
+Earlier versions of this function performed fewer range-checks on the sequence
+of units.
 @end deftypefun
 
 @deftypefun int u8_mbtoucr (ucs4_t *@var{puc}, const uint8_t *@var{s}, size_t @var{n})
@@ -112,6 +146,9 @@ This function is similar to @code{u8_mbtouc}, except that the return value
 gives more details about the failure, similar to @posixfunc{mbrtowc}.
 @end deftypefun
 
+@node Creating Unicode strings
+@subsection Creating Unicode strings one character at a time
+
 The following function stores a Unicode character as a Unicode string in
 memory.
 
@@ -126,6 +163,9 @@ This function is similar to @posixfunc{wctomb}, except that it operates on a
 Unicode strings, @var{s} must not be NULL, and the argument @var{n} must be
 specified.
 @end deftypefun
+
+@node Copying Unicode strings
+@subsection Copying Unicode strings
 
 @cindex copying
 The following functions copy Unicode strings in memory.
@@ -161,6 +201,9 @@ This function is similar to @posixfunc{memset}, except that it operates on
 Unicode strings.
 @end deftypefun
 
+@node Comparing Unicode strings
+@subsection Comparing Unicode strings
+
 @cindex comparing
 The following function compares two Unicode strings of the same length.
 
@@ -191,6 +234,9 @@ This function is similar to the gnulib function @func{memcmp2}, except that it
 operates on Unicode strings.
 @end deftypefun
 
+@node Searching for a character
+@subsection Searching for a character in a Unicode string
+
 @cindex searching, for a character
 The following function searches for a given Unicode character.
 
@@ -204,6 +250,9 @@ occurrence of @var{uc} in @var{s}, or NULL if @var{uc} does not occur in
 This function is similar to @posixfunc{memchr}, except that it operates on
 Unicode strings.
 @end deftypefun
+
+@node Counting characters
+@subsection Counting the characters in a Unicode string
 
 @cindex counting
 The following function counts the number of Unicode characters.
@@ -232,6 +281,20 @@ Makes a freshly allocated copy of @var{s}, of length @var{n}.
 
 @node Elementary string functions on NUL terminated strings
 @section Elementary string functions on NUL terminated strings
+
+@menu
+* Iterating over a NUL terminated Unicode string::
+* Length::
+* Copying a NUL terminated Unicode string::
+* Comparing NUL terminated Unicode strings::
+* Duplicating a NUL terminated Unicode string::
+* Searching for a character in a NUL terminated Unicode string::
+* Searching for a substring::
+* Tokenizing::
+@end menu
+
+@node Iterating over a NUL terminated Unicode string
+@subsection Iterating over a NUL terminated Unicode string
 
 The following functions inspect and return details about the first character
 in a Unicode string.
@@ -273,6 +336,9 @@ Puts the character's @code{ucs4_t} representation in @code{*@var{puc}}.
 Note that this function works only on well-formed Unicode strings.
 @end deftypefun
 
+@node Length
+@subsection Length of a NUL terminated Unicode string
+
 The following functions determine the length of a Unicode string.
 
 @deftypefun size_t u8_strlen (const uint8_t *@var{s})
@@ -292,6 +358,9 @@ Returns the number of units in @var{s}, but at most @var{maxlen}.
 This function is similar to @posixfunc{strnlen} and @posixfunc{wcsnlen}, except
 that it operates on Unicode strings.
 @end deftypefun
+
+@node Copying a NUL terminated Unicode string
+@subsection Copying a NUL terminated Unicode string
 
 @cindex copying
 The following functions copy portions of Unicode strings in memory.
@@ -355,6 +424,9 @@ This function is similar to @posixfunc{strncat} and @posixfunc{wcsncat}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@node Comparing NUL terminated Unicode strings
+@subsection Comparing NUL terminated Unicode strings
+
 @cindex comparing
 The following functions compare two Unicode strings.
 
@@ -396,6 +468,9 @@ This function is similar to @posixfunc{strncmp} and @posixfunc{wcsncmp}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@node Duplicating a NUL terminated Unicode string
+@subsection Duplicating a NUL terminated Unicode string
+
 @cindex duplicating
 The following function allocates a duplicate of a Unicode string.
 
@@ -407,6 +482,9 @@ Duplicates @var{s}, returning an identical malloc'd string.
 This function is similar to @posixfunc{strdup} and @posixfunc{wcsdup}, except
 that it operates on Unicode strings.
 @end deftypefun
+
+@node Searching for a character in a NUL terminated Unicode string
+@subsection Searching for a character in a NUL terminated Unicode string
 
 @cindex searching, for a character
 The following functions search for a given Unicode character.
@@ -461,6 +539,9 @@ This function is similar to @posixfunc{strpbrk} and @posixfunc{wcspbrk}, except
 that it operates on Unicode strings.
 @end deftypefun
 
+@node Searching for a substring
+@subsection Searching for a substring in a NUL terminated Unicode string
+
 @cindex searching, for a substring
 The following functions search whether a given Unicode string is a substring
 of another Unicode string.
@@ -485,6 +566,9 @@ Tests whether @var{str} starts with @var{prefix}.
 @deftypefunx bool u32_endswith (const uint32_t *@var{str}, const uint32_t *@var{suffix})
 Tests whether @var{str} ends with @var{suffix}.
 @end deftypefun
+
+@node Tokenizing
+@subsection Tokenizing a NUL terminated Unicode string
 
 The following function does one step in tokenizing a Unicode string.
 

@@ -1,5 +1,5 @@
 ## Makefile for the toplevel directory of GNU libunistring.
-## Copyright (C) 2009, 2016 Free Software Foundation, Inc.
+## Copyright (C) 2009, 2016, 2018 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -38,4 +38,4 @@ EXTRA_DIST += woe32dll/export.h
 
 # Windows support.
 
-EXTRA_DIST += README.windows build-aux/windres-options
+EXTRA_DIST += INSTALL.windows build-aux/windres-options

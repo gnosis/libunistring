@@ -1,3 +1,6 @@
+New in 0.9.9:
+* Fixed a multithread-safety bug.
+
 New in 0.9.8:
 * The data tables and line breaking algorithm have been updated to Unicode
   version 9.0.0.

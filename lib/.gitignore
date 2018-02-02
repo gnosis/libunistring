@@ -54,7 +54,6 @@
 /malloc.c
 /malloca.c
 /malloca.h
-/malloca.valgrind
 /math.c
 /math.in.h
 /mbchar.c

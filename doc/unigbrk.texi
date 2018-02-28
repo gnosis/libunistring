@@ -148,7 +148,7 @@ This implements the extended (not legacy) grapheme cluster rules
 described in the Unicode standard, because the standard says that they
 are preferred.
 
-Note that this function do not handle the case when three or more
+Note that this function does not handle the case when three or more
 consecutive characters are needed to determine the boundary.  Use
 @func{uc_grapheme_breaks} for such cases.
 @end deftypefun

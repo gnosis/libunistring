@@ -1,3 +1,7 @@
+2011-01-29  Bruno Haible  <bruno@clisp.org>
+
+	* m4/woe32-dll.m4: Add a comment.
+
 2018-02-28  Daiki Ueno  <ueno@gnu.org>
 
 	* version.sh: Bump version number and date.

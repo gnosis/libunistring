@@ -1,3 +1,10 @@
+2018-03-27  Bruno Haible  <bruno@clisp.org>
+
+	Doc tweaks.
+	* README: Don't recommend to use --prefix=/usr/local, as it produces
+	problems with GCC (since GCC's treatment of /usr/local/include and
+	/usr/local/lib is inconsistent by default).
+
 2011-01-29  Bruno Haible  <bruno@clisp.org>
 
 	* m4/woe32-dll.m4: Add a comment.

@@ -33,6 +33,8 @@
 /u-ct-totitle.h
 /u-is-cased.h
 /u-is-invariant.h
+/u-prefix-context.h
+/u-suffix-context.h
 /u-totitle.h
 /u16-casecmp.c
 /u16-casecoll.c
@@ -49,6 +51,8 @@
 /u16-is-lowercase.c
 /u16-is-titlecase.c
 /u16-is-uppercase.c
+/u16-prefix-context.c
+/u16-suffix-context.c
 /u16-tolower.c
 /u16-totitle.c
 /u16-toupper.c
@@ -67,6 +71,8 @@
 /u32-is-lowercase.c
 /u32-is-titlecase.c
 /u32-is-uppercase.c
+/u32-prefix-context.c
+/u32-suffix-context.c
 /u32-tolower.c
 /u32-totitle.c
 /u32-toupper.c
@@ -85,6 +91,8 @@
 /u8-is-lowercase.c
 /u8-is-titlecase.c
 /u8-is-uppercase.c
+/u8-prefix-context.c
+/u8-suffix-context.c
 /u8-tolower.c
 /u8-totitle.c
 /u8-toupper.c

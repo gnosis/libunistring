@@ -12,7 +12,7 @@
 # It also requires
 #   - the gperf program.
 
-# Copyright (C) 2003-2016 Free Software Foundation, Inc.
+# Copyright (C) 2003-2018 Free Software Foundation, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -386,6 +386,8 @@ if test $skip_gnulib = false; then
       unicase/u8-is-lowercase
       unicase/u8-is-titlecase
       unicase/u8-is-uppercase
+      unicase/u8-prefix-context
+      unicase/u8-suffix-context
       unicase/u8-tolower
       unicase/u8-totitle
       unicase/u8-toupper
@@ -402,6 +404,8 @@ if test $skip_gnulib = false; then
       unicase/u16-is-lowercase
       unicase/u16-is-titlecase
       unicase/u16-is-uppercase
+      unicase/u16-prefix-context
+      unicase/u16-suffix-context
       unicase/u16-tolower
       unicase/u16-totitle
       unicase/u16-toupper
@@ -418,6 +422,8 @@ if test $skip_gnulib = false; then
       unicase/u32-is-lowercase
       unicase/u32-is-titlecase
       unicase/u32-is-uppercase
+      unicase/u32-prefix-context
+      unicase/u32-suffix-context
       unicase/u32-tolower
       unicase/u32-totitle
       unicase/u32-toupper

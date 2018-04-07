@@ -1,3 +1,13 @@
+New in 0.9.10:
+* The functions
+    u8_casing_prefix_context, u8_casing_prefixes_context,
+    u8_casing_suffix_context, u8_casing_suffixes_context,
+    u16_casing_prefix_context, u16_casing_prefixes_context,
+    u16_casing_suffix_context, u16_casing_suffixes_context,
+    u32_casing_prefix_context, u32_casing_prefixes_context,
+    u32_casing_suffix_context, u32_casing_suffixes_context,
+  that are documented since version 0.9.1, are now actually implemented.
+
 New in 0.9.9:
 * Fixed a multithread-safety bug.
 

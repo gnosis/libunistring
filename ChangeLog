@@ -1,5 +1,10 @@
 2018-05-17  Bruno Haible  <bruno@clisp.org>
 
+	doc: Fix @menu structure (regression from 2017-12-10).
+	* doc/libunistring.texi (Introduction): Fix @menu.
+
+2018-05-17  Bruno Haible  <bruno@clisp.org>
+
 	Allow use of automake-1.16.
 	* autogen.sh: Update comments.
 

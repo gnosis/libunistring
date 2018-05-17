@@ -348,7 +348,6 @@ internal in-memory representation.
 * Locale encodings::            What is a locale encoding?
 * In-memory representation::    How to represent strings in memory?
 * char * strings::              What to keep in mind with @code{char *} strings
-* The wchar_t mess::            Why @code{wchar_t *} strings are useless
 * Unicode strings::             How are Unicode strings represented?
 @end menu
 

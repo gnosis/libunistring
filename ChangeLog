@@ -1,3 +1,8 @@
+2018-05-17  Bruno Haible  <bruno@clisp.org>
+
+	Allow use of automake-1.16.
+	* autogen.sh: Update comments.
+
 2018-04-07  Bruno Haible  <bruno@clisp.org>
 
 	Implement the documented functions u*_casing_*_context.

@@ -465,7 +465,7 @@ if test $skip_gnulib = false; then
   fi
 fi
 
-build-aux/fixaclocal aclocal -I m4 -I gnulib-m4
+aclocal -I m4 -I gnulib-m4
 autoconf
 autoheader && touch config.h.in
 # Make sure we get new versions of files brought in by automake.

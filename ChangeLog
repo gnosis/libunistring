@@ -1,3 +1,11 @@
+2018-09-17  Bruno Haible  <bruno@clisp.org>
+
+	Remove the 'fixaclocal' auxiliary script.
+	* autogen.sh: Don't invoke fixaclocal.
+	* Makefile.am (ACLOCAL): Remove override.
+	(EXTRA_DIST): Remove build-aux/fixaclocal.
+	* build-aux/fixaclocal: Remove file.
+
 2018-05-17  Bruno Haible  <bruno@clisp.org>
 
 	Prepare for 0.9.10 release.

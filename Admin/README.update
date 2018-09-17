@@ -2,7 +2,7 @@
 
 The substance of libunistring is maintained in Gnulib:
 
-  http://git.savannah.gnu.org/cgit/gnulib.git
+  https://git.savannah.gnu.org/gitweb/?p=gnulib.git
 
 This file attempts to describe the procedure of updating Gnulib to the
 latest Unicode release.  Also, a few scripts are included here to make
@@ -19,7 +19,7 @@ uniwbrk.h, unigbrk.h) often require manual adjustment of source files.
 
 The release notes are typically available at:
 
-  http://unicode.org/versions/Unicode<VERSION>/
+  https://unicode.org/versions/Unicode<VERSION>/
 
 * Regenerating the Gnulib source code
 

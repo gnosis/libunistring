@@ -392,14 +392,14 @@ Japanese, even the processing of pure Japanese text was error prone.
 References:
 @itemize @bullet
 @item
-The Unicode standard:@texnl{} @url{http://www.unicode.org/}
+The Unicode standard:@texnl{} @url{https://www.unicode.org/}
 @item
-Definition of UTF-8:@texnl{} @url{http://www.rfc-editor.org/rfc/rfc3629.txt}
+Definition of UTF-8:@texnl{} @url{https://www.rfc-editor.org/rfc/rfc3629.txt}
 @item
-Definition of UTF-16:@texnl{} @url{http://www.rfc-editor.org/rfc/rfc2781.txt}
+Definition of UTF-16:@texnl{} @url{https://www.rfc-editor.org/rfc/rfc2781.txt}
 @item
 Markus Kuhn's UTF-8 and Unicode FAQ:@texnl{}
-@url{http://www.cl.cam.ac.uk/~mgk25/unicode.html}
+@url{https://www.cl.cam.ac.uk/~mgk25/unicode.html}
 @end itemize
 
 @node Unicode and i18n
@@ -595,7 +595,7 @@ functions do not work with multibyte strings.
 @end itemize
 
 The workarounds can be found in GNU gnulib
-@url{http://www.gnu.org/software/gnulib/}.
+@url{https://www.gnu.org/software/gnulib/}.
 @itemize @bullet
 @item
 gnulib has modules @samp{mbchar}, @samp{mbiter}, @samp{mbuiter} that
@@ -863,7 +863,7 @@ that uses @code{libunistring} was installed.
 GNU Gnulib provides an autoconf macro that tests for the availability
 of @code{libunistring}.  It is contained in the Gnulib module
 @samp{libunistring}, see@texnl{}
-@url{http://www.gnu.org/software/gnulib/MODULES.html#module=libunistring}.
+@url{https://www.gnu.org/software/gnulib/MODULES.html#module=libunistring}.
 
 @amindex gl_LIBUNISTRING
 The macro is called @code{gl_LIBUNISTRING}.  It searches for an installed
@@ -924,7 +924,7 @@ For bidirectional reordering of strings, we recommend the GNU FriBidi library:
 @cindex rendering
 For the rendering of Unicode strings outside of the context of a given toolkit
 (KDE/Qt or GNOME/Gtk), we recommend the Pango library:
-@url{http://www.pango.org/}.
+@url{https://www.pango.org/}.
 
 @include wchar_t.texi
 

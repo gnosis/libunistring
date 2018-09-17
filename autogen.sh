@@ -25,7 +25,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Usage: ./autogen.sh [--skip-gnulib]
 #
@@ -53,7 +53,7 @@ if test $skip_gnulib = false; then
   # but that is too old (does not support @arrow{}). So take the version which
   # matches the latest stable texinfo release.
   if test ! -f build-aux/texinfo.tex; then
-    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'http://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_'`echo $TEXINFO_VERSION | sed -e 's/[.]/_/g'` \
+    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'https://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_'`echo $TEXINFO_VERSION | sed -e 's/[.]/_/g'` \
         && mv build-aux/texinfo.tex.tmp build-aux/texinfo.tex; \
     } || rm -f build-aux/texinfo.tex.tmp
   fi

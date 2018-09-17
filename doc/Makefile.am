@@ -1,5 +1,5 @@
 ## Makefile for the doc subdirectory of GNU libunistring.
-## Copyright (C) 2009, 2011, 2017 Free Software Foundation, Inc.
+## Copyright (C) 2009, 2011, 2014, 2017-2018 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 ## GNU General Public License for more details.
 ##
 ## You should have received a copy of the GNU General Public License
-## along with this program.  If not, see <http://www.gnu.org/licenses/>.
+## along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Process this file with automake to produce Makefile.in.
 
@@ -23,7 +23,7 @@ MOSTLYCLEANFILES =
 # List of -I options referring to directories that contain texinfo sources
 # used by this directory.
 # Should contain at least one -I option, to work around a bug in texi2dvi 1.13,
-# see <http://lists.gnu.org/archive/html/bug-automake/2009-04/msg00029.html>.
+# see <https://lists.gnu.org/archive/html/bug-automake/2009-04/msg00029.html>.
 TEXINCLUDES = -I .
 
 MAKEINFO = env LANG= LC_MESSAGES= LC_ALL= LANGUAGE= @MAKEINFO@

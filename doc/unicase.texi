@@ -54,7 +54,7 @@ Bosnian, and Serbian languages.
 
 @c Normally we would use .33 space for each column, but this is too much in
 @c TeX mode, see
-@c <http://lists.gnu.org/archive/html/bug-texinfo/2009-05/msg00016.html>.
+@c <https://lists.gnu.org/archive/html/bug-texinfo/2009-05/msg00016.html>.
 @multitable @columnfractions .31 .31 .31
 @headitem Lower case @tab Title case @tab Upper case
 @item LATIN SMALL LETTER LJ

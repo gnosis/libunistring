@@ -392,7 +392,7 @@ combining classes are attached "first" or "closer" to the base character.
 
 The canonical combining class of a character is a number in the range
 0..255.  The possible values are described in the Unicode Character Database
-@texnl{}@url{http://www.unicode.org/Public/UNIDATA/UCD.html}.  The list here is
+@texnl{}@url{https://www.unicode.org/Public/UNIDATA/UCD.html}.  The list here is
 not definitive; more values can be added in future versions.
 
 @deftypevr Constant int UC_CCC_NR
@@ -515,7 +515,7 @@ Every Unicode character or code point has a @emph{bidi class} assigned to it.
 Before Unicode 4.0, this concept was known as @emph{bidirectional category}.
 
 The bidi class guides the bidirectional algorithm@texnl{}
-(@url{http://www.unicode.org/reports/tr9/}).  The possible values are
+(@url{https://www.unicode.org/reports/tr9/}).  The possible values are
 the following.
 
 @deftypevr Constant int UC_BIDI_L

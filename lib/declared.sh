@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# Copyright (C) 2009 Free Software Foundation, Inc.
+# Copyright (C) 2006-2018 Free Software Foundation, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,7 +13,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
 # This script determines the declared global symbols in a C header file.
@@ -45,8 +45,8 @@ Report bugs to <bruno@clisp.org>."
 func_version ()
 {
   echo "declared.sh (GNU libunistring)"
-  echo "Copyright (C) 2006, 2009 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+  echo "Copyright (C) 2006-2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law."
   echo "Written by" "Bruno Haible"

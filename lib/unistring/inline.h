@@ -1,5 +1,5 @@
 /* Decision whether to use 'inline' or not.
-   Copyright (C) 2006, 2009 Free Software Foundation, Inc.
+   Copyright (C) 2006, 2009, 2018 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify it
    under the terms of the GNU Lesser General Public License as published
@@ -12,7 +12,7 @@
    Lesser General Public License for more details.
 
    You should have received a copy of the GNU Lesser General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* Written by Bruno Haible <bruno@clisp.org>, 2009.  */
 
@@ -22,7 +22,7 @@
 /* This is like the gl_INLINE macro in gnulib/m4/inline.m4, but makes its
    decision based on defined preprocessor symbols rather than through
    autoconf tests.
-   See <http://lists.gnu.org/archive/html/bug-gnulib/2006-11/msg00055.html>  */
+   See <https://lists.gnu.org/archive/html/bug-gnulib/2006-11/msg00055.html>  */
 
 /* Test for the 'inline' keyword or equivalent.  ISO C 99 semantics is not
    required, only that 'static inline' works.

@@ -99,7 +99,7 @@ characters.
 This is a more low-level API.  The grapheme cluster break property is a
 property defined in Unicode Standard Annex #29, section ``Grapheme Cluster
 Boundaries'', see
-@url{http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries}.@texnl{}
+@url{https://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries}.@texnl{}
 It is used for determining the grapheme cluster breaks in a string.
 
 The following are the possible values of the grapheme cluster break

@@ -1,3 +1,12 @@
+2018-10-23  Bruno Haible  <bruno@clisp.org>
+
+	Support for per-thread locales on systems with HAVE_NAMELESS_LOCALES.
+	This allows 'uc_locale_language' to return the right locale name for
+	locales created by newlocale() or duplocale() on such systems, if and
+	only if the 'newlocale', 'duplocale' overrides from gnulib are used.
+	* lib/Makefile.am (config.h): Don't hide symbols that start with
+	'libintl_locale'.
+
 2018-09-17  Bruno Haible  <bruno@clisp.org>
 
 	Remove the 'fixaclocal' auxiliary script.

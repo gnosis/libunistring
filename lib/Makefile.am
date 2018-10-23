@@ -1,5 +1,5 @@
 ## Makefile for the lib subdirectory of GNU libunistring.
-## Copyright (C) 2009-2011 Free Software Foundation, Inc.
+## Copyright (C) 2009-2018 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -246,6 +246,8 @@ endif
 # Hide undesired symbols that are defined by libunistring_la_SOURCES or
 # libunistring_la_LIBADD from the global namespace, by prefixing them with
 # "libunistring_".
+# But don't hide symbols that start with "libintl_locale", for the reason
+# stated in localename-table.h.
 all check install: config.h
 config.h: $(BUILT_SOURCES) libunistring.sym
 	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
@@ -284,6 +286,7 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	          fi; \
 	          LC_ALL=C join -v 1 - $$symfile; \
 	        } \
+	      | grep -v '^libintl_locale' \
 	      | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t; \
 	  } 6>&1 && \
 	  if test -f config.h; then \

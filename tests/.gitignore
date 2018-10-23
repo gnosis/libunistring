@@ -24,7 +24,6 @@
 /intprops.h
 /inttypes.in.h
 /isblank.c
-/locale.in.h
 /macros.h
 /mbtowc-impl.h
 /mbtowc.c
@@ -89,6 +88,7 @@
 /test-iswblank.c
 /test-langinfo.c
 /test-limits-h.c
+/test-localcharset.c
 /test-locale.c
 /test-localename.c
 /test-lock.c

@@ -49,6 +49,9 @@
 /limits.in.h
 /localcharset.c
 /localcharset.h
+/locale.in.h
+/localename-table.c
+/localename-table.h
 /localename.c
 /localename.h
 /malloc.c

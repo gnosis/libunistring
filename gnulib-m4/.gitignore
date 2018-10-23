@@ -40,6 +40,7 @@
 /iconv_open.m4
 /include_next.m4
 /inline.m4
+/intl-thread-locale.m4
 /intlmacosx.m4
 /intmax_t.m4
 /inttypes-pri.m4

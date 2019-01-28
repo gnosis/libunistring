@@ -458,6 +458,7 @@ if test $skip_gnulib = false; then
     && mv lib/unicase.in.h.tmp lib/unicase.in.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
+    $GNULIB_TOOL --copy-file build-aux/test-driver.diff
     # If we got no texinfo.tex so far, take the snapshot from gnulib.
     if test ! -f build-aux/texinfo.tex; then
       $GNULIB_TOOL --copy-file build-aux/texinfo.tex build-aux/texinfo.tex
@@ -471,5 +472,6 @@ autoheader && touch config.h.in
 # Make sure we get new versions of files brought in by automake.
 (cd build-aux && rm -f ar-lib compile depcomp install-sh mdate-sh missing test-driver)
 automake --add-missing --copy
+patch build-aux/test-driver < build-aux/test-driver.diff
 # Get rid of autom4te.cache directory.
 rm -rf autom4te.cache

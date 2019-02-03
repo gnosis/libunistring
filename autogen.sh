@@ -12,7 +12,7 @@
 # It also requires
 #   - the gperf program.
 
-# Copyright (C) 2003-2018 Free Software Foundation, Inc.
+# Copyright (C) 2003-2019 Free Software Foundation, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -442,7 +442,7 @@ if test $skip_gnulib = false; then
         < lib/unistr.in.h \
         > lib/unistr.in.h.tmp \
     && mv lib/unistr.in.h.tmp lib/unistr.in.h
-    # Change lib/unictype.h and lib/uninorm.h for shared libraries on Woe32 systems.
+    # Change lib/unictype.h, lib/uninorm.h, lib/unicase.h for shared libraries on Woe32 systems.
     sed -e 's/extern const uc_general_category_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_general_category_t UC_/' \
         -e 's/extern const uc_property_t UC_/extern LIBUNISTRING_DLL_VARIABLE const uc_property_t UC_/' \
         < lib/unictype.in.h \
@@ -458,6 +458,7 @@ if test $skip_gnulib = false; then
     && mv lib/unicase.in.h.tmp lib/unicase.in.h
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
+    $GNULIB_TOOL --copy-file build-aux/declared.sh lib/declared.sh; chmod a+x lib/declared.sh
     $GNULIB_TOOL --copy-file build-aux/test-driver.diff
     # If we got no texinfo.tex so far, take the snapshot from gnulib.
     if test ! -f build-aux/texinfo.tex; then

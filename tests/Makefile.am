@@ -1,5 +1,5 @@
 ## Makefile for the tests subdirectory of GNU libunistring.
-## Copyright (C) 2009 Free Software Foundation, Inc.
+## Copyright (C) 2009, 2019 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ TESTS_ENVIRONMENT += @LOCALCHARSET_TESTS_ENVIRONMENT@
 # For debugging memory leaks and memory allocation bugs.
 # You should build with --disable-shared when using valgrind.
 CHECKER =
-#CHECKER = valgrind --tool=memcheck --suppressions=$(srcdir)/../lib/malloca.valgrind --num-callers=20 --leak-check=yes --leak-resolution=high --show-reachable=yes
+#CHECKER = valgrind --tool=memcheck --suppressions=$(srcdir)/../lib/memchr.valgrind --num-callers=20 --leak-check=yes --leak-resolution=high --show-reachable=yes
 #CHECKER = valgrind --tool=massif --format=html --depth=10 --alloc-fn=xmalloc --alloc-fn=xrealloc --stacks=no
 CHECKER_END_OF_COMMENTS =
 

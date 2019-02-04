@@ -1,7 +1,14 @@
+2019-02-04  Bruno Haible  <bruno@clisp.org>
+
+	Move run-test to gnulib.
+	* autogen.sh: Copy build-aux/run-test from gnulib.
+	* build-aux/run-test: Remove file.
+
 2019-02-03  Bruno Haible  <bruno@clisp.org>
 
 	Move declared.sh to gnulib.
 	* autogen.sh: Copy lib/declared.sh from gnulib.
+	* lib/declared.sh: Remove file.
 
 2019-01-28  Bruno Haible  <bruno@clisp.org>
 

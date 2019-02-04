@@ -459,6 +459,7 @@ if test $skip_gnulib = false; then
     $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
     $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
     $GNULIB_TOOL --copy-file build-aux/declared.sh lib/declared.sh; chmod a+x lib/declared.sh
+    $GNULIB_TOOL --copy-file build-aux/run-test; chmod a+x build-aux/run-test
     $GNULIB_TOOL --copy-file build-aux/test-driver.diff
     # If we got no texinfo.tex so far, take the snapshot from gnulib.
     if test ! -f build-aux/texinfo.tex; then

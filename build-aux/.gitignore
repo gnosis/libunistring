@@ -13,6 +13,7 @@
 # Other files brought in by autogen.sh:
 /config.guess
 /config.sub
+/run-test
 /test-driver.diff
 /texinfo.tex
 

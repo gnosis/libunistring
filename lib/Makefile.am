@@ -178,7 +178,7 @@ EXTRA_DIST       += unistring/cdefs.in.h
 nobase_nodist_include_HEADERS += unistring/woe32dll.h
 
 # Directories that contain some CLEANFILES.
-CLEANDIRS = 
+CLEANDIRS =
 CLEANDIRS_NOT_IN_SRCDIR = unistring
 clean-local: clean-generic
 	@for dir in '' $(CLEANDIRS); do \
@@ -188,6 +188,24 @@ clean-local: clean-generic
 	done; \
 	if test '$(srcdir)' != '.'; then \
 	  for dir in '' $(CLEANDIRS_NOT_IN_SRCDIR); do \
+	    if test -n "$$dir" && test -d $$dir; then \
+	      echo "rmdir $$dir"; rmdir $$dir; \
+	    fi; \
+	  done; \
+	fi; \
+        :
+
+# Directories that contain some DISTCLEANFILES.
+DISTCLEANDIRS = sys
+DISTCLEANDIRS_NOT_IN_SRCDIR =
+distclean-local: distclean-generic
+	@for dir in '' $(DISTCLEANDIRS); do \
+	  if test -n "$$dir" && test -d $$dir; then \
+	    echo "rmdir $$dir"; rmdir $$dir; \
+	  fi; \
+	done; \
+	if test '$(srcdir)' != '.'; then \
+	  for dir in '' $(DISTCLEANDIRS_NOT_IN_SRCDIR); do \
 	    if test -n "$$dir" && test -d $$dir; then \
 	      echo "rmdir $$dir"; rmdir $$dir; \
 	    fi; \

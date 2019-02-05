@@ -1,5 +1,13 @@
 2019-02-04  Bruno Haible  <bruno@clisp.org>
 
+	Remove left-over empty directories in 'make distclean'.
+	* lib/Makefile.am (DISTCLEANDIRS, DISTCLEANDIRS_NOT_IN_SRCDIR): New
+	variables.
+	(distclean-local): New target.
+	* tests/Makefile.am (distclean-local): New target.
+
+2019-02-04  Bruno Haible  <bruno@clisp.org>
+
 	Move run-test to gnulib.
 	* autogen.sh: Copy build-aux/run-test from gnulib.
 	* build-aux/run-test: Remove file.

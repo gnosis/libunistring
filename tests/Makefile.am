@@ -37,3 +37,9 @@ CHECKER_END_OF_COMMENTS =
 
 # This must be the last thing that gets added to TESTS_ENVIRONMENT.
 TESTS_ENVIRONMENT += $(SHELL) $(top_srcdir)/build-aux/run-test '$(CHECKER)'
+
+
+# Remove .deps directories creates by 'configure'.
+# I would say that this left-over is an Automake 1.16.1 bug.
+distclean-local:
+	rm -rf $(DEPDIR) */$(DEPDIR)

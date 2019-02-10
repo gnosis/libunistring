@@ -43,7 +43,7 @@ while :; do
   esac
 done
 
-TEXINFO_VERSION=4.13
+TEXINFO_VERSION=6.5
 
 if test $skip_gnulib = false; then
   # texinfo.tex
@@ -53,7 +53,7 @@ if test $skip_gnulib = false; then
   # but that is too old (does not support @arrow{}). So take the version which
   # matches the latest stable texinfo release.
   if test ! -f build-aux/texinfo.tex; then
-    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'https://cvs.savannah.gnu.org/viewvc/*checkout*/texinfo/doc/texinfo.tex?root=texinfo&pathrev=texinfo_'`echo $TEXINFO_VERSION | sed -e 's/[.]/_/g'` \
+    { wget -q --timeout=5 -O build-aux/texinfo.tex.tmp 'https://git.savannah.gnu.org/gitweb/?p=texinfo.git;a=blob_plain;f=doc/texinfo.tex;hb=refs/tags/texinfo-'"$TEXINFO_VERSION" \
         && mv build-aux/texinfo.tex.tmp build-aux/texinfo.tex; \
     } || rm -f build-aux/texinfo.tex.tmp
   fi
@@ -463,7 +463,7 @@ if test $skip_gnulib = false; then
     $GNULIB_TOOL --copy-file build-aux/test-driver.diff
     # If we got no texinfo.tex so far, take the snapshot from gnulib.
     if test ! -f build-aux/texinfo.tex; then
-      $GNULIB_TOOL --copy-file build-aux/texinfo.tex build-aux/texinfo.tex
+      $GNULIB_TOOL --copy-file build-aux/texinfo.tex
     fi
   fi
 fi

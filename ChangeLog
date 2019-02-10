@@ -1,3 +1,10 @@
+2019-02-10  Bruno Haible  <bruno@clisp.org>
+
+	Use a newer texinfo.tex.
+	* autogen.sh (TEXINFO_VERSION): Bump to 6.5.
+	Fetch texinfo.tex from the texinfo git repository instead of the
+	obsolete texinfo CVS repository.
+
 2019-02-04  Bruno Haible  <bruno@clisp.org>
 
 	Remove left-over empty directories in 'make distclean'.

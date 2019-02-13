@@ -1,5 +1,11 @@
 2019-02-13  Bruno Haible  <bruno@clisp.org>
 
+	build: Put the .sym file in the source directory.
+	* lib/Makefile.am (libunistring.sym): Generate in the source directory.
+	(config.h): Update rule.
+
+2019-02-13  Bruno Haible  <bruno@clisp.org>
+
 	doc: Simplify the title page.
 	* doc/libunistring.texi (titlepage): Remove redundant subtitle.
 

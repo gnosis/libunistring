@@ -1,5 +1,5 @@
 ## Makefile for the lib subdirectory of GNU libunistring.
-## Copyright (C) 2009-2018 Free Software Foundation, Inc.
+## Copyright (C) 2009-2019 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -239,7 +239,7 @@ HEADERS_WITH_EXTERNS = \
 # This file has the same format as the one expected by the libtool option
 # '-export-symbols', but we don't use this option, because it would prevent us
 # from building some of the gnulib unit tests.
-libunistring.sym : $(HEADERS_WITH_EXTERNS)
+$(srcdir)/libunistring.sym : $(HEADERS_WITH_EXTERNS)
 	for f in $(HEADERS_WITH_EXTERNS); do \
 	  if test -f $$f; then \
 	    cat $$f; \
@@ -251,6 +251,14 @@ libunistring.sym : $(HEADERS_WITH_EXTERNS)
 	  > $@-t
 	mv $@-t $@
 # We distribute it because declared.sh relies on GNU sed.
+# The GNU Coding Standards say in
+# <https://www.gnu.org/prep/standards/html_node/Makefile-Basics.html>:
+#   "GNU distributions usually contain some files which are not source files
+#    ... . Since these files normally appear in the source directory, they
+#    should always appear in the source directory, not in the build directory.
+#    So Makefile rules to update them should put the updated files in the
+#    source directory."
+# Therefore we put this file in the source directory, not the build directory.
 MOSTLYCLEANFILES     += libunistring.sym-t
 MAINTAINERCLEANFILES += libunistring.sym
 EXTRA_DIST           += libunistring.sym declared.sh
@@ -267,7 +275,7 @@ endif
 # But don't hide symbols that start with "libintl_locale", for the reason
 # stated in localename-table.h.
 all check install: config.h
-config.h: $(BUILT_SOURCES) libunistring.sym
+config.h: $(BUILT_SOURCES) $(srcdir)/libunistring.sym
 	{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
 	  : "Avoid double inclusion, to avoid a warning about redefinitions."; \
 	  echo '#ifndef UNISTRING_CONFIG_H'; \
@@ -296,14 +304,7 @@ config.h: $(BUILT_SOURCES) libunistring.sym
 	      done; \
 	    } 5>&1 \
 	      | sed -e 's,.* ,,' | LC_ALL=C sort | LC_ALL=C uniq \
-	      | { \
-	          if test -f libunistring.sym; then \
-	            symfile='libunistring.sym'; \
-	          else \
-	            symfile='$(srcdir)/libunistring.sym'; \
-	          fi; \
-	          LC_ALL=C join -v 1 - $$symfile; \
-	        } \
+	      | LC_ALL=C join -v 1 - $(srcdir)/libunistring.sym \
 	      | grep -v '^libintl_locale' \
 	      | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t; \
 	  } 6>&1 && \

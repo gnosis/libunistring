@@ -123,7 +123,6 @@ A copy of the license is included in @ref{GNU GPL}.
 @titlepage
 @title GNU libunistring, version @value{VERSION}
 @subtitle updated @value{UPDATED}
-@subtitle Edition @value{EDITION}, @value{UPDATED}
 @author Bruno Haible
 
 @ifnothtml

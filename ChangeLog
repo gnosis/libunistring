@@ -1,5 +1,12 @@
 2019-02-13  Bruno Haible  <bruno@clisp.org>
 
+	doc: Make function declarations easier to read.
+	* doc/uni*.texi: Inside the argument list of function declarations, use
+	no-break spaces instead of spaces, except directly after a comma.
+	* doc/libunistring.texi: Bump copyright year.
+
+2019-02-13  Bruno Haible  <bruno@clisp.org>
+
 	build: Put the .sym file in the source directory.
 	* lib/Makefile.am (libunistring.sym): Generate in the source directory.
 	(config.h): Update rule.

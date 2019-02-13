@@ -45,10 +45,10 @@ override.
 The following functions determine the positions at which line breaks are
 possible.
 
-@deftypefun void u8_possible_linebreaks (const uint8_t *@var{s}, size_t @var{n}, const char *@var{encoding}, char *@var{p})
-@deftypefunx void u16_possible_linebreaks (const uint16_t *@var{s}, size_t @var{n}, const char *@var{encoding}, char *@var{p})
-@deftypefunx void u32_possible_linebreaks (const uint32_t *@var{s}, size_t @var{n}, const char *@var{encoding}, char *@var{p})
-@deftypefunx void ulc_possible_linebreaks (const char *@var{s}, size_t @var{n}, const char *@var{encoding}, char *@var{p})
+@deftypefun void u8_possible_linebreaks (const@tie{}uint8_t@tie{}*@var{s}, size_t@tie{}@var{n}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx void u16_possible_linebreaks (const@tie{}uint16_t@tie{}*@var{s}, size_t@tie{}@var{n}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx void u32_possible_linebreaks (const@tie{}uint32_t@tie{}*@var{s}, size_t@tie{}@var{n}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx void ulc_possible_linebreaks (const@tie{}char@tie{}*@var{s}, size_t@tie{}@var{n}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
 Determines the line break points in @var{s}, and stores the result at
 @code{@var{p}[0..@var{n}-1]}.  Every @code{@var{p}[@var{i}]} is assigned one of
 the values @code{UC_BREAK_MANDATORY}, @code{UC_BREAK_POSSIBLE},
@@ -59,10 +59,10 @@ The following functions determine where line breaks should be inserted so that
 each line fits in a given width, when output to a device that uses
 non-proportional fonts.
 
-@deftypefun int u8_width_linebreaks (const uint8_t *@var{s}, size_t @var{n}, int @var{width}, int @var{start_column}, int @var{at_end_columns}, const char *@var{override}, const char *@var{encoding}, char *@var{p})
-@deftypefunx int u16_width_linebreaks (const uint16_t *@var{s}, size_t @var{n}, int @var{width}, int @var{start_column}, int @var{at_end_columns}, const char *@var{override}, const char *@var{encoding}, char *@var{p})
-@deftypefunx int u32_width_linebreaks (const uint32_t *@var{s}, size_t @var{n}, int @var{width}, int @var{start_column}, int @var{at_end_columns}, const char *@var{override}, const char *@var{encoding}, char *@var{p})
-@deftypefunx int ulc_width_linebreaks (const char *@var{s}, size_t @var{n}, int @var{width}, int @var{start_column}, int @var{at_end_columns}, const char *@var{override}, const char *@var{encoding}, char *@var{p})
+@deftypefun int u8_width_linebreaks (const@tie{}uint8_t@tie{}*@var{s}, size_t@tie{}@var{n}, int@tie{}@var{width}, int@tie{}@var{start_column}, int@tie{}@var{at_end_columns}, const@tie{}char@tie{}*@var{override}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx int u16_width_linebreaks (const@tie{}uint16_t@tie{}*@var{s}, size_t@tie{}@var{n}, int@tie{}@var{width}, int@tie{}@var{start_column}, int@tie{}@var{at_end_columns}, const@tie{}char@tie{}*@var{override}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx int u32_width_linebreaks (const@tie{}uint32_t@tie{}*@var{s}, size_t@tie{}@var{n}, int@tie{}@var{width}, int@tie{}@var{start_column}, int@tie{}@var{at_end_columns}, const@tie{}char@tie{}*@var{override}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
+@deftypefunx int ulc_width_linebreaks (const@tie{}char@tie{}*@var{s}, size_t@tie{}@var{n}, int@tie{}@var{width}, int@tie{}@var{start_column}, int@tie{}@var{at_end_columns}, const@tie{}char@tie{}*@var{override}, const@tie{}char@tie{}*@var{encoding}, char@tie{}*@var{p})
 Chooses the best line breaks, assuming that every character occupies a width
 given by the @code{uc_width} function (see @ref{uniwidth.h}).
 

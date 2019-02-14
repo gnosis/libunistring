@@ -1,5 +1,12 @@
 2019-02-13  Bruno Haible  <bruno@clisp.org>
 
+	doc: Fix hyperlinks to table of contents in HTML doc.
+	Reported by Akim Demaille <akim.demaille@gmail.com>.
+	* doc/Makefile.am (libunistring_toc.html): Replace references to
+	libunistring.html with references to libunistring_toc.html.
+
+2019-02-13  Bruno Haible  <bruno@clisp.org>
+
 	doc: Make function declarations easier to read.
 	* doc/uni*.texi: Inside the argument list of function declarations, use
 	no-break spaces instead of spaces, except directly after a comma.

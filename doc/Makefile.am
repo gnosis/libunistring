@@ -1,5 +1,5 @@
 ## Makefile for the doc subdirectory of GNU libunistring.
-## Copyright (C) 2009, 2011, 2014, 2017-2018 Free Software Foundation, Inc.
+## Copyright (C) 2009, 2011, 2014, 2017-2019 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -146,7 +146,9 @@ libunistring_toc.html: libunistring.texi version.texi $(libunistring_TEXINFOS)
 	     $(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -split_chapter `if test -f libunistring.texi; then echo libunistring.texi; else echo $(srcdir)/libunistring.texi; fi` ;; \
 	esac \
 	&& { mv libunistring/libunistring.html libunistring_toc.html; \
-	     mv libunistring/*.html .; \
+	     for file in libunistring/*.html; do \
+	       sed -e 's/libunistring\.html/libunistring_toc.html/g' < $$file > `basename $$file` && rm -f $$file; \
+	     done; \
 	     rmdir libunistring; \
 	   }
 

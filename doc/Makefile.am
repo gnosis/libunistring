@@ -41,8 +41,7 @@ libunistring_TEXINFOS = \
 # So we have to duplicate the entire rule which would otherwise be generated
 # by automake.
 $(srcdir)/stamp-vti: $(info_TEXINFOS) $(libunistring_TEXINFOS) $(top_srcdir)/version.sh
-	(dir=.; test -f ./libunistring.texi || dir=$(srcdir); \
-	set `$(SHELL) $(top_srcdir)/build-aux/mdate-sh $$dir/libunistring.texi`; \
+	(set `$(SHELL) $(top_srcdir)/build-aux/mdate-sh $(srcdir)/libunistring.texi`; \
 	echo "@set UPDATED $$1 $$2 $$3"; \
 	echo "@set UPDATED-MONTH $$2 $$3"; \
 	echo "@set EDITION $(VERSION)"; \
@@ -136,14 +135,14 @@ html-split: libunistring_toc.html
 # Override of automake's definition.
 # We want to use texi2html, not makeinfo --html.
 libunistring.html: libunistring.texi version.texi $(libunistring_TEXINFOS)
-	$(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -monolithic `if test -f libunistring.texi; then echo libunistring.texi; else echo $(srcdir)/libunistring.texi; fi`
+	$(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -monolithic $(srcdir)/libunistring.texi
 
 libunistring_toc.html: libunistring.texi version.texi $(libunistring_TEXINFOS)
 	case "@PERL@" in \
 	  *"/missing perl") \
-	     $(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -split_chapter `if test -f libunistring.texi; then echo libunistring.texi; else echo $(srcdir)/libunistring.texi; fi` || exit 0 ;; \
+	     $(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -split_chapter $(srcdir)/libunistring.texi || exit 0 ;; \
 	  *) $(RM) libunistring_*.html ; \
-	     $(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -split_chapter `if test -f libunistring.texi; then echo libunistring.texi; else echo $(srcdir)/libunistring.texi; fi` ;; \
+	     $(TEXI2HTML) $(TEXINCLUDES) -no-sec-nav -no-menu -toc-links -number -split_chapter $(srcdir)/libunistring.texi ;; \
 	esac \
 	&& { mv libunistring/libunistring.html libunistring_toc.html; \
 	     for file in libunistring/*.html; do \

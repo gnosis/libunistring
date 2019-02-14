@@ -1,5 +1,11 @@
 2019-02-13  Bruno Haible  <bruno@clisp.org>
 
+	doc: Assume that the texinfo sources are in the source dir.
+	* doc/Makefile.am (stamp-vti, libunistring.html, libunistring_toc.html):
+	Lookup libunistring.texi in $(srcdir).
+
+2019-02-13  Bruno Haible  <bruno@clisp.org>
+
 	doc: Fix hyperlinks to table of contents in HTML doc.
 	Reported by Akim Demaille <akim.demaille@gmail.com>.
 	* doc/Makefile.am (libunistring_toc.html): Replace references to

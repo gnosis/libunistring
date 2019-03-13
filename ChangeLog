@@ -1,3 +1,8 @@
+2019-03-13  Bruno Haible  <bruno@clisp.org>
+
+	build: Update Windows support.
+	* lib/libunistring.rc: Update.
+
 2019-02-13  Bruno Haible  <bruno@clisp.org>
 
 	doc: Assume that the texinfo sources are in the source dir.

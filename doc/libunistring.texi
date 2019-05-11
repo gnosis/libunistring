@@ -900,10 +900,10 @@ on most systems.
 @cindex bug reports
 @cindex bug tracker
 @cindex mailing list
-If you encounter any problem, please don't hesitate to send a detailed
-bug report to the @code{bug-libunistring@@gnu.org} mailing list.  You can
-alternatively also use the bug tracker at the project page
-@url{https://savannah.gnu.org/projects/libunistring}.
+If you encounter any problem, please don't hesitate to submit a detailed
+bug report either in the bug tracker at the project page
+@url{https://savannah.gnu.org/projects/libunistring}, or by email
+to the @code{bug-libunistring@@gnu.org} mailing list.
 
 Please always include the version number of this library, and a short
 description of your operating system and compilation environment with

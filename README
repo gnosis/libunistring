@@ -75,10 +75,12 @@ Homepage
 
     https://www.gnu.org/software/libunistring/
 
-Bug reports to
---------------
+Bug reports
+-----------
 
-    <bug-libunistring@gnu.org>
+Report bugs
+  - in the bug tracker at <https://savannah.gnu.org/projects/libunistring>
+  - or by email to <bug-libunistring@gnu.org>.
 
 
 Bruno Haible <bruno@clisp.org>

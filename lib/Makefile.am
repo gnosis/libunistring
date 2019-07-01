@@ -302,8 +302,8 @@ config.h: $(BUILT_SOURCES) $(srcdir)/libunistring.sym
 	            ;; \
 	        esac; \
 	      done; \
-	    } 5>&1 \
-	      | sed -e 's,.* ,,' | LC_ALL=C sort | LC_ALL=C uniq \
+	    } 5>&1 1>&2 \
+	      | sed -e 's,.* ,,' | grep -v '@' | LC_ALL=C sort | LC_ALL=C uniq \
 	      | LC_ALL=C join -v 1 - $(srcdir)/libunistring.sym \
 	      | grep -v '^libintl_locale' \
 	      | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t; \

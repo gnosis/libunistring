@@ -1,3 +1,10 @@
+2019-06-30  Bruno Haible  <bruno@clisp.org>
+
+	build: Fix build errors with MSVC.
+	* lib/exported.sh.in: Remove one level of eval.
+	* lib/Makefile.am (config.h): Redirect compiler output to stderr.
+	Remove symbols that contain an '@'.
+
 2019-05-11  Bruno Haible  <bruno@clisp.org>
 
 	Update bug reporting instructions.

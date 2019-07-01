@@ -170,6 +170,10 @@
 /wctob.c
 /wctomb-impl.h
 /wctomb.c
+/windows-thread.c
+/windows-thread.h
+/windows-tls.c
+/windows-tls.h
 /xalloc-die.c
 /xalloc-oversized.h
 /xalloc.h

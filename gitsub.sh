@@ -436,7 +436,7 @@ case "$mode" in
     git_options=""
     while test $# -gt 0; do
       case "$1" in
-        --recursive)
+        --reference=* | --depth=* | --recursive)
           git_options="$git_options $1"
           shift
           ;;

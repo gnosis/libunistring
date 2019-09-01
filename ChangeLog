@@ -1,5 +1,10 @@
 2019-09-01  Bruno Haible  <bruno@clisp.org>
 
+	build: Explain how to avoid skipped tests.
+	* HACKING: Explain which locales to install, to avoid skipped tests.
+
+2019-09-01  Bruno Haible  <bruno@clisp.org>
+
 	build: Add support for shallow-cloning of subdirectories.
 	* gitsub.sh (func_usage): Document allowed git options with 'git pull'.
 	(func_pull): Accept GIT_OPTIONS argument.

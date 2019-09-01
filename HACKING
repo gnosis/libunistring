@@ -49,6 +49,20 @@ You will need reasonably recent versions of the build tools:
 And, of course, the packages listed in the DEPENDENCIES file.
 
 
+Additional requirements for maintainers
+---------------------------------------
+
+If you are a maintainer, you will want to minimize the number of tests that
+are skipped. To this effect, you need to install a couple of locales, used by
+the tests. By default, only those enabled in /etc/locale.gen are preinstalled.
+
+$ sudo localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6
+$ sudo localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1
+$ sudo localedef -i fr_FR -f UTF-8 fr_FR.UTF-8
+$ sudo localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP
+$ sudo localedef -i zh_CN -f GB18030 zh_CN.GB18030
+
+
 Building off the Git repository
 ===============================
 

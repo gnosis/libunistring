@@ -101,6 +101,15 @@ To speed up the build:
      linking and therefore should certainly not be distributed.
 
 
+Continuous integration
+======================
+
+The package is built automatically, at regular intervals.  You find the latest
+build results here:
+  https://gitlab.com/gnu-libunistring/ci-distcheck/pipelines
+  https://gitlab.com/gnu-libunistring/ci-distcheck/-/jobs?scope=finished
+
+
 Running the testsuite in valgrind
 =================================
 

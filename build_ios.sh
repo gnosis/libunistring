@@ -30,17 +30,33 @@ function compile_unistring() {
         --disable-shared
     make -j 10
     make install
+    make clean
+    make distclean
 }
 
+# prerequisites for building:
+#   brew install automake autoconf m4 gperf sed perl wget texinfo
+
+# to clean the workspace:
+#   make clean
+#   make distclean
+#   rm -rf .build
+
+# to use updated version of the texinfo and m4 by brew and not by macOS
+export PATH="/usr/local/opt/texinfo/bin:$PATH"
+export PATH="/usr/local/opt/m4/bin:$PATH"
+
+# To generate the 'configure' script:
 git pull && ./gitsub.sh pull
 ./autogen.sh
-compile_unistring iPhoneOS          arm64   arm-apple-darwin    .build/iphoneos-arm64
-# compile_unistring iPhoneOS          armv7   arm-apple-darwin    .build/iphoneos-armv7
-# compile_unistring iPhoneOS          armv7s  arm-apple-darwin    .build/iphoneos-armv7s
-# compile_unistring iPhoneSimulator   i386    i686-apple-darwin   .build/iphonesimulator-i386
-# compile_unistring iPhoneSimulator   x86_64  x86_64-apple-darwin .build/iphonesimulator-x86_64
 
-# mkdir -p .build/iphoneos/lib .build/iphonesimulator/lib
-# cp -R .build/iphoneos-arm64/include .build/
-# lipo -create .build/iphoneos-{arm64,armv7,armv7s}/lib/libunistring.a -output .build/iphoneos/lib/libunistring.a
-# lipo -create .build/iphonesimulator-{i386,x86_64}/lib/libunistring.a -output .build/iphonesimulator/lib/libunistring.a
+compile_unistring iPhoneOS          arm64   arm-apple-darwin    .build/iphoneos-arm64
+compile_unistring iPhoneOS          armv7   arm-apple-darwin    .build/iphoneos-armv7
+compile_unistring iPhoneOS          armv7s  arm-apple-darwin    .build/iphoneos-armv7s
+compile_unistring iPhoneSimulator   i386    i686-apple-darwin   .build/iphonesimulator-i386
+compile_unistring iPhoneSimulator   x86_64  x86_64-apple-darwin .build/iphonesimulator-x86_64
+
+mkdir -p .build/iphoneos/lib .build/iphonesimulator/lib
+cp -R .build/iphoneos-arm64/include .build/
+lipo -create .build/iphoneos-{arm64,armv7,armv7s}/lib/libunistring.a -output .build/iphoneos/lib/libunistring.a
+lipo -create .build/iphonesimulator-{i386,x86_64}/lib/libunistring.a -output .build/iphonesimulator/lib/libunistring.a

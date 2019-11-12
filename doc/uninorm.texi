@@ -200,7 +200,7 @@ Tests whether the normalization form @var{nf} includes canonical composition.
 
 @deftypefun uninorm_t uninorm_decomposing_form (uninorm_t@tie{}@var{nf})
 Returns the decomposing variant of the normalization form @var{nf}.
-This maps NFC,NFD @arrow{} NFD and NFKC,NFKD @arrow{} NFKD.
+This maps NFC,NFD -> NFD and NFKC,NFKD -> NFKD.
 @end deftypefun
 
 The following functions apply a Unicode normalization form to a Unicode string.

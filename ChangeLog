@@ -1,3 +1,10 @@
+2019-12-19  Bruno Haible  <bruno@clisp.org>
+
+	build: Remove generated lib/uni*.h files from the tarball.
+	* lib/Makefile.am (nodist_include_HEADERS): New variable.
+	(nobase_include_HEADERS): Remove the headers files listed in
+	nodist_include_HEADERS.
+
 2019-09-01  Bruno Haible  <bruno@clisp.org>
 
 	build: Explain how to avoid skipped tests.

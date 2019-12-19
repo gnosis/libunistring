@@ -28,7 +28,7 @@ SUFFIXES =
 
 lib_LTLIBRARIES = libunistring.la
 
-nobase_include_HEADERS = \
+nodist_include_HEADERS = \
   unitypes.h \
   unistr.h \
   uniconv.h \
@@ -40,7 +40,9 @@ nobase_include_HEADERS = \
   uniwbrk.h \
   unilbrk.h \
   uninorm.h \
-  unicase.h \
+  unicase.h
+
+nobase_include_HEADERS = \
   unistring/inline.h
 
 noinst_HEADERS = \

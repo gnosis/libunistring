@@ -26,6 +26,8 @@ MOSTLYCLEANFILES =
 # see <https://lists.gnu.org/archive/html/bug-automake/2009-04/msg00029.html>.
 TEXINCLUDES = -I .
 
+RM = rm -f
+
 MAKEINFO = env LANG= LC_MESSAGES= LC_ALL= LANGUAGE= @MAKEINFO@
 MAKEINFOFLAGS = $(TEXINCLUDES) --no-split
 

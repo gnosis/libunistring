@@ -88,6 +88,7 @@
 /relocatable.valgrind
 /setlocale-lock.c
 /setlocale_null.c
+/setlocale_null.h
 /signbitd.c
 /signbitf.c
 /signbitl.c

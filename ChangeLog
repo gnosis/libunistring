@@ -1,5 +1,12 @@
 2019-12-22  Bruno Haible  <bruno@clisp.org>
 
+	build: Don't erase the .sym file if 'sed' is not GNU sed.
+	* lib/Makefile.am (libunistring.sym): Test the exit status of the
+	declared.sh command. Preserve the existing libunistring.sym if it
+	failed.
+
+2019-12-22  Bruno Haible  <bruno@clisp.org>
+
 	build: Update after gnulib changed.
 	* lib/Makefile.am (libunistring.sym): Don't rename the
 	gl_get_setlocale_null_lock function.

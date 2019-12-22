@@ -1,5 +1,17 @@
 2019-12-22  Bruno Haible  <bruno@clisp.org>
 
+	build: Update after gnulib changed.
+	* lib/Makefile.am (libunistring.sym): Don't rename the
+	gl_get_setlocale_null_lock function.
+	* NEWS: Document the fixed multithread-safety bugs:
+	  2019-12-18  Bruno Haible  <bruno@clisp.org>
+	      hard-locale: Make multithread-safe.
+	      This fix impacts mbrtowc on Cygwin and Haiku.
+	  2019-12-17  Bruno Haible  <bruno@clisp.org>
+	      localcharset: Fix multithread-safety bug on Windows and OS/2.
+
+2019-12-22  Bruno Haible  <bruno@clisp.org>
+
 	build: Fix spurious error message in 'doc'.
 	* doc/Makefile.am (RM): New variable.
 

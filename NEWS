@@ -1,3 +1,6 @@
+New in 0.9.11:
+* Fixed multithread-safety bugs on Cygwin, native Windows, and Haiku.
+
 New in 0.9.10:
 * The functions
     u8_casing_prefix_context, u8_casing_prefixes_context,

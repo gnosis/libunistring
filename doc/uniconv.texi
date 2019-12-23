@@ -9,7 +9,7 @@ The following function returns the locale encoding.
 
 @deftypefun {const char *} locale_charset ()
 Determines the current locale's character encoding, and canonicalizes it
-into one of the canonical names listed in @file{config.charset}.
+into one of the canonical names listed in @file{localcharset.h}.
 If the canonical name cannot be determined, the result is a non-canonical
 name.
 

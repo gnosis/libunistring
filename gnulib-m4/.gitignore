@@ -174,3 +174,9 @@
 /xalloc.m4
 /xsize.m4
 /yield.m4
+/iswdigit.m4
+/iswxdigit.m4
+/musl.m4
+/semaphore.m4
+/visibility.m4
+/zzgnulib.m4

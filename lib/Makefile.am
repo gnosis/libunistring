@@ -163,18 +163,7 @@ CLEANFILES       += unistring/iconveh.h
 nobase_nodist_include_HEADERS += unistring/version.h
 
 # unistring/cdefs.h is not public, but is included by other header files.
-nobase_nodist_include_HEADERS += unistring/cdefs.h
-unistring/cdefs.h : unistring/cdefs.in.h $(UNUSED_PARAMETER_H)
-	@MKDIR_P@ unistring
-	rm -f $@-t $@
-	sed -e '/definition of _GL_UNUSED_PARAMETER/r $(UNUSED_PARAMETER_H)' \
-	    < $(srcdir)/unistring/cdefs.in.h \
-	    > $@-t
-	mv $@-t $@
-BUILT_SOURCES    += unistring/cdefs.h
-MOSTLYCLEANFILES += unistring/cdefs.h-t
-CLEANFILES       += unistring/cdefs.h
-EXTRA_DIST       += unistring/cdefs.in.h
+nobase_include_HEADERS += unistring/cdefs.h
 
 # unistring/woe32dll.h is not public, but is included by other header files.
 nobase_nodist_include_HEADERS += unistring/woe32dll.h

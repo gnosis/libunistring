@@ -62,6 +62,8 @@
 /isnanf.m4
 /isnanl.m4
 /iswblank.m4
+/iswdigit.m4
+/iswxdigit.m4
 /langinfo_h.m4
 /largefile.m4
 /lcmessage.m4
@@ -98,6 +100,7 @@
 /msvc-inval.m4
 /msvc-nothrow.m4
 /multiarch.m4
+/musl.m4
 /nanosleep.m4
 /netinet_in_h.m4
 /nocrash.m4
@@ -120,6 +123,7 @@
 /relocatable-lib.m4
 /sched_h.m4
 /select.m4
+/semaphore.m4
 /setenv.m4
 /setlocale.m4
 /setlocale_null.m4
@@ -162,6 +166,7 @@
 /unistd_h.m4
 /usleep.m4
 /vasnprintf.m4
+/visibility.m4
 /warn-on-use.m4
 /wchar_h.m4
 /wchar_t.m4
@@ -174,9 +179,4 @@
 /xalloc.m4
 /xsize.m4
 /yield.m4
-/iswdigit.m4
-/iswxdigit.m4
-/musl.m4
-/semaphore.m4
-/visibility.m4
 /zzgnulib.m4

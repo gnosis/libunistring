@@ -11,7 +11,7 @@
 # It also requires
 #   - the gperf program.
 
-# Copyright (C) 2003-2019 Free Software Foundation, Inc.
+# Copyright (C) 2003-2020 Free Software Foundation, Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -453,6 +453,7 @@ if test $skip_gnulib = false; then
       < lib/unicase.in.h \
       > lib/unicase.in.h.tmp \
   && mv lib/unicase.in.h.tmp lib/unicase.in.h
+  $GNULIB_TOOL --copy-file build-aux/ar-lib; chmod a+x build-aux/ar-lib
   $GNULIB_TOOL --copy-file build-aux/config.guess; chmod a+x build-aux/config.guess
   $GNULIB_TOOL --copy-file build-aux/config.sub;   chmod a+x build-aux/config.sub
   $GNULIB_TOOL --copy-file build-aux/declared.sh lib/declared.sh; chmod a+x lib/declared.sh

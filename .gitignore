@@ -1943,7 +1943,6 @@
 /tests/uniwidth/test-uc_width2.sh
 
 # Files brought in by "automake --add-missing --copy":
-/build-aux/ar-lib
 /build-aux/compile
 /build-aux/depcomp
 /build-aux/install-sh
@@ -1952,6 +1951,7 @@
 /build-aux/test-driver
 
 # Other files brought in by autogen.sh:
+/build-aux/ar-lib
 /build-aux/config.guess
 /build-aux/config.sub
 /build-aux/run-test

@@ -122,6 +122,7 @@
 /gnulib-m4/open.m4
 /gnulib-m4/pathmax.m4
 /gnulib-m4/perror.m4
+/gnulib-m4/pid_t.m4
 /gnulib-m4/pipe.m4
 /gnulib-m4/printf-frexp.m4
 /gnulib-m4/printf-frexpl.m4
@@ -152,6 +153,7 @@
 /gnulib-m4/ssize_t.m4
 /gnulib-m4/stat-time.m4
 /gnulib-m4/stat.m4
+/gnulib-m4/std-gnu11.m4
 /gnulib-m4/stdalign.m4
 /gnulib-m4/stdbool.m4
 /gnulib-m4/stddef_h.m4
@@ -309,6 +311,7 @@
 /lib/strncat.c
 /lib/strstr.c
 /lib/sys_types.in.h
+/lib/thread-optim.h
 /lib/unicase.in.h
 /lib/uniconv.in.h
 /lib/unictype.in.h
@@ -1113,7 +1116,9 @@
 /tests/alloca.c
 /tests/arg-nonnull.h
 /tests/arpa_inet.in.h
+/tests/atomic-int-gnulib.h
 /tests/basename-lgpl.c
+/tests/basename-lgpl.h
 /tests/binary-io.c
 /tests/binary-io.h
 /tests/bind.c

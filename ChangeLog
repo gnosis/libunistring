@@ -1,3 +1,9 @@
+2020-09-06  Bruno Haible  <bruno@clisp.org>
+
+	build: Add support for clang on Windows.
+	* m4/woe32-dll.m4 (gl_WOE32_DLL): Set gl_cv_ld_autoimport to 'no' on
+	MSVC and MSVC/clang.
+
 2020-08-30  Bruno Haible  <bruno@clisp.org>
 
 	build: Update after gnulib changed.

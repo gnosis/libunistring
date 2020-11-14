@@ -98,7 +98,7 @@ This manual is for GNU libunistring.
 
 @ignore
 @c This was: @copying but it triggers a makeinfo 4.13 bug
-Copyright (C) 2001-2019 Free Software Foundation, Inc.
+Copyright (C) 2001-2020 Free Software Foundation, Inc.
 
 This manual is free documentation.  It is dually licensed under the
 GNU FDL and the GNU GPL.  This means that you can redistribute this
@@ -129,7 +129,7 @@ A copy of the license is included in @ref{GNU GPL}.
 @page
 @vskip 0pt plus 1filll
 @c @insertcopying
-Copyright (C) 2001-2019 Free Software Foundation, Inc.
+Copyright (C) 2001-2020 Free Software Foundation, Inc.
 
 This manual is free documentation.  It is dually licensed under the
 GNU FDL and the GNU GPL.  This means that you can redistribute this
@@ -178,6 +178,7 @@ A copy of the license is included in @ref{GNU GPL}.
 * Using the library::           How to link with the library and use it?
 * More functionality::          More advanced functionality
 * The wchar_t mess::            Why @code{wchar_t *} strings are useless
+* The char32_t problem::        Why @code{char32_t *} strings are problematic
 * Licenses::                    Licenses
 
 * Index::                       General Index
@@ -926,6 +927,8 @@ For the rendering of Unicode strings outside of the context of a given toolkit
 @url{https://www.pango.org/}.
 
 @include wchar_t.texi
+
+@include char32_t.texi
 
 @node Licenses
 @appendix Licenses

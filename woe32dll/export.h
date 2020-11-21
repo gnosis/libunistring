@@ -1,5 +1,5 @@
 /* Exporting symbols from Cygwin shared libraries.
-   Copyright (C) 2006, 2011-2018 Free Software Foundation, Inc.
+   Copyright (C) 2006, 2011-2020 Free Software Foundation, Inc.
    Written by Bruno Haible <bruno@clisp.org>, 2006.
 
    This program is free software: you can redistribute it and/or
@@ -103,7 +103,11 @@
 #if defined __GNUC__ /* GCC compiler, GNU toolchain */
 
  /* IMP(x) is a symbol that contains the address of x.  */
-# define IMP(x) _imp__##x
+# if defined _WIN64 || defined _LP64
+#  define IMP(x) __imp_##x
+# else
+#  define IMP(x) _imp__##x
+# endif
 
  /* Ensure that the variable x is exported from the library, and that a
     pseudo-variable IMP(x) is available.  */

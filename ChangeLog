@@ -1,3 +1,10 @@
+2020-11-21  Bruno Haible  <bruno@clisp.org>
+
+	build: Fix export of symbols in 64-bit mode on Windows.
+	Reported by kenjiuno <h8mastre@gmail.com> in
+	<https://savannah.gnu.org/bugs/?59491>.
+	* woe32dll/export.h (IMP): Correct definition in 64-bit mode.
+
 2020-09-06  Bruno Haible  <bruno@clisp.org>
 
 	build: Add support for clang on Windows.

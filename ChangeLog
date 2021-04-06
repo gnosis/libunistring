@@ -1,3 +1,10 @@
+2021-04-06  Bruno Haible  <bruno@clisp.org>
+
+	build: Fix the set of exported symbols on Alpine Linux.
+	* build-aux/join-v-1: New file.
+	* Makefile.am (EXTRA_DIST): Add it.
+	* lib/Makefile.am (config.h): Use it instead of 'join -v 1'.
+
 2021-02-28  Bruno Haible  <bruno@clisp.org>
 
 	Update DEPENDENCIES.

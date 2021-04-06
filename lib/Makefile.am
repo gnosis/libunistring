@@ -1,5 +1,5 @@
 ## Makefile for the lib subdirectory of GNU libunistring.
-## Copyright (C) 2009-2019 Free Software Foundation, Inc.
+## Copyright (C) 2009-2021 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -303,7 +303,7 @@ config.h: $(BUILT_SOURCES) $(srcdir)/libunistring.sym
 	      done; \
 	    } 5>&1 1>&2 \
 	      | sed -e 's,.* ,,' | grep -v '@' | LC_ALL=C sort | LC_ALL=C uniq \
-	      | LC_ALL=C join -v 1 - $(srcdir)/libunistring.sym \
+	      | LC_ALL=C $(top_srcdir)/build-aux/join-v-1 - $(srcdir)/libunistring.sym \
 	      | grep -v '^libintl_locale' \
 	      | grep -v 'gl_get_setlocale_null_lock' \
 	      | sed -e 's,^\(.*\)$$,#define \1 libunistring_\1,' > config.h-t; \

@@ -1,5 +1,5 @@
 ## Makefile for the toplevel directory of GNU libunistring.
-## Copyright (C) 2009, 2016, 2018 Free Software Foundation, Inc.
+## Copyright (C) 2009, 2016, 2018, 2021 Free Software Foundation, Inc.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ SUBDIRS = doc gnulib-local lib tests
 
 EXTRA_DIST = \
   version.sh BUGS DEPENDENCIES HACKING autogen.sh \
-  build-aux/texi2html build-aux/run-test
+  build-aux/join-v-1 build-aux/texi2html build-aux/run-test
 
 
 # Allow users to use "gnulib-tool --update".

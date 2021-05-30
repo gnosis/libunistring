@@ -1,4 +1,5 @@
 New in 0.9.11:
+* The license has changed from "LGPLv3+ or GPLv2" to "LGPLv3+ or GPLv2+".
 * Fixed multithread-safety bugs on Cygwin, native Windows, and Haiku.
 
 New in 0.9.10:

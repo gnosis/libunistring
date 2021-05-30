@@ -1,3 +1,10 @@
+2021-05-30  Bruno Haible  <bruno@clisp.org>
+
+	Change license to LGPLv3+ or GPLv2+.
+	* README (Copyright): Adjust section.
+	* doc/libunistring.texi (Licenses): Change accordingly.
+	* NEWS: Mention the change.
+
 2021-04-06  Bruno Haible  <bruno@clisp.org>
 
 	build: Fix the set of exported symbols on Alpine Linux.

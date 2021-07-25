@@ -152,9 +152,9 @@ gives more details about the failure, similar to @posixfunc{mbrtowc}.
 The following function stores a Unicode character as a Unicode string in
 memory.
 
-@deftypefun int u8_uctomb (uint8_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, int@tie{}@var{n})
-@deftypefunx int u16_uctomb (uint16_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, int@tie{}@var{n})
-@deftypefunx int u32_uctomb (uint32_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, int@tie{}@var{n})
+@deftypefun int u8_uctomb (uint8_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, ptrdiff_t@tie{}@var{n})
+@deftypefunx int u16_uctomb (uint16_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, ptrdiff_t@tie{}@var{n})
+@deftypefunx int u32_uctomb (uint32_t@tie{}*@var{s}, ucs4_t@tie{}@var{uc}, ptrdiff_t@tie{}@var{n})
 Puts the multibyte character represented by @var{uc} in @var{s}, returning its
 length.  Returns -1 upon failure, -2 if the number of available units, @var{n},
 is too small.  The latter case cannot occur if @var{n} >= 6/2/1, respectively.

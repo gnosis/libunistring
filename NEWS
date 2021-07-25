@@ -1,5 +1,7 @@
 New in 0.9.11:
 * The license has changed from "LGPLv3+ or GPLv2" to "LGPLv3+ or GPLv2+".
+* The functions u8_uctomb, u16_uctomb, u32_uctomb now support strings larger
+  than 2 GiB by taking an 'n' argument of type ptrdiff_t (instead of int).
 * Fixed multithread-safety bugs on Cygwin, native Windows, and Haiku.
 
 New in 0.9.10:

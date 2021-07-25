@@ -1,3 +1,10 @@
+2021-07-25  Bruno Haible  <bruno@clisp.org>
+
+	u{8,16,32}-uctomb: Avoid possible trouble with huge strings.
+	* doc/unistr.texi (Creating Unicode strings): Update prototypes of
+	u8_uctomb, u16_uctomb, u32_uctomb to match the change in gnulib on
+	2020-09-05.
+
 2021-05-30  Bruno Haible  <bruno@clisp.org>
 
 	Change license to LGPLv3+ or GPLv2+.

@@ -20,9 +20,10 @@
 /gnulib-m4/arpa_inet_h.m4
 /gnulib-m4/btowc.m4
 /gnulib-m4/builtin-expect.m4
+/gnulib-m4/calloc.m4
 /gnulib-m4/close.m4
 /gnulib-m4/codeset.m4
-/gnulib-m4/ctype.m4
+/gnulib-m4/ctype_h.m4
 /gnulib-m4/dirname.m4
 /gnulib-m4/double-slash-root.m4
 /gnulib-m4/dup2.m4
@@ -42,6 +43,7 @@
 /gnulib-m4/flexmember.m4
 /gnulib-m4/float_h.m4
 /gnulib-m4/fpieee.m4
+/gnulib-m4/free.m4
 /gnulib-m4/frexp.m4
 /gnulib-m4/frexpl.m4
 /gnulib-m4/fseterr.m4
@@ -133,8 +135,11 @@
 /gnulib-m4/pthread_sigmask.m4
 /gnulib-m4/putenv.m4
 /gnulib-m4/raise.m4
+/gnulib-m4/realloc.m4
+/gnulib-m4/reallocarray.m4
 /gnulib-m4/relocatable-lib.m4
 /gnulib-m4/sched_h.m4
+/gnulib-m4/sched_yield.m4
 /gnulib-m4/select.m4
 /gnulib-m4/semaphore.m4
 /gnulib-m4/setenv.m4
@@ -192,6 +197,7 @@
 /gnulib-m4/wint_t.m4
 /gnulib-m4/xalloc.m4
 /gnulib-m4/xsize.m4
+/gnulib-m4/year2038.m4
 /gnulib-m4/yield.m4
 /gnulib-m4/zzgnulib.m4
 /lib/Makefile.gnulib
@@ -216,6 +222,7 @@
 /lib/float.c
 /lib/float.in.h
 /lib/fpucw.h
+/lib/free.c
 /lib/frexp.c
 /lib/frexpl.c
 /lib/fseterr.c
@@ -233,6 +240,8 @@
 /lib/iconv_open-zos.gperf
 /lib/iconv_open.c
 /lib/iconveh.h
+/lib/idx.h
+/lib/intprops.h
 /lib/inttypes.in.h
 /lib/isnan.c
 /lib/isnand-nolibm.h
@@ -1124,6 +1133,7 @@
 /tests/bind.c
 /tests/btowc.c
 /tests/c++defs.h
+/tests/calloc.c
 /tests/cloexec.c
 /tests/cloexec.h
 /tests/close.c
@@ -1151,6 +1161,8 @@
 /tests/getprogname.h
 /tests/gettext.h
 /tests/gettimeofday.c
+/tests/ialloc.c
+/tests/ialloc.h
 /tests/iconvsupport.c
 /tests/ignore-value.h
 /tests/inet_pton.c
@@ -1165,6 +1177,7 @@
 /tests/localtime-buffer.h
 /tests/lstat.c
 /tests/macros.h
+/tests/malloc.c
 /tests/mbtowc-impl.h
 /tests/mbtowc.c
 /tests/minus-zero.h
@@ -1187,8 +1200,11 @@
 /tests/raise.c
 /tests/randomd.c
 /tests/randoml.c
+/tests/realloc.c
+/tests/reallocarray.c
 /tests/same-inode.h
 /tests/sched.in.h
+/tests/sched_yield.c
 /tests/select.c
 /tests/setenv.c
 /tests/setlocale.c
@@ -1237,6 +1253,7 @@
 /tests/test-c-strcase.sh
 /tests/test-c-strcasecmp.c
 /tests/test-c-strncasecmp.c
+/tests/test-calloc-gnu.c
 /tests/test-cloexec.c
 /tests/test-close.c
 /tests/test-connect.c
@@ -1251,6 +1268,7 @@
 /tests/test-float.c
 /tests/test-fputc.c
 /tests/test-fread.c
+/tests/test-free.c
 /tests/test-frexp.c
 /tests/test-frexp.h
 /tests/test-frexpl.c
@@ -1293,6 +1311,7 @@
 /tests/test-lock.c
 /tests/test-lstat.c
 /tests/test-lstat.h
+/tests/test-malloc-gnu.c
 /tests/test-malloca.c
 /tests/test-math.c
 /tests/test-mbrtowc-w32-1.sh
@@ -1329,6 +1348,8 @@
 /tests/test-pthread_sigmask1.c
 /tests/test-pthread_sigmask2.c
 /tests/test-raise.c
+/tests/test-realloc-gnu.c
+/tests/test-reallocarray.c
 /tests/test-rwlock1.c
 /tests/test-sched.c
 /tests/test-select-fd.c

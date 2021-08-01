@@ -1,5 +1,5 @@
 /* Common macro definitions for C include files.
-   Copyright (C) 2008-2020 Free Software Foundation, Inc.
+   Copyright (C) 2008-2021 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify it
    under the terms of the GNU Lesser General Public License as published
@@ -17,25 +17,56 @@
 #ifndef _UNISTRING_CDEFS_H
 #define _UNISTRING_CDEFS_H
 
-/* _GL_UNUSED_PARAMETER is a marker that can be appended to function parameter
+/* _GL_UNUSED_PARAMETER is a marker that can be prepended to function parameter
    declarations for parameters that are not used.  This helps to reduce
    warnings, such as from GCC -Wunused-parameter.  The syntax is as follows:
-       type param _GL_UNUSED_PARAMETER
+       _GL_UNUSED_PARAMETER type param
    or more generally
-       param_decl _GL_UNUSED_PARAMETER
+       _GL_UNUSED_PARAMETER param_decl
    For example:
-       int param _GL_UNUSED_PARAMETER
-       int *(*param)(void) _GL_UNUSED_PARAMETER
-   Other possible, but obscure and discouraged syntaxes:
-       int _GL_UNUSED_PARAMETER *(*param)(void)
-       _GL_UNUSED_PARAMETER int *(*param)(void)
+       _GL_UNUSED_PARAMETER int param
+       _GL_UNUSED_PARAMETER int *(*param) (void)
  */
 #ifndef _GL_UNUSED_PARAMETER
-# if __GNUC__ >= 3 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 7)
-#  define _GL_UNUSED_PARAMETER __attribute__ ((__unused__))
-# else
-#  define _GL_UNUSED_PARAMETER
-# endif
+# define _GL_UNUSED_PARAMETER _UC_ATTRIBUTE_MAYBE_UNUSED
+#endif
+
+/* The definitions below are taken from gnulib/m4/gnulib-common.m4,
+   with prefix _UC instead of prefix _GL.  */
+
+/* True if the compiler says it groks GNU C version MAJOR.MINOR.  */
+#if defined __GNUC__ && defined __GNUC_MINOR__
+# define _UC_GNUC_PREREQ(major, minor) \
+    ((major) < __GNUC__ + ((minor) <= __GNUC_MINOR__))
+#else
+# define _UC_GNUC_PREREQ(major, minor) 0
+#endif
+
+#if (defined __has_attribute \
+     && (!defined __clang_minor__ \
+         || 3 < __clang_major__ + (5 <= __clang_minor__)))
+# define _UC_HAS_ATTRIBUTE(attr) __has_attribute (__##attr##__)
+#else
+# define _UC_HAS_ATTRIBUTE(attr) _UC_ATTR_##attr
+# define _UC_ATTR_unused _UC_GNUC_PREREQ (2, 7)
+#endif
+
+#ifdef __has_c_attribute
+# define _GL_HAS_C_ATTRIBUTE(attr) __has_c_attribute (__##attr##__)
+#else
+# define _GL_HAS_C_ATTRIBUTE(attr) 0
+#endif
+
+#if _GL_HAS_C_ATTRIBUTE (maybe_unused)
+# define _UC_ATTRIBUTE_MAYBE_UNUSED [[__maybe_unused__]]
+#else
+# define _UC_ATTRIBUTE_MAYBE_UNUSED _UC_ATTRIBUTE_UNUSED
+#endif
+
+#if _UC_HAS_ATTRIBUTE (unused)
+# define _UC_ATTRIBUTE_UNUSED __attribute__ ((__unused__))
+#else
+# define _UC_ATTRIBUTE_UNUSED
 #endif
 
 #endif /* _UNISTRING_CDEFS_H */

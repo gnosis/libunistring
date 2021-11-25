@@ -16,7 +16,7 @@ dnl along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.64])
+AC_PREREQ([2.69])
 AC_INIT
 AC_CONFIG_SRCDIR([lib/unistring/version.in.h])
 AC_CONFIG_AUX_DIR([build-aux])
